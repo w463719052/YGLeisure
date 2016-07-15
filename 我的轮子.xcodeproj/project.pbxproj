@@ -21,7 +21,6 @@
 		15AA47121D2F5CC000E4AD97 /* YGBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15AA47111D2F5CC000E4AD97 /* YGBaseViewController.m */; };
 		15AA47161D2F5D1200E4AD97 /* YGTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 15AA47151D2F5D1200E4AD97 /* YGTool.m */; };
 		15AA471A1D2F8B5200E4AD97 /* YGSuspensionPhoneFrameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 15AA47191D2F8B5200E4AD97 /* YGSuspensionPhoneFrameVC.m */; };
-		15B5554B1D388E5200DD7233 /* YGLiveVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B5554A1D388E5200DD7233 /* YGLiveVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,8 +52,6 @@
 		15AA47151D2F5D1200E4AD97 /* YGTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGTool.m; sourceTree = "<group>"; };
 		15AA47181D2F8B5200E4AD97 /* YGSuspensionPhoneFrameVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGSuspensionPhoneFrameVC.h; sourceTree = "<group>"; };
 		15AA47191D2F8B5200E4AD97 /* YGSuspensionPhoneFrameVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGSuspensionPhoneFrameVC.m; sourceTree = "<group>"; };
-		15B555491D388E5200DD7233 /* YGLiveVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGLiveVC.h; sourceTree = "<group>"; };
-		15B5554A1D388E5200DD7233 /* YGLiveVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGLiveVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +92,6 @@
 		15AA46CD1D2F515100E4AD97 /* 我的轮子 */ = {
 			isa = PBXGroup;
 			children = (
-				15B555481D388DD000DD7233 /* 直播软件 */,
 				15AA47171D2F89D500E4AD97 /* 悬浮毛玻璃相框 */,
 				15AA470F1D2F5C5900E4AD97 /* 物流详情页面 */,
 				15AA46D11D2F515100E4AD97 /* AppDelegate.h */,
@@ -148,15 +144,6 @@
 				15AA47191D2F8B5200E4AD97 /* YGSuspensionPhoneFrameVC.m */,
 			);
 			name = "悬浮毛玻璃相框";
-			sourceTree = "<group>";
-		};
-		15B555481D388DD000DD7233 /* 直播软件 */ = {
-			isa = PBXGroup;
-			children = (
-				15B555491D388E5200DD7233 /* YGLiveVC.h */,
-				15B5554A1D388E5200DD7233 /* YGLiveVC.m */,
-			);
-			name = "直播软件";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,7 +254,6 @@
 				15AA471A1D2F8B5200E4AD97 /* YGSuspensionPhoneFrameVC.m in Sources */,
 				15AA46E71D2F545B00E4AD97 /* YGLogisticsInformationVC.m in Sources */,
 				15AA46D31D2F515100E4AD97 /* AppDelegate.m in Sources */,
-				15B5554B1D388E5200DD7233 /* YGLiveVC.m in Sources */,
 				15AA46D01D2F515100E4AD97 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
