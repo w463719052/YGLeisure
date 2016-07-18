@@ -10,6 +10,7 @@
 #import "YGLogisticsInformationVC.h"
 #import "YGHeader.h"
 #import "YGSuspensionPhoneFrameVC.h"
+#import "YGPersonalProfileVC.h"
 
 @interface ViewController ()
 {
@@ -26,7 +27,7 @@ static NSInteger const BUTTONHEIGTH = 40;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _buttonArray = @[@"物流详情",@"悬浮图片"];
+    _buttonArray = @[@"物流详情",@"悬浮图片",@"个人简介"];
     for (int i = 0; i<_buttonArray.count; i++) {
         int column = i%5;
         int line = i/5;
@@ -53,6 +54,10 @@ static NSInteger const BUTTONHEIGTH = 40;
         [self presentViewController:naVC animated:YES completion:nil];
     } else if(send.tag == 1) {
         YGSuspensionPhoneFrameVC *myVC = [[YGSuspensionPhoneFrameVC alloc] init];
+        UINavigationController *naVC = [[UINavigationController alloc] initWithRootViewController:myVC];
+        [self presentViewController:naVC animated:YES completion:nil];
+    } else if (send.tag == 2) {
+        YGPersonalProfileVC *myVC = [[YGPersonalProfileVC alloc] init];
         UINavigationController *naVC = [[UINavigationController alloc] initWithRootViewController:myVC];
         [self presentViewController:naVC animated:YES completion:nil];
     }
