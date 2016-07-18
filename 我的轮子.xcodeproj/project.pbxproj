@@ -20,7 +20,6 @@
 		15AA46F31D2F556C00E4AD97 /* YGLogisticsInformationDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 15AA46EE1D2F556C00E4AD97 /* YGLogisticsInformationDetailCell.m */; };
 		15AA47121D2F5CC000E4AD97 /* YGBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15AA47111D2F5CC000E4AD97 /* YGBaseViewController.m */; };
 		15AA47161D2F5D1200E4AD97 /* YGTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 15AA47151D2F5D1200E4AD97 /* YGTool.m */; };
-		15AA471A1D2F8B5200E4AD97 /* YGSuspensionPhoneFrameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 15AA47191D2F8B5200E4AD97 /* YGSuspensionPhoneFrameVC.m */; };
 		15B555751D38D39E00DD7233 /* YGPersonalProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B555741D38D39E00DD7233 /* YGPersonalProfileVC.m */; };
 		15B555781D38DD7300DD7233 /* YGBaseMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B555771D38DD7300DD7233 /* YGBaseMapView.m */; };
 /* End PBXBuildFile section */
@@ -52,8 +51,6 @@
 		15AA47131D2F5D0000E4AD97 /* YGHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGHeader.h; sourceTree = "<group>"; };
 		15AA47141D2F5D1200E4AD97 /* YGTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGTool.h; sourceTree = "<group>"; };
 		15AA47151D2F5D1200E4AD97 /* YGTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGTool.m; sourceTree = "<group>"; };
-		15AA47181D2F8B5200E4AD97 /* YGSuspensionPhoneFrameVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGSuspensionPhoneFrameVC.h; sourceTree = "<group>"; };
-		15AA47191D2F8B5200E4AD97 /* YGSuspensionPhoneFrameVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGSuspensionPhoneFrameVC.m; sourceTree = "<group>"; };
 		15B555731D38D39E00DD7233 /* YGPersonalProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGPersonalProfileVC.h; sourceTree = "<group>"; };
 		15B555741D38D39E00DD7233 /* YGPersonalProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGPersonalProfileVC.m; sourceTree = "<group>"; };
 		15B555761D38DD7300DD7233 /* YGBaseMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGBaseMapView.h; sourceTree = "<group>"; };
@@ -98,9 +95,7 @@
 		15AA46CD1D2F515100E4AD97 /* 我的轮子 */ = {
 			isa = PBXGroup;
 			children = (
-				15B24C561D3CAC8A00FA0493 /* 图片放大 */,
 				15B5556F1D38D32900DD7233 /* 个人简介界面 */,
-				15AA47171D2F89D500E4AD97 /* 悬浮毛玻璃相框 */,
 				15AA470F1D2F5C5900E4AD97 /* 物流详情页面 */,
 				15AA46D11D2F515100E4AD97 /* AppDelegate.h */,
 				15AA46D21D2F515100E4AD97 /* AppDelegate.m */,
@@ -143,22 +138,6 @@
 				15AA46ED1D2F556C00E4AD97 /* YGTextView.m */,
 			);
 			name = "物流详情页面";
-			sourceTree = "<group>";
-		};
-		15AA47171D2F89D500E4AD97 /* 悬浮毛玻璃相框 */ = {
-			isa = PBXGroup;
-			children = (
-				15AA47181D2F8B5200E4AD97 /* YGSuspensionPhoneFrameVC.h */,
-				15AA47191D2F8B5200E4AD97 /* YGSuspensionPhoneFrameVC.m */,
-			);
-			name = "悬浮毛玻璃相框";
-			sourceTree = "<group>";
-		};
-		15B24C561D3CAC8A00FA0493 /* 图片放大 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "图片放大";
 			sourceTree = "<group>";
 		};
 		15B5556F1D38D32900DD7233 /* 个人简介界面 */ = {
@@ -280,7 +259,6 @@
 				15AA46F31D2F556C00E4AD97 /* YGLogisticsInformationDetailCell.m in Sources */,
 				15B555751D38D39E00DD7233 /* YGPersonalProfileVC.m in Sources */,
 				15AA46F21D2F556C00E4AD97 /* YGTextView.m in Sources */,
-				15AA471A1D2F8B5200E4AD97 /* YGSuspensionPhoneFrameVC.m in Sources */,
 				15AA46E71D2F545B00E4AD97 /* YGLogisticsInformationVC.m in Sources */,
 				15AA46D31D2F515100E4AD97 /* AppDelegate.m in Sources */,
 				15AA46D01D2F515100E4AD97 /* main.m in Sources */,
