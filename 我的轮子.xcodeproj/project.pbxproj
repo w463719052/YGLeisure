@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15A6F0B41D4610020005F9D7 /* YGSoundRecordingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 15A6F0B31D4610020005F9D7 /* YGSoundRecordingVC.m */; };
 		15AA46D01D2F515100E4AD97 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 15AA46CF1D2F515100E4AD97 /* main.m */; };
 		15AA46D31D2F515100E4AD97 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 15AA46D21D2F515100E4AD97 /* AppDelegate.m */; };
 		15AA46D61D2F515100E4AD97 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15AA46D51D2F515100E4AD97 /* ViewController.m */; };
@@ -20,11 +21,22 @@
 		15AA46F31D2F556C00E4AD97 /* YGLogisticsInformationDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 15AA46EE1D2F556C00E4AD97 /* YGLogisticsInformationDetailCell.m */; };
 		15AA47121D2F5CC000E4AD97 /* YGBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15AA47111D2F5CC000E4AD97 /* YGBaseViewController.m */; };
 		15AA47161D2F5D1200E4AD97 /* YGTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 15AA47151D2F5D1200E4AD97 /* YGTool.m */; };
+		15B33F741D88FF0300247239 /* YGMosaicImageInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B33F731D88FF0300247239 /* YGMosaicImageInfo.m */; };
 		15B555751D38D39E00DD7233 /* YGPersonalProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B555741D38D39E00DD7233 /* YGPersonalProfileVC.m */; };
 		15B555781D38DD7300DD7233 /* YGBaseMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B555771D38DD7300DD7233 /* YGBaseMapView.m */; };
+		15B6984E1D7968F700883F3F /* YGDingDangVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B6984D1D7968F700883F3F /* YGDingDangVC.m */; };
+		15B698511D796A8C00883F3F /* YGDingDangCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B698501D796A8C00883F3F /* YGDingDangCell.m */; };
+		15B933A01D7D4B6A007C178D /* YGCustomerInformationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B9339F1D7D4B6A007C178D /* YGCustomerInformationCell.m */; };
+		15BE48CF1D94C4A20081E051 /* YGDrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BE48CE1D94C4A20081E051 /* YGDrawingView.m */; };
+		15BE48D21D94C5210081E051 /* YGDrawingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BE48D11D94C5210081E051 /* YGDrawingVC.m */; };
+		15BE48D51D94CC8F0081E051 /* YGDrawingLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BE48D41D94CC8F0081E051 /* YGDrawingLineView.m */; };
+		15CA57D01D87EAE500AFD555 /* YGMosaicImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15CA57CF1D87EAE500AFD555 /* YGMosaicImageView.m */; };
+		15D0C5D01D82A9E7000A9575 /* YGPiceModifyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 15D0C5CF1D82A9E7000A9575 /* YGPiceModifyVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		15A6F0B21D4610020005F9D7 /* YGSoundRecordingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGSoundRecordingVC.h; sourceTree = "<group>"; };
+		15A6F0B31D4610020005F9D7 /* YGSoundRecordingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGSoundRecordingVC.m; sourceTree = "<group>"; };
 		15AA46CB1D2F515100E4AD97 /* 我的轮子.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "我的轮子.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		15AA46CF1D2F515100E4AD97 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		15AA46D11D2F515100E4AD97 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,10 +63,28 @@
 		15AA47131D2F5D0000E4AD97 /* YGHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGHeader.h; sourceTree = "<group>"; };
 		15AA47141D2F5D1200E4AD97 /* YGTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGTool.h; sourceTree = "<group>"; };
 		15AA47151D2F5D1200E4AD97 /* YGTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGTool.m; sourceTree = "<group>"; };
+		15B33F721D88FF0300247239 /* YGMosaicImageInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGMosaicImageInfo.h; sourceTree = "<group>"; };
+		15B33F731D88FF0300247239 /* YGMosaicImageInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGMosaicImageInfo.m; sourceTree = "<group>"; };
 		15B555731D38D39E00DD7233 /* YGPersonalProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGPersonalProfileVC.h; sourceTree = "<group>"; };
 		15B555741D38D39E00DD7233 /* YGPersonalProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGPersonalProfileVC.m; sourceTree = "<group>"; };
 		15B555761D38DD7300DD7233 /* YGBaseMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGBaseMapView.h; sourceTree = "<group>"; };
 		15B555771D38DD7300DD7233 /* YGBaseMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGBaseMapView.m; sourceTree = "<group>"; };
+		15B6984C1D7968F700883F3F /* YGDingDangVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGDingDangVC.h; sourceTree = "<group>"; };
+		15B6984D1D7968F700883F3F /* YGDingDangVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGDingDangVC.m; sourceTree = "<group>"; };
+		15B6984F1D796A8C00883F3F /* YGDingDangCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGDingDangCell.h; sourceTree = "<group>"; };
+		15B698501D796A8C00883F3F /* YGDingDangCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGDingDangCell.m; sourceTree = "<group>"; };
+		15B9339E1D7D4B6A007C178D /* YGCustomerInformationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGCustomerInformationCell.h; sourceTree = "<group>"; };
+		15B9339F1D7D4B6A007C178D /* YGCustomerInformationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGCustomerInformationCell.m; sourceTree = "<group>"; };
+		15BE48CD1D94C4A20081E051 /* YGDrawingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGDrawingView.h; sourceTree = "<group>"; };
+		15BE48CE1D94C4A20081E051 /* YGDrawingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGDrawingView.m; sourceTree = "<group>"; };
+		15BE48D01D94C5210081E051 /* YGDrawingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGDrawingVC.h; sourceTree = "<group>"; };
+		15BE48D11D94C5210081E051 /* YGDrawingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGDrawingVC.m; sourceTree = "<group>"; };
+		15BE48D31D94CC8F0081E051 /* YGDrawingLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGDrawingLineView.h; sourceTree = "<group>"; };
+		15BE48D41D94CC8F0081E051 /* YGDrawingLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGDrawingLineView.m; sourceTree = "<group>"; };
+		15CA57CE1D87EAE500AFD555 /* YGMosaicImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGMosaicImageView.h; sourceTree = "<group>"; };
+		15CA57CF1D87EAE500AFD555 /* YGMosaicImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGMosaicImageView.m; sourceTree = "<group>"; };
+		15D0C5CE1D82A9E7000A9575 /* YGPiceModifyVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGPiceModifyVC.h; sourceTree = "<group>"; };
+		15D0C5CF1D82A9E7000A9575 /* YGPiceModifyVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGPiceModifyVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +125,11 @@
 		15AA46CD1D2F515100E4AD97 /* 我的轮子 */ = {
 			isa = PBXGroup;
 			children = (
+				15BE48CC1D94C46F0081E051 /* 画图 */,
+				15D0C5CA1D82A93D000A9575 /* 图片拼接 */,
+				15B6984B1D79684400883F3F /* 订单详情页 */,
+				15A6F0B21D4610020005F9D7 /* YGSoundRecordingVC.h */,
+				15A6F0B31D4610020005F9D7 /* YGSoundRecordingVC.m */,
 				15B5556F1D38D32900DD7233 /* 个人简介界面 */,
 				15AA470F1D2F5C5900E4AD97 /* 物流详情页面 */,
 				15AA46D11D2F515100E4AD97 /* AppDelegate.h */,
@@ -151,6 +186,45 @@
 			name = "个人简介界面";
 			sourceTree = "<group>";
 		};
+		15B6984B1D79684400883F3F /* 订单详情页 */ = {
+			isa = PBXGroup;
+			children = (
+				15B6984C1D7968F700883F3F /* YGDingDangVC.h */,
+				15B6984D1D7968F700883F3F /* YGDingDangVC.m */,
+				15B6984F1D796A8C00883F3F /* YGDingDangCell.h */,
+				15B698501D796A8C00883F3F /* YGDingDangCell.m */,
+				15B9339E1D7D4B6A007C178D /* YGCustomerInformationCell.h */,
+				15B9339F1D7D4B6A007C178D /* YGCustomerInformationCell.m */,
+			);
+			name = "订单详情页";
+			sourceTree = "<group>";
+		};
+		15BE48CC1D94C46F0081E051 /* 画图 */ = {
+			isa = PBXGroup;
+			children = (
+				15BE48D01D94C5210081E051 /* YGDrawingVC.h */,
+				15BE48D11D94C5210081E051 /* YGDrawingVC.m */,
+				15BE48CD1D94C4A20081E051 /* YGDrawingView.h */,
+				15BE48CE1D94C4A20081E051 /* YGDrawingView.m */,
+				15BE48D31D94CC8F0081E051 /* YGDrawingLineView.h */,
+				15BE48D41D94CC8F0081E051 /* YGDrawingLineView.m */,
+			);
+			name = "画图";
+			sourceTree = "<group>";
+		};
+		15D0C5CA1D82A93D000A9575 /* 图片拼接 */ = {
+			isa = PBXGroup;
+			children = (
+				15D0C5CE1D82A9E7000A9575 /* YGPiceModifyVC.h */,
+				15D0C5CF1D82A9E7000A9575 /* YGPiceModifyVC.m */,
+				15CA57CE1D87EAE500AFD555 /* YGMosaicImageView.h */,
+				15CA57CF1D87EAE500AFD555 /* YGMosaicImageView.m */,
+				15B33F721D88FF0300247239 /* YGMosaicImageInfo.h */,
+				15B33F731D88FF0300247239 /* YGMosaicImageInfo.m */,
+			);
+			name = "图片拼接";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -200,6 +274,7 @@
 				TargetAttributes = {
 					15AA46CA1D2F515100E4AD97 = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 6HPVU69B37;
 					};
 					15AA46F71D2F5C0100E4AD97 = {
 						CreatedOnToolsVersion = 7.1;
@@ -250,17 +325,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15B6984E1D7968F700883F3F /* YGDingDangVC.m in Sources */,
+				15A6F0B41D4610020005F9D7 /* YGSoundRecordingVC.m in Sources */,
 				15AA46F11D2F556C00E4AD97 /* YGLogisticsInformationCell.m in Sources */,
 				15AA47161D2F5D1200E4AD97 /* YGTool.m in Sources */,
 				15AA46D61D2F515100E4AD97 /* ViewController.m in Sources */,
+				15D0C5D01D82A9E7000A9575 /* YGPiceModifyVC.m in Sources */,
+				15B33F741D88FF0300247239 /* YGMosaicImageInfo.m in Sources */,
 				15AA46F01D2F556C00E4AD97 /* YGLogisticsInformationInfo.m in Sources */,
 				15B555781D38DD7300DD7233 /* YGBaseMapView.m in Sources */,
+				15BE48D21D94C5210081E051 /* YGDrawingVC.m in Sources */,
 				15AA47121D2F5CC000E4AD97 /* YGBaseViewController.m in Sources */,
 				15AA46F31D2F556C00E4AD97 /* YGLogisticsInformationDetailCell.m in Sources */,
 				15B555751D38D39E00DD7233 /* YGPersonalProfileVC.m in Sources */,
 				15AA46F21D2F556C00E4AD97 /* YGTextView.m in Sources */,
+				15BE48CF1D94C4A20081E051 /* YGDrawingView.m in Sources */,
+				15CA57D01D87EAE500AFD555 /* YGMosaicImageView.m in Sources */,
 				15AA46E71D2F545B00E4AD97 /* YGLogisticsInformationVC.m in Sources */,
 				15AA46D31D2F515100E4AD97 /* AppDelegate.m in Sources */,
+				15B698511D796A8C00883F3F /* YGDingDangCell.m in Sources */,
+				15BE48D51D94CC8F0081E051 /* YGDrawingLineView.m in Sources */,
+				15B933A01D7D4B6A007C178D /* YGCustomerInformationCell.m in Sources */,
 				15AA46D01D2F515100E4AD97 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,10 +463,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "我的轮子/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zccl.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -389,10 +477,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "我的轮子/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zccl.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

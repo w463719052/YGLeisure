@@ -10,6 +10,10 @@
 #import "YGLogisticsInformationVC.h"
 #import "YGHeader.h"
 #import "YGPersonalProfileVC.h"
+#import "YGSoundRecordingVC.h"
+#import "YGDingDangVC.h"
+#import "YGPiceModifyVC.h"
+#import "YGDrawingVC.h"
 
 @interface ViewController ()
 {
@@ -26,7 +30,7 @@ static NSInteger const BUTTONHEIGTH = 40;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _buttonArray = @[@"物流详情",@"个人简介"];
+    _buttonArray = @[@"物流详情",@"个人简介",@"录音",@"订单详情页",@"图片拼接",@"画图"];
     for (int i = 0; i<_buttonArray.count; i++) {
         int column = i%5;
         int line = i/5;
@@ -42,7 +46,6 @@ static NSInteger const BUTTONHEIGTH = 40;
         [button addTarget:self action:@selector(buttonPress:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:button];
     }
-    
     // Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -53,6 +56,22 @@ static NSInteger const BUTTONHEIGTH = 40;
         [self presentViewController:naVC animated:YES completion:nil];
     } else if(send.tag == 1) {
         YGPersonalProfileVC *myVC = [[YGPersonalProfileVC alloc] init];
+        UINavigationController *naVC = [[UINavigationController alloc] initWithRootViewController:myVC];
+        [self presentViewController:naVC animated:YES completion:nil];
+    } else if(send.tag == 2) {
+        YGSoundRecordingVC *myVC = [[YGSoundRecordingVC alloc] init];
+        UINavigationController *naVC = [[UINavigationController alloc] initWithRootViewController:myVC];
+        [self presentViewController:naVC animated:YES completion:nil];
+    } else if (send.tag == 3) {
+        YGDingDangVC *myVC = [[YGDingDangVC alloc] init];
+        UINavigationController *naVC = [[UINavigationController alloc] initWithRootViewController:myVC];
+        [self presentViewController:naVC animated:YES completion:nil];
+    } else if (send.tag == 4) {
+        YGPiceModifyVC *myVC = [[YGPiceModifyVC alloc] init];
+        UINavigationController *naVC = [[UINavigationController alloc] initWithRootViewController:myVC];
+        [self presentViewController:naVC animated:YES completion:nil];
+    } else if (send.tag == 5) {
+        YGDrawingVC *myVC = [[YGDrawingVC alloc] init];
         UINavigationController *naVC = [[UINavigationController alloc] initWithRootViewController:myVC];
         [self presentViewController:naVC animated:YES completion:nil];
     }
