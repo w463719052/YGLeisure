@@ -17,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setNavigationBarWithBackButton:YES];
     YGDrawingView *drawingView =[[YGDrawingView alloc] init];
     [self.view addSubview:drawingView];
     // Do any additional setup after loading the view.

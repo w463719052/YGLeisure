@@ -12,5 +12,7 @@
 
 @property (nonatomic,strong) UIDynamicAnimator *animator;
 @property(nonatomic,strong) UIAttachmentBehavior *attachmentBehavior;
+@property (nonatomic,assign) CGPoint loaction;
+@property (nonatomic,assign) CGSize currentSize;
 
 @end
