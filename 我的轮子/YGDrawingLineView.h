@@ -10,8 +10,7 @@
 
 @interface YGDrawingLineView : UILabel
 
-@property (nonatomic,strong) UIDynamicAnimator *animator;
-@property(nonatomic,strong) UIAttachmentBehavior *attachmentBehavior;
+@property (nonatomic,strong) UILabel *lbl;
 @property (nonatomic,assign) CGPoint loaction;
 @property (nonatomic,assign) CGSize currentSize;
 
