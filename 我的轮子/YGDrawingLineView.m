@@ -21,7 +21,7 @@
 
 - (void)addContentView {
     
-    _lbl = [[UILabel alloc] initWithFrame:CGRectMake(160, 100, 50, 20)];
+    _lbl = [[UILabel alloc] initWithFrame:CGRectMake(210, 100, 50, 20)];
     _lbl.backgroundColor = [UIColor greenColor];
     _lbl.textAlignment = NSTextAlignmentCenter;
     _lbl.adjustsFontSizeToFitWidth = YES;
@@ -48,12 +48,13 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     _loaction = [[touches anyObject] locationInView:self];
+    _lblTransform = _lbl.transform;
     if (_loaction.x > _currentSize.width-20) {
         [self setAnchorPoint:CGPointMake(0, 0.5) forView:self];
-        [self setAnchorPoint:CGPointMake(0, 0.5) forView:_lbl];
+//        [self setAnchorPoint:CGPointMake(0, 0.5) forView:_lbl];
     } else if (_loaction.x < 20) {
         [self setAnchorPoint:CGPointMake(1, 0.5) forView:self];
-        [self setAnchorPoint:CGPointMake(1, 0.5) forView:_lbl];
+//        [self setAnchorPoint:CGPointMake(1, 0.5) forView:_lbl];
     }
 }
 
@@ -61,7 +62,7 @@
     UITouch *touch = [touches anyObject];
     //当前的point
     CGPoint currentP = [touch locationInView:self.superview];
-    self.transform = [self solveTransformWithPoint:currentP center:CGPointMake(self.layer.position.x+self.transform.tx, self.layer.position.y+self.transform.ty)];
+    [self solveTransformWithPoint:currentP center:CGPointMake(self.layer.position.x+self.transform.tx, self.layer.position.y+self.transform.ty)];
 //    _lbl.frame = CGRectMake((150-150/(self.transform.a+self.transform.b+0.000001))/2, 0, 150/(self.transform.a+self.transform.b), 20);
 //    _lbl.center = self.center;
     
@@ -73,14 +74,14 @@
 //        _lbl.layer.anchorPoint = CGPointMake(0, 0.5);
         [self.superview addSubview:_lbl];
 //    }
-    _lbl.transform = CGAffineTransformMake(self.transform.d, -self.transform.c, self.transform.c, self.transform.d, self.transform.tx+(150*(self.transform.a)-50)/2, self.transform.ty+150*(self.transform.b)/2);
 //    _lbl.center = CGPointMake(self.center.x+50*self.transform.a, self.center.y);
     NSLog(@"%f,%f,%f,%f,%f,%f",self.transform.a,self.transform.b,self.transform.c,self.transform.d,self.transform.tx,self.transform.ty);
+    NSLog(@"********%f,%f",_lblTransform.tx,_lblTransform.ty);
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self setAnchorPoint:CGPointMake(0.5f, 0.5f) forView:self];
-    [self setAnchorPoint:CGPointMake(0.5f, 0.5f) forView:_lbl];
+//    [self setAnchorPoint:CGPointMake(0.5f, 0.5f) forView:_lbl];
 }
 
 - (void)setAnchorPoint:(CGPoint)anchorPoint forView:(UIView *)view
@@ -94,7 +95,7 @@
     view.center = CGPointMake (view.center.x - transition.x, view.center.y - transition.y);
 }
 
-- (CGAffineTransform)solveTransformWithPoint:(CGPoint)point center:(CGPoint)center {
+- (void)solveTransformWithPoint:(CGPoint)point center:(CGPoint)center {
     CGFloat x1 = point.x - center.x;
     CGFloat y1 = point.y - center.y;
     CGFloat s = y1/sqrt(pow(y1, 2)+pow(x1, 2));
@@ -104,17 +105,19 @@
     
     if (_loaction.x > _currentSize.width-20) {
 //        [self setAnchorPoint:CGPointMake(0, 0.5) forView:self];
-        return CGAffineTransformMake(e*c+c, s+e*s, -s, c, self.transform.tx, self.transform.ty);
+        self.transform = CGAffineTransformMake(e*c+c, s+e*s, -s, c, self.transform.tx, self.transform.ty);
+//        _lbl.transform = CGAffineTransformMake(self.transform.d, -self.transform.c, self.transform.c, self.transform.d, _lblTransform.tx+self.transform.tx+(150*(self.transform.a-1))/2, _lblTransform.ty+self.transform.ty+(150*(self.transform.b))/2);
+        
+        _lbl.transform = CGAffineTransformMake(self.transform.d, -self.transform.c, self.transform.c, self.transform.d, self.transform.tx+(150*(self.transform.a-1))/2, self.transform.ty+(150*(self.transform.b))/2);
     } else if (_loaction.x < 20) {
 //        [self setAnchorPoint:CGPointMake(1, 0.5) forView:self];
-        return CGAffineTransformMake(-(e*c+c), -(s+e*s), s, -c, self.transform.tx, self.transform.ty);
+        self.transform = CGAffineTransformMake(-(e*c+c), -(s+e*s), s, -c, self.transform.tx, self.transform.ty);
+        _lbl.transform = CGAffineTransformMake(self.transform.d, -self.transform.c, self.transform.c, self.transform.d, _lblTransform.tx+self.transform.tx-(150*(self.transform.a-1))/2, _lblTransform.ty+self.transform.ty-(150*(self.transform.b))/2);
     } else {
-//        [self setAnchorPoint:CGPointMake(0.5f, 0.5f) forView:self];
-//      return  CGAffineTransformTranslate(self.transform, (x1-x2)*self.transform.a+(y1-y2)*self.transform.b, (y1-y2)*self.transform.d+(x1-x2)*self.transform.c);
-//        return  CGAffineTransformTranslate(self.transform, (x1-x2)*self.transform.d+(y1-y2)*self.transform.b, (y1-y2)*self.transform.d+(x1-x2)*self.transform.c);
         CGFloat sss = _loaction.x-_currentSize.width/2;
         CGFloat ddd = _loaction.y-_currentSize.height/2;
-        return  CGAffineTransformMake(self.transform.a, self.transform.b, self.transform.c, self.transform.d, x1+self.transform.tx-sss*self.transform.a-ddd*self.transform.c, y1+self.transform.ty-sss*self.transform.b-ddd*self.transform.d);
+        self.transform = CGAffineTransformMake(self.transform.a, self.transform.b, self.transform.c, self.transform.d, x1+self.transform.tx-sss*self.transform.a-ddd*self.transform.c, y1+self.transform.ty-sss*self.transform.b-ddd*self.transform.d);
+        _lbl.transform = CGAffineTransformMake(self.transform.d, -self.transform.c, self.transform.c, self.transform.d, self.transform.tx+(150*(self.transform.a-1))/2, self.transform.ty+(150*(self.transform.b))/2);
     };
 }
 
@@ -139,6 +142,11 @@
         CGFloat sss = _loaction.x-_currentSize.width/2;
         CGFloat ddd = _loaction.y-_currentSize.height/2;
         return  CGAffineTransformMake(self.transform.a, self.transform.b, self.transform.c, self.transform.d, x1+self.transform.tx-sss*self.transform.a-ddd*self.transform.c, y1+self.transform.ty-sss*self.transform.b-ddd*self.transform.d);
+//=======
+//        CGFloat xxx = (_loaction.x-_currentSize.width/2)*self.transform.a;
+//        CGFloat yyy = (_loaction.x-_currentSize.width/2)*self.transform.b;
+//        return  CGAffineTransformMake(self.transform.a, self.transform.b, self.transform.c, self.transform.d, x1+self.transform.tx-xxx, y1+self.transform.ty-yyy);
+//>>>>>>> Stashed changes
     };
 }
 

@@ -13,5 +13,6 @@
 @property (nonatomic,strong) UILabel *lbl;
 @property (nonatomic,assign) CGPoint loaction;
 @property (nonatomic,assign) CGSize currentSize;
+@property (nonatomic) CGAffineTransform lblTransform;
 
 @end
