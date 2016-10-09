@@ -7,12 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YGMagnifierView.h"
 
 @interface YGDrawingLineView : UILabel
 
-@property (nonatomic,strong) UILabel *lbl;
+@property (nonatomic,strong) UITextField *field;
 @property (nonatomic,assign) CGPoint loaction;
 @property (nonatomic,assign) CGSize currentSize;
-@property (nonatomic) CGAffineTransform lblTransform;
+@property (nonatomic) CGAffineTransform fieldTransform;
+@property (nonatomic) CGAffineTransform selfTransform;
+
+@property (nonatomic,strong) YGMagnifierView *magnifierView;
+
+- (void)addField;
 
 @end

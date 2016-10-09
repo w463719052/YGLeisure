@@ -18,6 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setNavigationBarWithBackButton:YES];
+    self.title = @"图片标注";
     YGDrawingView *drawingView =[[YGDrawingView alloc] init];
     [self.view addSubview:drawingView];
     // Do any additional setup after loading the view.

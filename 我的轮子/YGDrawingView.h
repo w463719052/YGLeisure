@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YGTwoBarCodeView.h"
+#import "YGCompanyLogoView.h"
 
 @interface YGDrawingView : UIView
 
 @property (nonatomic,strong) UIImageView *imageView;
+
+@property (nonatomic,strong) YGTwoBarCodeView *twoBarCodeView;
+@property (nonatomic,strong) YGCompanyLogoView *companyLogoView;
 
 @end
