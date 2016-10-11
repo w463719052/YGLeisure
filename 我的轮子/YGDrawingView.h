@@ -9,12 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "YGTwoBarCodeView.h"
 #import "YGCompanyLogoView.h"
+#import "YGSetPropertyView.h"
 
-@interface YGDrawingView : UIView
+@interface YGDrawingView : UIView<UITextFieldDelegate>
 
 @property (nonatomic,strong) UIImageView *imageView;
 
 @property (nonatomic,strong) YGTwoBarCodeView *twoBarCodeView;
 @property (nonatomic,strong) YGCompanyLogoView *companyLogoView;
+
+@property (nonatomic,strong) YGSetPropertyView *setPropertyView;
 
 @end

@@ -10,7 +10,6 @@
 #import "YGLogisticsInformationVC.h"
 #import "YGHeader.h"
 #import "YGPersonalProfileVC.h"
-#import "YGSoundRecordingVC.h"
 #import "YGDingDangVC.h"
 #import "YGPiceModifyVC.h"
 #import "YGDrawingVC.h"
@@ -30,7 +29,7 @@ static NSInteger const BUTTONHEIGTH = 40;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _buttonArray = @[@"物流详情",@"个人简介",@"录音",@"订单详情页",@"图片拼接",@"图片标注"];
+    _buttonArray = @[@"物流详情",@"个人简介",@"订单详情页",@"图片拼接",@"图片标注"];
     for (int i = 0; i<_buttonArray.count; i++) {
         int column = i%5;
         int line = i/5;
@@ -58,19 +57,15 @@ static NSInteger const BUTTONHEIGTH = 40;
         YGPersonalProfileVC *myVC = [[YGPersonalProfileVC alloc] init];
         UINavigationController *naVC = [[UINavigationController alloc] initWithRootViewController:myVC];
         [self presentViewController:naVC animated:YES completion:nil];
-    } else if(send.tag == 2) {
-        YGSoundRecordingVC *myVC = [[YGSoundRecordingVC alloc] init];
-        UINavigationController *naVC = [[UINavigationController alloc] initWithRootViewController:myVC];
-        [self presentViewController:naVC animated:YES completion:nil];
-    } else if (send.tag == 3) {
+    }else if (send.tag == 2) {
         YGDingDangVC *myVC = [[YGDingDangVC alloc] init];
         UINavigationController *naVC = [[UINavigationController alloc] initWithRootViewController:myVC];
         [self presentViewController:naVC animated:YES completion:nil];
-    } else if (send.tag == 4) {
+    } else if (send.tag == 3) {
         YGPiceModifyVC *myVC = [[YGPiceModifyVC alloc] init];
         UINavigationController *naVC = [[UINavigationController alloc] initWithRootViewController:myVC];
         [self presentViewController:naVC animated:YES completion:nil];
-    } else if (send.tag == 5) {
+    } else if (send.tag == 4) {
         YGDrawingVC *myVC = [[YGDrawingVC alloc] init];
         UINavigationController *naVC = [[UINavigationController alloc] initWithRootViewController:myVC];
         [self presentViewController:naVC animated:YES completion:nil];

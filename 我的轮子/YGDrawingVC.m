@@ -6,6 +6,8 @@
 //  Copyright © 2016年 com.zccl. All rights reserved.
 //
 
+//http://121.40.41.225:6050/ass/camera/#g=1&p=图片标注
+
 #import "YGDrawingVC.h"
 #import "YGDrawingView.h"
 

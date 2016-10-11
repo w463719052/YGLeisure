@@ -14,10 +14,33 @@
 static NSInteger const Intrale = 10;
 static NSInteger const ButtonWidth = 30;
 
+
+@interface YGDrawingView () {
+ CGFloat _keyBoardHeight;
+}
+@end
+
 @implementation YGDrawingView
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardWillShowNotification
+                                                  object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardWillHideNotification
+                                                  object:nil];
+}
 
 -(instancetype)init{
     if (self=[super init]) {
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(keyboardWillShow:)
+                                                     name:UIKeyboardWillShowNotification
+                                                   object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(keyboardWillHide:)
+                                                     name:UIKeyboardWillHideNotification
+                                                   object:nil];
         self.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
         self.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
         self.userInteractionEnabled = YES;
@@ -26,10 +49,28 @@ static NSInteger const ButtonWidth = 30;
     return self;
 }
 
+/**< 键盘出现和改变时调用此方法*/
+- (void)keyboardWillShow:(NSNotification *)aNotification
+{
+    //获取键盘的高度
+    NSDictionary *userInfo = [aNotification userInfo];
+    CGRect end=[[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    CGRect frame = _setPropertyView.frame;
+    frame.origin.y = ScreenHeight-64-125-end.size.height;
+    _setPropertyView.frame = frame;
+    _imageView.transform = CGAffineTransformMake(_setPropertyView.lineView.transform.d, _setPropertyView.lineView.transform.c, -_setPropertyView.lineView.transform.c, _setPropertyView.lineView.transform.d, 0, 0 - (((CGRectGetMidX(_setPropertyView.lineView.frame)-ScreenWidth/2)*(_setPropertyView.lineView.transform.c))+((CGRectGetMidY(_setPropertyView.lineView.frame)-ScreenWidth/2)*(_setPropertyView.lineView.transform.d)))-(_imageView.center.y-CGRectGetMinY(_setPropertyView.frame)+20));
+}
+/**< 键盘隐藏时调用此方法*/
+- (void)keyboardWillHide:(NSNotification *)aNotification {
+    CGRect frame = _setPropertyView.frame;
+    frame.origin.y = ScreenHeight-64-125;
+    _setPropertyView.frame = frame;
+}
+
 - (void)addContentView {
     _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 80, ScreenWidth, ScreenWidth)];
     _imageView.userInteractionEnabled = YES;
-    _imageView.image = [UIImage imageNamed:@"phone"];
+    _imageView.image = [UIImage imageNamed:@"u11548"];
     _imageView.layer.masksToBounds = YES;
     [self addSubview:_imageView];
     
@@ -48,6 +89,20 @@ static NSInteger const ButtonWidth = 30;
         [addButton addTarget:self action:@selector(addLine:) forControlEvents:UIControlEventTouchUpInside];
         [backView addSubview:addButton];
     }
+    
+    if (!_setPropertyView) {
+        _setPropertyView = [[YGSetPropertyView alloc] initWithFrame:CGRectMake(0, ScreenHeight-64-125, ScreenWidth, 125)];
+        _setPropertyView.hidden = YES;
+        [_setPropertyView.deleteButton addTarget:self action:@selector
+         (deleteButtonPress:) forControlEvents:UIControlEventTouchUpInside];
+        [_setPropertyView.confirmButton addTarget:self action:@selector(setPropertyViewHide) forControlEvents:UIControlEventTouchUpInside];
+        _setPropertyView.identificationField.delegate = self;
+        _setPropertyView.valueField1.delegate = self;
+        _setPropertyView.valueField2.delegate = self;
+        _setPropertyView.valueField3.delegate = self;
+        _setPropertyView.customField.delegate = self;
+        [self addSubview:_setPropertyView];
+    }
 }
 
 - (void)addLine:(UIButton *)send {
@@ -55,9 +110,15 @@ static NSInteger const ButtonWidth = 30;
         YGDrawingArrowView *arrowView = [[YGDrawingArrowView alloc] init];
         [_imageView addSubview:arrowView];
     } else if (send.tag == 1) {
-    YGDrawingLineView *lineView = [[YGDrawingLineView alloc] init];
-    [_imageView addSubview:lineView];
-    [lineView addField];
+        YGDrawingLineView *lineView = [[YGDrawingLineView alloc] init];
+        [_imageView addSubview:lineView];
+        [lineView addField];
+        [_setPropertyView setFieldInitialTextWithInfo:nil];
+        _setPropertyView.deleteButton.buttonInfo = lineView;
+        _setPropertyView.lineView = lineView;
+        _setPropertyView.hidden = NO;
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapPress:)];
+        [lineView addGestureRecognizer:tap];
     } else if (send.tag == 5) {
         if (!_twoBarCodeView) {
             _twoBarCodeView = [[YGTwoBarCodeView alloc] initWithX:Intrale y:ScreenWidth-70-Intrale width:70 string:@"哈哈哈哈哈哈哈哈哈哈哈"];
@@ -70,5 +131,53 @@ static NSInteger const ButtonWidth = 30;
         }
     }
 }
+
+- (void)tapPress:(UITapGestureRecognizer *)send {
+    YGDrawingLineView *view = (YGDrawingLineView *)send.view;
+    [_setPropertyView setFieldInitialTextWithInfo:view.info];
+    _setPropertyView.deleteButton.buttonInfo = view;
+    _setPropertyView.lineView = view;
+    _setPropertyView.hidden = NO;
+}
+
+- (void)setPropertyViewHide {
+        _imageView.transform = CGAffineTransformMake(1, 0, 0, 1, 0, 0);
+        [self endEditing:YES];
+        _setPropertyView.hidden = YES;
+}
+
+- (void)deleteButtonPress:(YGMyButton *)send {
+    [self setPropertyViewHide];
+    YGDrawingLineView *view = (YGDrawingLineView *)send.buttonInfo;
+    [view deleteView];
+}
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textFieldDidChange:) name:UITextFieldTextDidChangeNotification object:textField];
+}
+
+- (void)textFieldDidChange:(NSNotification *)note
+{
+    YGSetPropertyInfo *info = [[YGSetPropertyInfo alloc] init];
+    info.identification = _setPropertyView.identificationField.text;
+    info.type = _setPropertyView.valueField1.text;
+    info.number = _setPropertyView.valueField2.text;
+    info.unit = _setPropertyView.valueField3.text;
+    info.custom = _setPropertyView.customField.text;
+    [_setPropertyView.lineView setField1TextWithInfo:info];
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:UITextFieldTextDidChangeNotification object:nil];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    _imageView.transform = CGAffineTransformMake(1, 0, 0, 1, 0, 0);
+    [self endEditing:YES];
+    return YES;
+}
+
 
 @end
