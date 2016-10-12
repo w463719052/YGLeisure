@@ -12,10 +12,9 @@
 
 @interface YGDrawingLineView : UIView
 
+@property (nonatomic,strong) UIView *centView;
 @property (nonatomic,strong) UITextField *field;
-@property (nonatomic,strong) UITextField *field1;
 @property (nonatomic,assign) CGPoint loaction;
-@property (nonatomic,assign) CGPoint currentTouch;
 @property (nonatomic,assign) CGSize currentSize;
 @property (nonatomic) CGAffineTransform fieldTransform;
 @property (nonatomic) CGAffineTransform selfTransform;

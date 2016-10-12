@@ -13,10 +13,11 @@
 
 static NSInteger const Intrale = 10;
 static NSInteger const ButtonWidth = 30;
-
+//static NSInteger const SetPropertyViewHeight = 165;
 
 @interface YGDrawingView () {
- CGFloat _keyBoardHeight;
+   CGFloat _setPropertyViewHeight;
+    
 }
 @end
 
@@ -42,7 +43,7 @@ static NSInteger const ButtonWidth = 30;
                                                      name:UIKeyboardWillHideNotification
                                                    object:nil];
         self.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
-        self.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
+        self.backgroundColor = [UIColor colorWithWhite:0 alpha:1];
         self.userInteractionEnabled = YES;
         [self addContentView];
     }
@@ -56,19 +57,19 @@ static NSInteger const ButtonWidth = 30;
     NSDictionary *userInfo = [aNotification userInfo];
     CGRect end=[[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
     CGRect frame = _setPropertyView.frame;
-    frame.origin.y = ScreenHeight-64-125-end.size.height;
+    frame.origin.y = ScreenHeight-64-_setPropertyViewHeight-end.size.height;
     _setPropertyView.frame = frame;
     _imageView.transform = CGAffineTransformMake(_setPropertyView.lineView.transform.d, _setPropertyView.lineView.transform.c, -_setPropertyView.lineView.transform.c, _setPropertyView.lineView.transform.d, 0, 0 - (((CGRectGetMidX(_setPropertyView.lineView.frame)-ScreenWidth/2)*(_setPropertyView.lineView.transform.c))+((CGRectGetMidY(_setPropertyView.lineView.frame)-ScreenWidth/2)*(_setPropertyView.lineView.transform.d)))-(_imageView.center.y-CGRectGetMinY(_setPropertyView.frame)+20));
 }
 /**< 键盘隐藏时调用此方法*/
 - (void)keyboardWillHide:(NSNotification *)aNotification {
     CGRect frame = _setPropertyView.frame;
-    frame.origin.y = ScreenHeight-64-125;
+    frame.origin.y = ScreenHeight-64-_setPropertyViewHeight;
     _setPropertyView.frame = frame;
 }
 
 - (void)addContentView {
-    _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 80, ScreenWidth, ScreenWidth)];
+    _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 50, ScreenWidth, ScreenWidth)];
     _imageView.userInteractionEnabled = YES;
     _imageView.image = [UIImage imageNamed:@"u11548"];
     _imageView.layer.masksToBounds = YES;
@@ -91,7 +92,7 @@ static NSInteger const ButtonWidth = 30;
     }
     
     if (!_setPropertyView) {
-        _setPropertyView = [[YGSetPropertyView alloc] initWithFrame:CGRectMake(0, ScreenHeight-64-125, ScreenWidth, 125)];
+        _setPropertyView = [[YGSetPropertyView alloc] initWithFrame:CGRectMake(0, ScreenHeight-64-_setPropertyViewHeight, ScreenWidth, _setPropertyViewHeight)];
         _setPropertyView.hidden = YES;
         [_setPropertyView.deleteButton addTarget:self action:@selector
          (deleteButtonPress:) forControlEvents:UIControlEventTouchUpInside];
@@ -101,6 +102,10 @@ static NSInteger const ButtonWidth = 30;
         _setPropertyView.valueField2.delegate = self;
         _setPropertyView.valueField3.delegate = self;
         _setPropertyView.customField.delegate = self;
+        __weak typeof(self) vc = self;
+        _setPropertyView.fieldButtonPress = ^(){
+            [vc textFieldDidChange:nil];
+        };
         [self addSubview:_setPropertyView];
     }
 }
@@ -109,16 +114,23 @@ static NSInteger const ButtonWidth = 30;
     if (send.tag == 0 || send.tag == 2 || send.tag == 3 || send.tag == 4) {
         YGDrawingArrowView *arrowView = [[YGDrawingArrowView alloc] init];
         [_imageView addSubview:arrowView];
+        _setPropertyViewHeight = [_setPropertyView addContentVieWithTag:send.tag];
+        _setPropertyView.frame = CGRectMake(0, ScreenHeight-64-_setPropertyViewHeight, ScreenWidth, _setPropertyViewHeight);
+        _setPropertyView.deleteButton.buttonInfo = arrowView;
+        _setPropertyView.hidden = NO;
     } else if (send.tag == 1) {
         YGDrawingLineView *lineView = [[YGDrawingLineView alloc] init];
         [_imageView addSubview:lineView];
         [lineView addField];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapPress:)];
+        [lineView addGestureRecognizer:tap];
+        _setPropertyViewHeight = [_setPropertyView addContentVieWithTag:send.tag];
+        _setPropertyView.frame = CGRectMake(0, ScreenHeight-64-_setPropertyViewHeight, ScreenWidth, _setPropertyViewHeight);
+        [_setPropertyView addContentVieWithTag:send.tag];
         [_setPropertyView setFieldInitialTextWithInfo:nil];
         _setPropertyView.deleteButton.buttonInfo = lineView;
         _setPropertyView.lineView = lineView;
         _setPropertyView.hidden = NO;
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapPress:)];
-        [lineView addGestureRecognizer:tap];
     } else if (send.tag == 5) {
         if (!_twoBarCodeView) {
             _twoBarCodeView = [[YGTwoBarCodeView alloc] initWithX:Intrale y:ScreenWidth-70-Intrale width:70 string:@"哈哈哈哈哈哈哈哈哈哈哈"];
@@ -141,9 +153,9 @@ static NSInteger const ButtonWidth = 30;
 }
 
 - (void)setPropertyViewHide {
-        _imageView.transform = CGAffineTransformMake(1, 0, 0, 1, 0, 0);
-        [self endEditing:YES];
-        _setPropertyView.hidden = YES;
+    _imageView.transform = CGAffineTransformMake(1, 0, 0, 1, 0, 0);
+    [self endEditing:YES];
+    _setPropertyView.hidden = YES;
 }
 
 - (void)deleteButtonPress:(YGMyButton *)send {
@@ -156,6 +168,7 @@ static NSInteger const ButtonWidth = 30;
 {
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textFieldDidChange:) name:UITextFieldTextDidChangeNotification object:textField];
 }
+
 
 - (void)textFieldDidChange:(NSNotification *)note
 {
