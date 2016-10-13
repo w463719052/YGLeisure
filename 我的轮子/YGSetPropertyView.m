@@ -76,6 +76,7 @@ static NSInteger const TextFont = 13;
 - (CGFloat)addPlainTextField {
     _plainTextField = [[UITextField alloc] initWithFrame:CGRectMake(Intrale, CGRectGetMaxY(_deleteButton.frame)+2*Intrale, self.frame.size.width-2*Intrale, LblHeight)];
     _plainTextField.borderStyle = UITextBorderStyleRoundedRect;
+    _plainTextField.placeholder = @"请输入文字";
     [self addSubview:_plainTextField];
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(0, 0, LblHeight, LblHeight);
@@ -255,7 +256,7 @@ static NSInteger const TextFont = 13;
 }
 
 - (void)addVoltageLeftLbl {
-    NSArray *array = @[@"电压",@"电流",@"功率"];
+    NSArray *array = @[@"电压[V]",@"电流[A]",@"功率[W]"];
     int row = 0;
     int column = 0;
     for (int i=0; i<array.count; i++) {
@@ -303,21 +304,22 @@ static NSInteger const TextFont = 13;
     _valueField3.text = info.unit?:@"mm";
     _customField.text = info.custom?:@"";
     
-    _plainTextField.text = info;
-    _holeIdentificationField.text;
-    _holeStyleField.text;
-    _holeNumberField.text;
-    _holeDiameterField.text;
+    _plainTextField.text = info.plainText;
     
-    _toothIdentificationField.text;
-    _toothNumberField.text;
-    _toothDiameterField.text;
-    _toothThickField.text;
-    _toothStyleField.text;
+    _holeIdentificationField.text = info.holeIdentification;
+    _holeStyleField.text = info.holeStyle?:@"通孔";
+    _holeNumberField.text = info.holeNumber?:@"1";
+    _holeDiameterField.text = info.holeDiameter?:@"0";
     
-    _voltageField.text;
-    _currentField.text;
-    _powerField.text
+    _toothIdentificationField.text = info.toothIdentification?:@"齿";
+    _toothNumberField.text = info.toothNumber?:@"1";
+    _toothDiameterField.text = info.toothDiameter?:@"0";
+    _toothThickField.text = info.toothThick?:@"0";
+    _toothStyleField.text = info.toothStyle?:@"直齿";
+    
+    _voltageField.text = info.voltage;
+    _currentField.text = info.current;
+    _powerField.text = info.power;
 }
 
 - (void)pushPickerViewWith:(UIButton *)send {

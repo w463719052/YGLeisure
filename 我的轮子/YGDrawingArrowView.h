@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "YGMagnifierView.h"
+#import "YGSetPropertyInfo.h"
 
 @interface YGDrawingArrowView : UIView
 
 @property (nonatomic,strong) UITextField *field;
 @property (nonatomic,strong) YGMagnifierView *magnifierView;
+
+- (void)setTextFieldMessageWithInfo:(YGSetPropertyInfo *)info;
 @end

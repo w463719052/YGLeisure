@@ -7,6 +7,7 @@
 //
 
 #import "YGDrawingArrowView.h"
+#import "YGTool.h"
 
 @implementation YGDrawingArrowView
 
@@ -35,14 +36,78 @@
     _field.attributedPlaceholder = colorStr;
     _field.textColor = [UIColor redColor];
     _field.font = [UIFont systemFontOfSize:12];
-//    _field.delegate = self;
-    //    _field.userInteractionEnabled = NO;
+    _field.userInteractionEnabled = NO;
     [self addSubview:_field];
 }
 
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    [textField sizeToFit];
-    return YES;
+- (void)setTextFieldMessageWithInfo:(YGSetPropertyInfo *)info {
+    if (self.tag == 0) {
+        _field.text = info.plainText;
+    } else if (self.tag == 2) {
+        NSString *identification = @"";
+        if (![YGTool isBlankString:info.holeIdentification]) {
+            identification = [NSString stringWithFormat:@"%@:",info.holeIdentification];
+        }
+        NSString *type = @"";
+        if (![YGTool isBlankString:info.holeStyle]) {
+            if ([info.holeStyle isEqualToString:@"通孔"]) {
+                type = @"Φ";
+            } else if ([info.holeStyle isEqualToString:@"牙孔"]) {
+                type = @"M";
+            }
+        }
+        NSString *diameter = @"";
+        if (![YGTool isBlankString:info.holeDiameter]) {
+            diameter = [NSString stringWithFormat:@"%@mm",info.holeDiameter];
+        }
+        NSString *custom = @"";
+        if (![YGTool isBlankString:info.custom]) {
+            custom = [NSString stringWithFormat:@",%@",info.custom];
+        }
+        _field.text = [NSString stringWithFormat:@"%@%@%@%@%@",identification,info.number,type,diameter,custom];
+    } else if (self.tag == 3) {
+        NSString *identification = @"";
+        if (![YGTool isBlankString:info.toothIdentification]) {
+            identification = [NSString stringWithFormat:@"%@:",info.toothIdentification];
+        }
+        NSString *diameter = @"";
+        if (![YGTool isBlankString:info.toothDiameter]) {
+            diameter = [NSString stringWithFormat:@"c-D%@",info.toothDiameter];
+        }
+        NSString *thick = @"";
+        if (![YGTool isBlankString:info.toothThick]) {
+            diameter = [NSString stringWithFormat:@",%@",info.toothThick];
+        }
+        NSString *type = @"";
+        if (![YGTool isBlankString:info.toothStyle]) {
+            diameter = [NSString stringWithFormat:@",%@",info.toothStyle];
+        }
+
+        NSString *custom = @"";
+        if (![YGTool isBlankString:info.custom]) {
+            custom = [NSString stringWithFormat:@",%@",info.custom];
+        }
+        _field.text = [NSString stringWithFormat:@"%@%@%@%@%@%@",identification,info.number,diameter,thick,type,custom];
+    } else if (self.tag == 4) {
+        NSString *voltage = @"";
+        if (![YGTool isBlankString:info.voltage]) {
+            voltage = [NSString stringWithFormat:@"%@V-",info.voltage];
+        }
+        NSString *current = @"";
+        if (![YGTool isBlankString:info.current]) {
+            current = [NSString stringWithFormat:@"%@A-",info.current];
+        }
+        NSString *power = @"";
+        if (![YGTool isBlankString:info.power]) {
+            power = [NSString stringWithFormat:@"%@W",info.power];
+        }
+        NSString *custom = @"";
+        if (![YGTool isBlankString:info.custom]) {
+            custom = [NSString stringWithFormat:@",%@",info.custom];
+        }
+        _field.text = [NSString stringWithFormat:@"%@%@%@%@",voltage,current,power,custom];
+    }
+    [_field sizeToFit];
 }
 
 - (void)tapPress:(UITapGestureRecognizer *)send {
@@ -72,6 +137,10 @@
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [_magnifierView removeFromSuperview];
+}
+
+- (void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [_magnifierView removeFromSuperview];
 }
 

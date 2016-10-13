@@ -97,11 +97,6 @@ static NSInteger const ButtonWidth = 30;
         [_setPropertyView.deleteButton addTarget:self action:@selector
          (deleteButtonPress:) forControlEvents:UIControlEventTouchUpInside];
         [_setPropertyView.confirmButton addTarget:self action:@selector(setPropertyViewHide) forControlEvents:UIControlEventTouchUpInside];
-        _setPropertyView.identificationField.delegate = self;
-        _setPropertyView.valueField1.delegate = self;
-        _setPropertyView.valueField2.delegate = self;
-        _setPropertyView.valueField3.delegate = self;
-        _setPropertyView.customField.delegate = self;
         __weak typeof(self) vc = self;
         _setPropertyView.fieldButtonPress = ^(){
             [vc textFieldDidChange:nil];
@@ -113,10 +108,16 @@ static NSInteger const ButtonWidth = 30;
 - (void)addLine:(UIButton *)send {
     if (send.tag == 0 || send.tag == 2 || send.tag == 3 || send.tag == 4) {
         YGDrawingArrowView *arrowView = [[YGDrawingArrowView alloc] init];
+        arrowView.tag = send.tag;
         [_imageView addSubview:arrowView];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapPress:)];
+        [arrowView addGestureRecognizer:tap];
         _setPropertyViewHeight = [_setPropertyView addContentVieWithTag:send.tag];
         _setPropertyView.frame = CGRectMake(0, ScreenHeight-64-_setPropertyViewHeight, ScreenWidth, _setPropertyViewHeight);
+        [_setPropertyView setFieldInitialTextWithInfo:nil];
         _setPropertyView.deleteButton.buttonInfo = arrowView;
+        _setPropertyView.arrowView = arrowView;
+        _setPropertyView.lineView = nil;
         _setPropertyView.hidden = NO;
     } else if (send.tag == 1) {
         YGDrawingLineView *lineView = [[YGDrawingLineView alloc] init];
@@ -126,10 +127,10 @@ static NSInteger const ButtonWidth = 30;
         [lineView addGestureRecognizer:tap];
         _setPropertyViewHeight = [_setPropertyView addContentVieWithTag:send.tag];
         _setPropertyView.frame = CGRectMake(0, ScreenHeight-64-_setPropertyViewHeight, ScreenWidth, _setPropertyViewHeight);
-        [_setPropertyView addContentVieWithTag:send.tag];
         [_setPropertyView setFieldInitialTextWithInfo:nil];
         _setPropertyView.deleteButton.buttonInfo = lineView;
         _setPropertyView.lineView = lineView;
+        _setPropertyView.arrowView = nil;
         _setPropertyView.hidden = NO;
     } else if (send.tag == 5) {
         if (!_twoBarCodeView) {
@@ -142,13 +143,47 @@ static NSInteger const ButtonWidth = 30;
             [_imageView addSubview:_companyLogoView];
         }
     }
+    [self setPropertyViewFieldDelegate];
+}
+
+- (void)setPropertyViewFieldDelegate {
+    _setPropertyView.identificationField.delegate = self;
+    _setPropertyView.valueField1.delegate = self;
+    _setPropertyView.valueField2.delegate = self;
+    _setPropertyView.valueField3.delegate = self;
+    _setPropertyView.customField.delegate = self;
+    _setPropertyView.plainTextField.delegate = self;
+    
+    _setPropertyView.holeIdentificationField.delegate = self;
+    _setPropertyView.holeStyleField.delegate = self;
+    _setPropertyView.holeNumberField.delegate = self;
+    _setPropertyView.holeDiameterField.delegate = self;
+    
+    _setPropertyView.toothIdentificationField.delegate = self;
+    _setPropertyView.toothNumberField.delegate = self;
+    _setPropertyView.toothDiameterField.delegate = self;
+    _setPropertyView.toothThickField.delegate = self;
+    _setPropertyView.toothStyleField.delegate = self;
+    
+    _setPropertyView.voltageField.delegate = self;
+    _setPropertyView.currentField.delegate = self;
+    _setPropertyView.powerField.delegate = self;
 }
 
 - (void)tapPress:(UITapGestureRecognizer *)send {
-    YGDrawingLineView *view = (YGDrawingLineView *)send.view;
-    [_setPropertyView setFieldInitialTextWithInfo:view.info];
-    _setPropertyView.deleteButton.buttonInfo = view;
-    _setPropertyView.lineView = view;
+    if ([send.view isKindOfClass:[YGDrawingLineView class]]) {
+        YGDrawingLineView *view = (YGDrawingLineView *)send.view;
+        [_setPropertyView setFieldInitialTextWithInfo:view.info];
+        _setPropertyView.deleteButton.buttonInfo = view;
+        _setPropertyView.lineView = view;
+        _setPropertyView.arrowView = nil;
+    } else {
+        YGDrawingArrowView *view = (YGDrawingArrowView *)send.view;
+        [_setPropertyView setFieldInitialTextWithInfo:nil];
+        _setPropertyView.deleteButton.buttonInfo = view;
+        _setPropertyView.arrowView = view;
+        _setPropertyView.lineView = nil;
+    }
     _setPropertyView.hidden = NO;
 }
 
@@ -160,8 +195,10 @@ static NSInteger const ButtonWidth = 30;
 
 - (void)deleteButtonPress:(YGMyButton *)send {
     [self setPropertyViewHide];
+    if ([send isKindOfClass:[YGDrawingLineView class]]) {
     YGDrawingLineView *view = (YGDrawingLineView *)send.buttonInfo;
     [view deleteView];
+    }
 }
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField
@@ -178,7 +215,29 @@ static NSInteger const ButtonWidth = 30;
     info.number = _setPropertyView.valueField2.text;
     info.unit = _setPropertyView.valueField3.text;
     info.custom = _setPropertyView.customField.text;
-    [_setPropertyView.lineView setField1TextWithInfo:info];
+    
+    info.plainText = _setPropertyView.plainTextField.text;/**< 普通标注*/
+    info.holeIdentification = _setPropertyView.holeIdentificationField.text;/**< 孔标识*/
+    info.holeStyle = _setPropertyView.holeStyleField.text;/**< 孔样式*/
+    info.holeNumber = _setPropertyView.holeNumberField.text;/**< 孔数*/
+    info.holeDiameter = _setPropertyView.holeDiameterField.text;/**< 孔直径*/
+    
+    info.toothIdentification = _setPropertyView.toothIdentificationField.text;/**< 齿标识*/
+    info.toothNumber = _setPropertyView.toothNumberField.text;/**< 齿数*/
+    info.toothDiameter = _setPropertyView.toothDiameterField.text;/**< 齿径*/
+    info.toothThick = _setPropertyView.toothThickField.text;/**< 齿厚*/
+    info.toothStyle = _setPropertyView.toothStyleField.text;/**< 齿样式*/
+    
+    info.voltage = _setPropertyView.voltageField.text;/**< 电压*/
+    info.current = _setPropertyView.currentField.text;/**< 电流*/
+    info.power = _setPropertyView.powerField.text;/**< 功率*/
+    
+    if (_setPropertyView.lineView) {
+        [_setPropertyView.lineView setField1TextWithInfo:info];
+    }
+    if (_setPropertyView.arrowView) {
+        [_setPropertyView.arrowView setTextFieldMessageWithInfo:info];
+    }
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField

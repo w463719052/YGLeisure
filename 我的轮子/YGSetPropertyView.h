@@ -10,6 +10,7 @@
 #import "YGMyButton.h"
 #import "YGDrawingLineView.h"
 #import "YGSetPropertyInfo.h"
+#import "YGDrawingArrowView.h"
 
 #define TypeArray @[@"长度L",@"高度h",@"宽度b",@"厚度t",@"中距a",@"弧长⌒",@"直径φ",@"盘径φ",@"牙径M"]
 #define UnitArray @[@"mm",@"cm",@"m"]
@@ -47,6 +48,8 @@
 @property (nonatomic,copy) NSString *chooseStr;
 
 @property (nonatomic,strong) YGDrawingLineView *lineView;
+
+@property (nonatomic,strong) YGDrawingArrowView *arrowView;
 
 @property (nonatomic, copy) void (^fieldButtonPress)();
 
