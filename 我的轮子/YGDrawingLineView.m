@@ -112,21 +112,26 @@ static NSInteger const ClickRange = 20;
     } else if (_loaction.x < ClickRange) {
         [self setAnchorPoint:CGPointMake(1, 0.5) forView:self];
     }
-}
-
-- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    UITouch *touch = [touches anyObject];
-    //当前的point
-    CGPoint currentP = [touch locationInView:self.superview];
-    [self solveTransformWithPoint:currentP center:CGPointMake(self.layer.position.x+self.transform.tx, self.layer.position.y+self.transform.ty)];
     
     if (!_magnifierView) {
         _magnifierView = [[YGMagnifierView alloc] init];
         _magnifierView.viewToMagnify = self.window;
     }
     [self.window addSubview:_magnifierView];
-    _magnifierView.touchPoint = [touch locationInView:self.window];
+    _magnifierView.touchPoint = [[touches anyObject] locationInView:self.window];
     [_magnifierView setNeedsDisplay];
+}
+
+- (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = [touches anyObject];
+    //当前的point
+    CGPoint currentP = [touch locationInView:self.superview];
+    if (currentP.y > 0 && currentP.y < self.superview.frame.size.height) {
+        [self solveTransformWithPoint:currentP center:CGPointMake(self.layer.position.x+self.transform.tx, self.layer.position.y+self.transform.ty)];
+        
+        _magnifierView.touchPoint = [touch locationInView:self.window];
+        [_magnifierView setNeedsDisplay];
+    }
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

@@ -35,6 +35,7 @@
 		15BE48CF1D94C4A20081E051 /* YGDrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BE48CE1D94C4A20081E051 /* YGDrawingView.m */; };
 		15BE48D21D94C5210081E051 /* YGDrawingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BE48D11D94C5210081E051 /* YGDrawingVC.m */; };
 		15BE48D51D94CC8F0081E051 /* YGDrawingLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BE48D41D94CC8F0081E051 /* YGDrawingLineView.m */; };
+		15C4C1721DB4CB24000DAE28 /* YGInputTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C4C1711DB4CB24000DAE28 /* YGInputTextField.m */; };
 		15CA57D01D87EAE500AFD555 /* YGMosaicImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15CA57CF1D87EAE500AFD555 /* YGMosaicImageView.m */; };
 		15D0C5D01D82A9E7000A9575 /* YGPiceModifyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 15D0C5CF1D82A9E7000A9575 /* YGPiceModifyVC.m */; };
 		15FBDD641DACB6E600D978DF /* YGSetPropertyInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 15FBDD631DACB6E600D978DF /* YGSetPropertyInfo.m */; };
@@ -97,6 +98,8 @@
 		15BE48D11D94C5210081E051 /* YGDrawingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGDrawingVC.m; sourceTree = "<group>"; };
 		15BE48D31D94CC8F0081E051 /* YGDrawingLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGDrawingLineView.h; sourceTree = "<group>"; };
 		15BE48D41D94CC8F0081E051 /* YGDrawingLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGDrawingLineView.m; sourceTree = "<group>"; };
+		15C4C1701DB4CB24000DAE28 /* YGInputTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGInputTextField.h; sourceTree = "<group>"; };
+		15C4C1711DB4CB24000DAE28 /* YGInputTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGInputTextField.m; sourceTree = "<group>"; };
 		15CA57CE1D87EAE500AFD555 /* YGMosaicImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGMosaicImageView.h; sourceTree = "<group>"; };
 		15CA57CF1D87EAE500AFD555 /* YGMosaicImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGMosaicImageView.m; sourceTree = "<group>"; };
 		15D0C5CE1D82A9E7000A9575 /* YGPiceModifyVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGPiceModifyVC.h; sourceTree = "<group>"; };
@@ -224,6 +227,8 @@
 				15BE48D11D94C5210081E051 /* YGDrawingVC.m */,
 				15BE48CD1D94C4A20081E051 /* YGDrawingView.h */,
 				15BE48CE1D94C4A20081E051 /* YGDrawingView.m */,
+				15C4C1701DB4CB24000DAE28 /* YGInputTextField.h */,
+				15C4C1711DB4CB24000DAE28 /* YGInputTextField.m */,
 				15A3E0431DA9E90A00707203 /* YGDrawingArrowView.h */,
 				15A3E0441DA9E90A00707203 /* YGDrawingArrowView.m */,
 				15BE48D31D94CC8F0081E051 /* YGDrawingLineView.h */,
@@ -369,6 +374,7 @@
 				15B555781D38DD7300DD7233 /* YGBaseMapView.m in Sources */,
 				15BE48D21D94C5210081E051 /* YGDrawingVC.m in Sources */,
 				15AA47121D2F5CC000E4AD97 /* YGBaseViewController.m in Sources */,
+				15C4C1721DB4CB24000DAE28 /* YGInputTextField.m in Sources */,
 				15AA46F31D2F556C00E4AD97 /* YGLogisticsInformationDetailCell.m in Sources */,
 				15B555751D38D39E00DD7233 /* YGPersonalProfileVC.m in Sources */,
 				15AA46F21D2F556C00E4AD97 /* YGTextView.m in Sources */,

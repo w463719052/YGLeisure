@@ -11,6 +11,8 @@
 #import "YGDrawingLineView.h"
 #import "YGDrawingArrowView.h"
 
+#import "YGInputTextField.h"
+
 static NSInteger const Intrale = 10;
 static NSInteger const ButtonWidth = 30;
 //static NSInteger const SetPropertyViewHeight = 165;
@@ -59,7 +61,13 @@ static NSInteger const ButtonWidth = 30;
     CGRect frame = _setPropertyView.frame;
     frame.origin.y = ScreenHeight-64-_setPropertyViewHeight-end.size.height;
     _setPropertyView.frame = frame;
-    _imageView.transform = CGAffineTransformMake(_setPropertyView.lineView.transform.d, _setPropertyView.lineView.transform.c, -_setPropertyView.lineView.transform.c, _setPropertyView.lineView.transform.d, 0, 0 - (((CGRectGetMidX(_setPropertyView.lineView.frame)-ScreenWidth/2)*(_setPropertyView.lineView.transform.c))+((CGRectGetMidY(_setPropertyView.lineView.frame)-ScreenWidth/2)*(_setPropertyView.lineView.transform.d)))-(_imageView.center.y-CGRectGetMinY(_setPropertyView.frame)+20));
+    if (_setPropertyView.lineView) {
+        _imageView.transform = CGAffineTransformMake(_setPropertyView.lineView.transform.d, _setPropertyView.lineView.transform.c, -_setPropertyView.lineView.transform.c, _setPropertyView.lineView.transform.d, 0, 0 - (((CGRectGetMidX(_setPropertyView.lineView.frame)-ScreenWidth/2)*(_setPropertyView.lineView.transform.c))+((CGRectGetMidY(_setPropertyView.lineView.frame)-ScreenWidth/2)*(_setPropertyView.lineView.transform.d)))-(_imageView.center.y-CGRectGetMinY(_setPropertyView.frame)+20));
+    } else if (_setPropertyView.arrowView) {
+        if ((CGRectGetMaxY(_setPropertyView.arrowView.frame)+CGRectGetMinY(_imageView.frame)-CGRectGetMinY(_setPropertyView.frame))>0) {
+            _imageView.transform = CGAffineTransformMake(1, 0, 0, 1, 0, - (CGRectGetMaxY(_setPropertyView.arrowView.frame)+CGRectGetMinY(_imageView.frame)-CGRectGetMinY(_setPropertyView.frame)));
+        }
+    }
 }
 /**< 键盘隐藏时调用此方法*/
 - (void)keyboardWillHide:(NSNotification *)aNotification {
@@ -107,18 +115,20 @@ static NSInteger const ButtonWidth = 30;
 
 - (void)addLine:(UIButton *)send {
     if (send.tag == 0 || send.tag == 2 || send.tag == 3 || send.tag == 4) {
-        YGDrawingArrowView *arrowView = [[YGDrawingArrowView alloc] init];
-        arrowView.tag = send.tag;
-        [_imageView addSubview:arrowView];
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapPress:)];
-        [arrowView addGestureRecognizer:tap];
-        _setPropertyViewHeight = [_setPropertyView addContentVieWithTag:send.tag];
-        _setPropertyView.frame = CGRectMake(0, ScreenHeight-64-_setPropertyViewHeight, ScreenWidth, _setPropertyViewHeight);
-        [_setPropertyView setFieldInitialTextWithInfo:nil];
-        _setPropertyView.deleteButton.buttonInfo = arrowView;
-        _setPropertyView.arrowView = arrowView;
-        _setPropertyView.lineView = nil;
-        _setPropertyView.hidden = NO;
+        YGInputTextField *field = [[YGInputTextField alloc] init];
+        [_imageView addSubview:field];
+//        YGDrawingArrowView *arrowView = [[YGDrawingArrowView alloc] init];
+//        arrowView.tag = send.tag;
+//        [_imageView addSubview:arrowView];
+//        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapPress:)];
+//        [arrowView addGestureRecognizer:tap];
+//        _setPropertyViewHeight = [_setPropertyView addContentVieWithTag:send.tag];
+//        _setPropertyView.frame = CGRectMake(0, ScreenHeight-64-_setPropertyViewHeight, ScreenWidth, _setPropertyViewHeight);
+//        [_setPropertyView setFieldInitialTextWithInfo:nil];
+//        _setPropertyView.deleteButton.buttonInfo = arrowView;
+//        _setPropertyView.arrowView = arrowView;
+//        _setPropertyView.lineView = nil;
+//        _setPropertyView.hidden = NO;
     } else if (send.tag == 1) {
         YGDrawingLineView *lineView = [[YGDrawingLineView alloc] init];
         [_imageView addSubview:lineView];
@@ -195,9 +205,12 @@ static NSInteger const ButtonWidth = 30;
 
 - (void)deleteButtonPress:(YGMyButton *)send {
     [self setPropertyViewHide];
-    if ([send isKindOfClass:[YGDrawingLineView class]]) {
-    YGDrawingLineView *view = (YGDrawingLineView *)send.buttonInfo;
-    [view deleteView];
+    if ([send.buttonInfo isKindOfClass:[YGDrawingLineView class]]) {
+        YGDrawingLineView *view = (YGDrawingLineView *)send.buttonInfo;
+        [view deleteView];
+    } else if ([send.buttonInfo isKindOfClass:[YGDrawingArrowView class]]) {
+        YGDrawingArrowView *view = (YGDrawingArrowView *)send.buttonInfo;
+        [view removeFromSuperview];
     }
 }
 

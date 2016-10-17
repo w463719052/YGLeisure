@@ -12,6 +12,7 @@
 
 @interface YGDrawingArrowView : UIView
 
+@property (nonatomic,strong) UIImageView *arrow;
 @property (nonatomic,strong) UITextField *field;
 @property (nonatomic,strong) YGMagnifierView *magnifierView;
 

@@ -10,11 +10,10 @@
 
 @implementation YGMagnifierView
 
-- (id)init {
-    if (self = [super init]) {
-        self.frame = CGRectMake(0, 64, 80, 80);
+- (id)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
         self.layer.borderColor = [[UIColor darkGrayColor] CGColor];
-        self.layer.borderWidth = 3;
+        self.layer.borderWidth = 4;
         self.layer.cornerRadius = 40;
         self.layer.masksToBounds = YES;
     }
