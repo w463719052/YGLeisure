@@ -11,9 +11,13 @@
 #import "YGCompanyLogoView.h"
 #import "YGSetPropertyView.h"
 
+#define Intrale 10
+#define ButtonWidth 35
+
 @interface YGDrawingView : UIView<UITextFieldDelegate>
 
 @property (nonatomic,strong) UIImageView *imageView;
+@property (nonatomic,strong) UIImageView *pictureImageView;
 
 @property (nonatomic,strong) YGTwoBarCodeView *twoBarCodeView;
 @property (nonatomic,strong) YGCompanyLogoView *companyLogoView;

@@ -12,10 +12,10 @@
 #import "YGDrawingArrowView.h"
 
 #import "YGInputTextField.h"
-
-static NSInteger const Intrale = 10;
-static NSInteger const ButtonWidth = 30;
+#import "YGArrowView.h"
 //static NSInteger const SetPropertyViewHeight = 165;
+
+#define PlaceHoldeArray @[@"箭头",@"线",@"牙孔标注，请输入参数",@"齿标注，请输入参数",@"电压标注，请输入参数",@"请输入标注内容",@"二维码",@"LOGO"]
 
 @interface YGDrawingView () {
    CGFloat _setPropertyViewHeight;
@@ -61,11 +61,12 @@ static NSInteger const ButtonWidth = 30;
     CGRect frame = _setPropertyView.frame;
     frame.origin.y = ScreenHeight-64-_setPropertyViewHeight-end.size.height;
     _setPropertyView.frame = frame;
-    if (_setPropertyView.lineView) {
-        _imageView.transform = CGAffineTransformMake(_setPropertyView.lineView.transform.d, _setPropertyView.lineView.transform.c, -_setPropertyView.lineView.transform.c, _setPropertyView.lineView.transform.d, 0, 0 - (((CGRectGetMidX(_setPropertyView.lineView.frame)-ScreenWidth/2)*(_setPropertyView.lineView.transform.c))+((CGRectGetMidY(_setPropertyView.lineView.frame)-ScreenWidth/2)*(_setPropertyView.lineView.transform.d)))-(_imageView.center.y-CGRectGetMinY(_setPropertyView.frame)+20));
-    } else if (_setPropertyView.arrowView) {
-        if ((CGRectGetMaxY(_setPropertyView.arrowView.frame)+CGRectGetMinY(_imageView.frame)-CGRectGetMinY(_setPropertyView.frame))>0) {
-            _imageView.transform = CGAffineTransformMake(1, 0, 0, 1, 0, - (CGRectGetMaxY(_setPropertyView.arrowView.frame)+CGRectGetMinY(_imageView.frame)-CGRectGetMinY(_setPropertyView.frame)));
+    _setPropertyView.textOptionsView.hidden = YES;
+    if ([_setPropertyView.selectView isKindOfClass:[YGDrawingLineView class]]) {
+        _imageView.transform = CGAffineTransformMake(_setPropertyView.selectView.transform.d, _setPropertyView.selectView.transform.c, -_setPropertyView.selectView.transform.c, _setPropertyView.selectView.transform.d, 0, 0 - (((CGRectGetMidX(_setPropertyView.selectView.frame)-ScreenWidth/2)*(_setPropertyView.selectView.transform.c))+((CGRectGetMidY(_setPropertyView.selectView.frame)-ScreenWidth/2)*(_setPropertyView.selectView.transform.d)))-(_imageView.center.y-CGRectGetMinY(_setPropertyView.frame)+20));
+    } else if ([_setPropertyView.selectView isKindOfClass:[YGInputTextField class]]) {
+        if ((CGRectGetMaxY(_setPropertyView.selectView.frame)+CGRectGetMinY(_imageView.frame)-CGRectGetMinY(_setPropertyView.frame))>0) {
+            _imageView.transform = CGAffineTransformMake(1, 0, 0, 1, 0, - (CGRectGetMaxY(_setPropertyView.selectView.frame)+CGRectGetMinY(_imageView.frame)-CGRectGetMinY(_setPropertyView.frame))-20);
         }
     }
 }
@@ -74,23 +75,49 @@ static NSInteger const ButtonWidth = 30;
     CGRect frame = _setPropertyView.frame;
     frame.origin.y = ScreenHeight-64-_setPropertyViewHeight;
     _setPropertyView.frame = frame;
+    _setPropertyView.textOptionsView.hidden = NO;
 }
 
 - (void)addContentView {
-    _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 50, ScreenWidth, ScreenWidth)];
+    UIImage *image = [UIImage imageNamed:@"aaa"];
+    
+    _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight-64-ButtonWidth-Intrale)];
+    _imageView.contentMode = UIViewContentModeScaleAspectFit;
     _imageView.userInteractionEnabled = YES;
-    _imageView.image = [UIImage imageNamed:@"u11548"];
+    //    _imageView.image = image;
     _imageView.layer.masksToBounds = YES;
     [self addSubview:_imageView];
+    
+    CGSize size;
+    CGFloat imageWidth = image.size.width;
+    CGFloat imageHeight = image.size.height;
+    if (imageWidth/imageHeight >= ScreenWidth/(ScreenHeight-ButtonWidth-Intrale)) {
+        size = CGSizeMake(ScreenWidth, ScreenWidth*imageWidth/imageHeight);
+    } else {
+        size = CGSizeMake(ScreenHeight-ButtonWidth-Intrale, ScreenHeight-ButtonWidth-Intrale);
+    }
+    if (imageWidth<ScreenWidth&&imageHeight<ScreenHeight-64-ButtonWidth-Intrale) {
+        _pictureImageView = [[UIImageView alloc] initWithFrame:CGRectMake((ScreenWidth-image.size.width)/2, (ScreenHeight-64-ButtonWidth-Intrale-image.size.height)/2, image.size.width, image.size.height)];
+    } else if (imageWidth/imageHeight >= ScreenWidth/(ScreenHeight-ButtonWidth-Intrale)) {
+        _pictureImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, (ScreenHeight-64-ButtonWidth-Intrale-ScreenWidth*imageWidth/imageHeight)/2, ScreenWidth, ScreenWidth*imageWidth/imageHeight)];
+    } else {
+        _pictureImageView = [[UIImageView alloc] initWithFrame:CGRectMake((ScreenWidth-imageWidth/imageHeight*(ScreenHeight-ButtonWidth-Intrale))/2, 0, imageWidth/imageHeight*(ScreenHeight-ButtonWidth-Intrale), ScreenHeight-ButtonWidth-Intrale)];
+    }
+    _pictureImageView.contentMode = UIViewContentModeScaleAspectFit;
+    _pictureImageView.userInteractionEnabled = YES;
+    _pictureImageView.image = image;
+    _pictureImageView.layer.masksToBounds = YES;
+    [_imageView addSubview:_pictureImageView];
     
     UIView *backView = [[UIView alloc] initWithFrame:CGRectMake(0, ScreenHeight-64-ButtonWidth-Intrale, ScreenWidth, ButtonWidth+Intrale)];
     backView.backgroundColor = RGBCOLOR(243, 243, 243);
     [self addSubview:backView];
     
-    NSArray *array = @[@"箭",@"线",@"孔",@"齿",@"电",@"二",@"LG"];
+    NSArray *array = @[@"箭",@"线",@"孔",@"齿",@"电",@"普",@"二",@"LG"];
     for (int i=0; i<array.count; i++) {
-        UIButton *addButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        YGMyButton *addButton = [YGMyButton buttonWithType:UIButtonTypeCustom];
         addButton.tag = i;
+        addButton.buttonInfo = PlaceHoldeArray[i];
         addButton.backgroundColor = [UIColor whiteColor];
         addButton.frame = CGRectMake(Intrale/2+i*(ButtonWidth+Intrale/2), Intrale/2, ButtonWidth, ButtonWidth);
         [addButton setTitle:array[i] forState:UIControlStateNormal];
@@ -113,22 +140,32 @@ static NSInteger const ButtonWidth = 30;
     }
 }
 
-- (void)addLine:(UIButton *)send {
-    if (send.tag == 0 || send.tag == 2 || send.tag == 3 || send.tag == 4) {
+- (void)addLine:(YGMyButton *)send {
+    if (send.tag == 0) {
+        YGArrowView *arrowView = [[YGArrowView alloc] init];
+        [_imageView addSubview:arrowView];
+        [arrowView addImageView];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapPress:)];
+        [arrowView addGestureRecognizer:tap];
+        _setPropertyViewHeight = [_setPropertyView addContentVieWithTag:send.tag];
+        _setPropertyView.frame = CGRectMake(0, ScreenHeight-64-_setPropertyViewHeight, ScreenWidth, _setPropertyViewHeight);
+        _setPropertyView.deleteButton.buttonInfo = arrowView;
+        _setPropertyView.selectView = arrowView;
+        _setPropertyView.hidden = NO;
+    } else if (send.tag == 2 || send.tag == 3 || send.tag == 4 || send.tag == 5) {
         YGInputTextField *field = [[YGInputTextField alloc] init];
+        field.textView.text = send.buttonInfo;
+        field.tag = send.tag;
+        field.isSetProperty = YES;
         [_imageView addSubview:field];
-//        YGDrawingArrowView *arrowView = [[YGDrawingArrowView alloc] init];
-//        arrowView.tag = send.tag;
-//        [_imageView addSubview:arrowView];
-//        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapPress:)];
-//        [arrowView addGestureRecognizer:tap];
-//        _setPropertyViewHeight = [_setPropertyView addContentVieWithTag:send.tag];
-//        _setPropertyView.frame = CGRectMake(0, ScreenHeight-64-_setPropertyViewHeight, ScreenWidth, _setPropertyViewHeight);
-//        [_setPropertyView setFieldInitialTextWithInfo:nil];
-//        _setPropertyView.deleteButton.buttonInfo = arrowView;
-//        _setPropertyView.arrowView = arrowView;
-//        _setPropertyView.lineView = nil;
-//        _setPropertyView.hidden = NO;
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapPress:)];
+        [field addGestureRecognizer:tap];
+        _setPropertyViewHeight = [_setPropertyView addContentVieWithTag:send.tag];
+        _setPropertyView.frame = CGRectMake(0, ScreenHeight-64-_setPropertyViewHeight, ScreenWidth, _setPropertyViewHeight);
+        [_setPropertyView setFieldInitialTextWithInfo:nil];
+        _setPropertyView.deleteButton.buttonInfo = field;
+        _setPropertyView.selectView = field;
+        _setPropertyView.hidden = NO;
     } else if (send.tag == 1) {
         YGDrawingLineView *lineView = [[YGDrawingLineView alloc] init];
         [_imageView addSubview:lineView];
@@ -139,19 +176,32 @@ static NSInteger const ButtonWidth = 30;
         _setPropertyView.frame = CGRectMake(0, ScreenHeight-64-_setPropertyViewHeight, ScreenWidth, _setPropertyViewHeight);
         [_setPropertyView setFieldInitialTextWithInfo:nil];
         _setPropertyView.deleteButton.buttonInfo = lineView;
-        _setPropertyView.lineView = lineView;
-        _setPropertyView.arrowView = nil;
+        _setPropertyView.selectView = lineView;
         _setPropertyView.hidden = NO;
-    } else if (send.tag == 5) {
-        if (!_twoBarCodeView) {
-            _twoBarCodeView = [[YGTwoBarCodeView alloc] initWithX:Intrale y:ScreenWidth-70-Intrale width:70 string:@"哈哈哈哈哈哈哈哈哈哈哈"];
-            [_imageView addSubview:_twoBarCodeView];
-        }
     } else if (send.tag == 6) {
-        if (!_companyLogoView) {
-            _companyLogoView = [[YGCompanyLogoView alloc] initWithFrame:CGRectMake(Intrale, ScreenWidth-70-Intrale, 70, 70) logo:@"logo"];
-            [_imageView addSubview:_companyLogoView];
+        if (!_twoBarCodeView) {
+            _twoBarCodeView = [[YGTwoBarCodeView alloc] initWithX:Intrale y:ScreenHeight-64-ButtonWidth-Intrale-70-Intrale width:70 string:@"哈哈哈哈哈哈哈哈哈哈哈"];
+            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapPress:)];
+            [_twoBarCodeView addGestureRecognizer:tap];
         }
+        [_imageView addSubview:_twoBarCodeView];
+        _setPropertyViewHeight = [_setPropertyView addContentVieWithTag:send.tag];
+        _setPropertyView.frame = CGRectMake(0, ScreenHeight-64-_setPropertyViewHeight, ScreenWidth, _setPropertyViewHeight);
+        _setPropertyView.hidden = NO;
+        _setPropertyView.deleteButton.buttonInfo = _twoBarCodeView;
+        _setPropertyView.selectView = _twoBarCodeView;
+    } else if (send.tag == 7) {
+        if (!_companyLogoView) {
+            _companyLogoView = [[YGCompanyLogoView alloc] initWithFrame:CGRectMake(ScreenWidth-70-Intrale, ScreenHeight-64-ButtonWidth-Intrale-70-Intrale, 70, 70) logo:@"logo"];
+            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapPress:)];
+            [_companyLogoView addGestureRecognizer:tap];
+        }
+        [_imageView addSubview:_companyLogoView];
+        _setPropertyViewHeight = [_setPropertyView addContentVieWithTag:send.tag];
+        _setPropertyView.frame = CGRectMake(0, ScreenHeight-64-_setPropertyViewHeight, ScreenWidth, _setPropertyViewHeight);
+        _setPropertyView.hidden = NO;
+        _setPropertyView.deleteButton.buttonInfo = _companyLogoView;
+        _setPropertyView.selectView = _companyLogoView;
     }
     [self setPropertyViewFieldDelegate];
 }
@@ -185,22 +235,36 @@ static NSInteger const ButtonWidth = 30;
         YGDrawingLineView *view = (YGDrawingLineView *)send.view;
         [_setPropertyView setFieldInitialTextWithInfo:view.info];
         _setPropertyView.deleteButton.buttonInfo = view;
-        _setPropertyView.lineView = view;
-        _setPropertyView.arrowView = nil;
-    } else {
-        YGDrawingArrowView *view = (YGDrawingArrowView *)send.view;
-        [_setPropertyView setFieldInitialTextWithInfo:nil];
+        _setPropertyView.selectView = view;
+    } else if ([send.view isKindOfClass:[YGInputTextField class]]) {
+        YGInputTextField *view = (YGInputTextField *)send.view;
+        [_setPropertyView setFieldInitialTextWithInfo:view.info];
+        view.isSetProperty = YES;
         _setPropertyView.deleteButton.buttonInfo = view;
-        _setPropertyView.arrowView = view;
-        _setPropertyView.lineView = nil;
+        _setPropertyView.selectView = view;
+    } else if ([send.view isKindOfClass:[YGArrowView class]]) {
+        YGArrowView *view = (YGArrowView *)send.view;
+        _setPropertyView.deleteButton.buttonInfo = view;
+        _setPropertyView.selectView = view;
+    } else {
+        _setPropertyView.deleteButton.buttonInfo = send.view;
+        _setPropertyView.selectView = send.view;
     }
     _setPropertyView.hidden = NO;
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self setPropertyViewHide];
 }
 
 - (void)setPropertyViewHide {
     _imageView.transform = CGAffineTransformMake(1, 0, 0, 1, 0, 0);
     [self endEditing:YES];
     _setPropertyView.hidden = YES;
+    [_setPropertyView.textOptionsView removeFromSuperview];
+    if ([_setPropertyView.selectView isKindOfClass:[YGInputTextField class]]) {
+        [(YGInputTextField *)_setPropertyView.selectView setViewBorderHide];
+    }
 }
 
 - (void)deleteButtonPress:(YGMyButton *)send {
@@ -208,9 +272,11 @@ static NSInteger const ButtonWidth = 30;
     if ([send.buttonInfo isKindOfClass:[YGDrawingLineView class]]) {
         YGDrawingLineView *view = (YGDrawingLineView *)send.buttonInfo;
         [view deleteView];
-    } else if ([send.buttonInfo isKindOfClass:[YGDrawingArrowView class]]) {
-        YGDrawingArrowView *view = (YGDrawingArrowView *)send.buttonInfo;
-        [view removeFromSuperview];
+    } else if ([send.buttonInfo isKindOfClass:[YGArrowView class]]) {
+        YGArrowView *view = (YGArrowView *)send.buttonInfo;
+        [view deleteView];
+    } else {
+        [(UIView *)send.buttonInfo removeFromSuperview];
     }
 }
 
@@ -218,7 +284,6 @@ static NSInteger const ButtonWidth = 30;
 {
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(textFieldDidChange:) name:UITextFieldTextDidChangeNotification object:textField];
 }
-
 
 - (void)textFieldDidChange:(NSNotification *)note
 {
@@ -245,11 +310,10 @@ static NSInteger const ButtonWidth = 30;
     info.current = _setPropertyView.currentField.text;/**< 电流*/
     info.power = _setPropertyView.powerField.text;/**< 功率*/
     
-    if (_setPropertyView.lineView) {
-        [_setPropertyView.lineView setField1TextWithInfo:info];
-    }
-    if (_setPropertyView.arrowView) {
-        [_setPropertyView.arrowView setTextFieldMessageWithInfo:info];
+    if ([_setPropertyView.selectView isKindOfClass:[YGDrawingLineView class]]) {
+        [(YGDrawingLineView *)_setPropertyView.selectView setField1TextWithInfo:info];
+    } else if ([_setPropertyView.selectView isKindOfClass:[YGInputTextField class]]) {
+        [(YGInputTextField *)_setPropertyView.selectView setTextFieldMessageWithInfo:info];
     }
 }
 

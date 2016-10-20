@@ -10,23 +10,32 @@
 
 @implementation YGMagnifierView
 
-- (id)initWithFrame:(CGRect)frame {
-    if (self = [super initWithFrame:frame]) {
+- (id)init {
+    if (self = [super init]) {
+        self.frame = CGRectMake(10, 64+10, 100, 100);
+        self.backgroundColor = [UIColor blackColor];
         self.layer.borderColor = [[UIColor darkGrayColor] CGColor];
-        self.layer.borderWidth = 4;
-        self.layer.cornerRadius = 40;
+        self.layer.borderWidth = 5;
+        self.layer.cornerRadius = 50;
         self.layer.masksToBounds = YES;
+        self.layer.contentsScale = [[UIScreen mainScreen] scale];
+        self.layer.delegate = self;
     }
     return self;
 }
 
-- (void)drawRect:(CGRect)rect {
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextTranslateCTM(context,self.frame.size.width/2,self.frame.size.height/2);
-    CGContextScaleCTM(context, 1.7, 1.7);
-    CGContextTranslateCTM(context,-_touchPoint.x,-_touchPoint.y);
-    [self.viewToMagnify.layer renderInContext:context];
+- (void)setPointToMagnify:(CGPoint)pointToMagnify
+{
+    _touchPoint = pointToMagnify;
+    [self.layer setNeedsDisplay];
 }
 
+- (void)drawLayer:(CALayer *)layer inContext:(CGContextRef)ctx
+{
+    CGContextTranslateCTM(ctx, self.frame.size.width/2, self.frame.size.height/2);
+    CGContextScaleCTM(ctx, 1.7, 1.7);
+    CGContextTranslateCTM(ctx,-_touchPoint.x,-_touchPoint.y);
+    [self.viewToMagnify.layer renderInContext:ctx];
+}
 
 @end

@@ -72,7 +72,7 @@ static NSInteger const ImageHeight = 20;
         if (![YGTool isBlankString:info.custom]) {
             custom = [NSString stringWithFormat:@",%@",info.custom];
         }
-        _field.text = [NSString stringWithFormat:@"%@%@%@%@%@",identification,info.number,type,diameter,custom];
+        _field.text = [NSString stringWithFormat:@"%@%@%@%@%@",identification,info.holeNumber,type,diameter,custom];
     } else if (self.tag == 3) {
         NSString *identification = @"";
         if (![YGTool isBlankString:info.toothIdentification]) {
@@ -84,30 +84,30 @@ static NSInteger const ImageHeight = 20;
         }
         NSString *thick = @"";
         if (![YGTool isBlankString:info.toothThick]) {
-            diameter = [NSString stringWithFormat:@",%@",info.toothThick];
+            thick = [NSString stringWithFormat:@",t%@",info.toothThick];
         }
         NSString *type = @"";
         if (![YGTool isBlankString:info.toothStyle]) {
-            diameter = [NSString stringWithFormat:@",%@",info.toothStyle];
+            type = [NSString stringWithFormat:@",%@",info.toothStyle];
         }
-
+        
         NSString *custom = @"";
         if (![YGTool isBlankString:info.custom]) {
             custom = [NSString stringWithFormat:@",%@",info.custom];
         }
-        _field.text = [NSString stringWithFormat:@"%@%@%@%@%@%@",identification,info.number,diameter,thick,type,custom];
+        _field.text = [NSString stringWithFormat:@"%@%@%@%@%@%@",identification,info.toothNumber,diameter,thick,type,custom];
     } else if (self.tag == 4) {
         NSString *voltage = @"";
         if (![YGTool isBlankString:info.voltage]) {
-            voltage = [NSString stringWithFormat:@"%@V-",info.voltage];
+            voltage = [NSString stringWithFormat:@"%@V",info.voltage];
         }
         NSString *current = @"";
         if (![YGTool isBlankString:info.current]) {
-            current = [NSString stringWithFormat:@"%@A-",info.current];
+            current = [NSString stringWithFormat:@"-%@A",info.current];
         }
         NSString *power = @"";
         if (![YGTool isBlankString:info.power]) {
-            power = [NSString stringWithFormat:@"%@W",info.power];
+            power = [NSString stringWithFormat:@"-%@W",info.power];
         }
         NSString *custom = @"";
         if (![YGTool isBlankString:info.custom]) {

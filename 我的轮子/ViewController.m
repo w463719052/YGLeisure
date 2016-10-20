@@ -69,6 +69,8 @@ static NSInteger const BUTTONHEIGTH = 40;
         YGDrawingVC *myVC = [[YGDrawingVC alloc] init];
         UINavigationController *naVC = [[UINavigationController alloc] initWithRootViewController:myVC];
         [self presentViewController:naVC animated:YES completion:nil];
+    } else if (send.tag == 5) {
+        
     }
 }
 

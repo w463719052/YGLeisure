@@ -1,40 +1,32 @@
 //
-//  YGDrawingLineView.m
+//  YGArrowView.m
 //  我的轮子
 //
-//  Created by zccl2 on 16/9/23.
+//  Created by zccl2 on 16/10/18.
 //  Copyright © 2016年 com.zccl. All rights reserved.
 //
 
-#import "YGDrawingLineView.h"
+#import "YGArrowView.h"
 #import "YGTool.h"
 
-@interface YGDrawingLineView ()<UITextFieldDelegate>
-{
-    
-}
-@end
-
-static NSInteger const Width = 150;
+static NSInteger const Width = 60;
 static NSInteger const Height = 30;
 static NSInteger const lineHeight = 2;
-static NSInteger const imageVieWidth = 15;
-static NSInteger const imageVieHeight = 20;
+static NSInteger const imageVieWidth = 10;
+static NSInteger const imageVieHeight = 18;
 
-static NSInteger const ClickRange = 30;
+static NSInteger const ClickRange = 25;
 
-@implementation YGDrawingLineView
+@implementation YGArrowView
 
 - (void)deleteView {
     [self removeFromSuperview];
-    [_centView removeFromSuperview];
     [_imageView1 removeFromSuperview];
-    [_imageView2 removeFromSuperview];
 }
 
 -(instancetype)init{
     if (self=[super init]) {
-        self.frame = CGRectMake(ScreenWidth/2-Width/2, (ScreenHeight-64-45)/2-Height/2, Width, Height);
+        self.frame = CGRectMake(40, 60, Width, Height);
         self.userInteractionEnabled = YES;
         _currentSize = self.frame.size;
         [self addContentView];
@@ -50,61 +42,17 @@ static NSInteger const ClickRange = 30;
     self.userInteractionEnabled = YES;
 }
 
-- (void)addField {
-    _centView = [[UITextField alloc] initWithFrame:CGRectMake(CGRectGetMidX(self.frame)-0.5, CGRectGetMidY(self.frame)-Height/2, 1, Height)];
-    _centView.userInteractionEnabled = NO;
-    [self.superview addSubview:_centView];
-    
-    _field = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 1, Height)];
-    _field.textColor = [UIColor redColor];
-    _field.textAlignment = NSTextAlignmentCenter;
-    _field.text = @"请输入";
-    _field.font = [UIFont systemFontOfSize:19];
-    _field.userInteractionEnabled = NO;
-    _field.shadowColor = [UIColor blackColor];
-    _field.shadowOffset = CGSizeMake(0, 0.8);
-    [_field sizeToFit];
-    _field.center = CGPointMake(0.5, 0);
-    [_centView addSubview:_field];
-    
+- (void)addImageView {
     _imageView1 = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMinX(self.frame), CGRectGetMidY(self.frame)-imageVieHeight/2, imageVieWidth, imageVieHeight)];
-    _imageView1.image = [UIImage imageNamed:@"红1"];
+    _imageView1.image = [UIImage imageNamed:@"箭头红"];
     _imageView1.tag = 1;
     [self.superview addSubview:_imageView1];
     [self setAnchorPoint:CGPointMake(0, 0.5) forView:_imageView1];
-    
-    _imageView2 = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMaxX(self.frame)-imageVieWidth, CGRectGetMidY(self.frame)-imageVieHeight/2, imageVieWidth, imageVieHeight)];
-    _imageView2.image = [UIImage imageNamed:@"红2"];
-    _imageView2.tag = 2;
-    [self.superview addSubview:_imageView2];
-    [self setAnchorPoint:CGPointMake(1, 0.5) forView:_imageView2];
-    
-}
-
-- (void)setField1TextWithInfo:(YGSetPropertyInfo *)info {
-    _info = info;
-    NSString *identification = @"";
-    if (![YGTool isBlankString:info.identification]) {
-        identification = [NSString stringWithFormat:@"%@:",info.identification];
-    }
-    NSString *type = @"";
-    if (![YGTool isBlankString:info.type]) {
-        type = [info.type substringWithRange:NSMakeRange(info.type.length-1, 1)];
-    }
-    NSString *custom = @"";
-    if (![YGTool isBlankString:info.custom]) {
-        custom = [NSString stringWithFormat:@",%@",info.custom];
-    }
-    _field.text = [NSString stringWithFormat:@"%@%@%@%@%@",identification,type,info.number,info.unit,custom];
-    [_field sizeToFit];
-    _field.center = CGPointMake(0.5, 0);
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     _loaction = [[touches anyObject] locationInView:self];
     _imageView1Transform = _imageView1.transform;
-    _imageView2Transform = _imageView2.transform;
-    _fieldTransform = _centView.transform;
     _selfTransform = self.transform;
     
     if (_loaction.x > _currentSize.width-ClickRange) {
@@ -112,14 +60,13 @@ static NSInteger const ClickRange = 30;
     } else if (_loaction.x < ClickRange) {
         [self setAnchorPoint:CGPointMake(1, 0.5) forView:self];
     }
-    
     if (!_magnifierView) {
         _magnifierView = [[YGMagnifierView alloc] init];
         _magnifierView.viewToMagnify = self.window;
     }
+    [self.window addSubview:_magnifierView];
     CGPoint point = [[touches anyObject] locationInView:self.window];
     [self setMagniferViewFrameWithPoint:point];
-    [self.window addSubview:_magnifierView];
     [_magnifierView setPointToMagnify:point];
 }
 
@@ -139,13 +86,12 @@ static NSInteger const ClickRange = 30;
     CGPoint currentP = [touch locationInView:self.superview];
     if (currentP.y > 0 && currentP.y < self.superview.frame.size.height) {
         [self solveTransformWithPoint:currentP center:CGPointMake(self.layer.position.x+self.transform.tx, self.layer.position.y+self.transform.ty)];
-        
         CGPoint point = [touch locationInView:self.window];
         [self setMagniferViewFrameWithPoint:point];
-        if (_loaction.x > _currentSize.width-ClickRange || _loaction.x < ClickRange) {
+        if (_loaction.x < ClickRange || _loaction.x > _currentSize.width-ClickRange) {
             [_magnifierView setPointToMagnify:point];
         } else {
-            [_magnifierView setPointToMagnify:CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame)+64)];
+            [_magnifierView setPointToMagnify:CGPointMake(CGRectGetMidX(_imageView1.frame), CGRectGetMidY(_imageView1.frame)+64)];
         }
     }
 }
@@ -180,24 +126,15 @@ static NSInteger const ClickRange = 30;
     CGFloat e = fabs(d)/_currentSize.width-1;
     if (_loaction.x > _currentSize.width-ClickRange) {
         self.transform = CGAffineTransformMake(e*c+c, s+e*s, -s, c, self.transform.tx, self.transform.ty);
-        _centView.transform = CGAffineTransformMake(self.transform.d, -self.transform.c, self.transform.c, self.transform.d, _fieldTransform.tx+(Width*(self.transform.a-_selfTransform.a))/2, _fieldTransform.ty+(Width*(self.transform.b-_selfTransform.b))/2);
         _imageView1.transform = CGAffineTransformMake(self.transform.d, -self.transform.c, self.transform.c, self.transform.d, _imageView1Transform.tx, _imageView1Transform.ty);
-        _imageView2.transform = CGAffineTransformMake(self.transform.d, -self.transform.c, self.transform.c, self.transform.d, _imageView2Transform.tx+(Width*(self.transform.a-_selfTransform.a)), _imageView2Transform.ty+(Width*(self.transform.b-_selfTransform.b)));
-        
     } else if (_loaction.x < ClickRange) {
         self.transform = CGAffineTransformMake(-(e*c+c), -(s+e*s), s, -c, self.transform.tx, self.transform.ty);
-        _centView.transform = CGAffineTransformMake(self.transform.d, -self.transform.c, self.transform.c, self.transform.d, _fieldTransform.tx-(Width*(self.transform.a-_selfTransform.a))/2, _fieldTransform.ty-(Width*(self.transform.b-_selfTransform.b))/2);
-        
         _imageView1.transform = CGAffineTransformMake(self.transform.d, -self.transform.c, self.transform.c, self.transform.d, _imageView1Transform.tx-(Width*(self.transform.a-_selfTransform.a)), _imageView1Transform.ty-(Width*(self.transform.b-_selfTransform.b)));
-        _imageView2.transform = CGAffineTransformMake(self.transform.d, -self.transform.c, self.transform.c, self.transform.d, _imageView2Transform.tx, _imageView2Transform.ty);
     } else {
         CGFloat distanceX = _loaction.x-_currentSize.width/2;
         CGFloat distanceY = _loaction.y-_currentSize.height/2;
         self.transform = CGAffineTransformMake(self.transform.a, self.transform.b, self.transform.c, self.transform.d, x1+self.transform.tx-distanceX*self.transform.a-distanceY*self.transform.c, y1+self.transform.ty-distanceX*self.transform.b-distanceY*self.transform.d);
-        _centView.transform = CGAffineTransformMake(self.transform.d, -self.transform.c, self.transform.c, self.transform.d, _fieldTransform.tx-_selfTransform.tx+self.transform.tx, _fieldTransform.ty-_selfTransform.ty+self.transform.ty);
-        
         _imageView1.transform = CGAffineTransformMake(self.transform.d, -self.transform.c, self.transform.c, self.transform.d,_imageView1Transform.tx-_selfTransform.tx+self.transform.tx, _imageView1Transform.ty-_selfTransform.ty+self.transform.ty);
-        _imageView2.transform = CGAffineTransformMake(self.transform.d, -self.transform.c, self.transform.c, self.transform.d,_imageView2Transform.tx-_selfTransform.tx+self.transform.tx, _imageView2Transform.ty-_selfTransform.ty+self.transform.ty);
     };
 }
 

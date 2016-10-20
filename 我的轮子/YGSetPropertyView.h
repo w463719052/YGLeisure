@@ -11,9 +11,14 @@
 #import "YGDrawingLineView.h"
 #import "YGSetPropertyInfo.h"
 #import "YGDrawingArrowView.h"
+#import "YGInputTextField.h"
+#import "YGArrowView.h"
+#import "YGSetPropertyTextOptionsView.h"
 
 #define TypeArray @[@"长度L",@"高度h",@"宽度b",@"厚度t",@"中距a",@"弧长⌒",@"直径φ",@"盘径φ",@"牙径M"]
 #define UnitArray @[@"mm",@"cm",@"m"]
+#define HoleStyleArray @[@"",@"通孔",@"牙孔"]
+#define ToothStyleArray @[@"",@"斜齿",@"直齿"]
 
 @interface YGSetPropertyView : UIView <UIPickerViewDelegate,UIPickerViewDataSource,UIActionSheetDelegate>
 
@@ -47,11 +52,17 @@
 
 @property (nonatomic,copy) NSString *chooseStr;
 
-@property (nonatomic,strong) YGDrawingLineView *lineView;
+//@property (nonatomic,strong) YGDrawingLineView *lineView;
+//
+//@property (nonatomic,strong) YGArrowView *arrowView;
+//
+//@property (nonatomic,strong) YGInputTextField *inputTextField;
 
-@property (nonatomic,strong) YGDrawingArrowView *arrowView;
+@property (nonatomic,strong) UIView *selectView;
 
-@property (nonatomic, copy) void (^fieldButtonPress)();
+@property (nonatomic,copy) void (^fieldButtonPress)();
+
+@property (nonatomic,strong) YGSetPropertyTextOptionsView *textOptionsView;
 
 - (CGFloat)addContentVieWithTag:(NSInteger)tag;
 - (void)setFieldInitialTextWithInfo:(YGSetPropertyInfo *)info;

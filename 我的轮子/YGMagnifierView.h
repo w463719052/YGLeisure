@@ -13,4 +13,6 @@
 @property (nonatomic,strong) UIView *viewToMagnify;
 @property (nonatomic,assign) CGPoint touchPoint;
 
+- (void)setPointToMagnify:(CGPoint)pointToMagnify;
+
 @end

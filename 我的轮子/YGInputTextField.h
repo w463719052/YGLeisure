@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YGSetPropertyInfo.h"
 
-@interface YGInputTextField : UILabel
+@interface YGInputTextField : UIView
+
+@property (nonatomic,strong) UITextView *textView;
+
+@property (nonatomic,assign) BOOL isSetProperty;
+
+@property (nonatomic,strong) YGSetPropertyInfo *info;
+
+- (void)setTextFieldMessageWithInfo:(YGSetPropertyInfo *)info;
+- (void)setViewBorderHide;
 
 @end

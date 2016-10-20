@@ -58,7 +58,7 @@ static NSInteger const TextFont = 13;
             [view removeFromSuperview];
         }
     }
-    if (tag == 0) {
+    if (tag == 5) {
        return [self addPlainTextField];
     } else if (tag == 1) {
        return [self addLineMessageField];
@@ -69,7 +69,7 @@ static NSInteger const TextFont = 13;
     } else if (tag == 4) {
        return [self addVoltageField];
     }
-    return 0;
+    return LblHeight+20;
 }
 
 
@@ -81,9 +81,33 @@ static NSInteger const TextFont = 13;
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(0, 0, LblHeight, LblHeight);
     button.backgroundColor = [UIColor lightGrayColor];
+    [button addTarget:self action:@selector(plainTextFieldRightButtonPress:) forControlEvents:UIControlEventTouchUpInside];
     _plainTextField.rightView = button;
     _plainTextField.rightViewMode = UITextFieldViewModeAlways;
     return CGRectGetMaxY(_plainTextField.frame)+Intrale;
+}
+
+- (void)plainTextFieldRightButtonPress:(UIButton *)send {
+    if (CGRectGetMaxY(self.frame)<ScreenHeight-64-70) {
+        return;
+    }
+    if (!send.selected) {
+        send.selected = YES;
+        if (!_textOptionsView) {
+            _textOptionsView = [[YGSetPropertyTextOptionsView alloc] initWithFrame:CGRectMake(ScreenWidth-80-Intrale, ScreenHeight-CGRectGetMaxY(_plainTextField.frame)-2*Intrale-390, 80, 390)];
+            __weak typeof(self) vc = self;
+            _textOptionsView.cellPress = ^(NSString *text){
+                vc.plainTextField.text = [vc.plainTextField.text stringByAppendingString:text];
+                if (vc.fieldButtonPress) {
+                    vc.fieldButtonPress();
+                }
+            };
+        }
+        [self.window addSubview:_textOptionsView];
+    } else {
+        send.selected = NO;
+        [_textOptionsView removeFromSuperview];
+    }
 }
 
 - (CGFloat)addLineMessageField {
@@ -106,6 +130,7 @@ static NSInteger const TextFont = 13;
     
     _valueField2 = [[UITextField alloc] initWithFrame:CGRectMake(CGRectGetMaxX(_valueField1.frame)+Intrale, CGRectGetMaxY(_identificationField.frame)+Intrale, (self.frame.size.width-2*LblWidth-5*Intrale)/3, LblHeight)];
     _valueField2.borderStyle = UITextBorderStyleRoundedRect;
+    _valueField2.keyboardType = UIKeyboardTypeNumberPad;
     [self addSubview:_valueField2];
     
     _valueField3 = [[UITextField alloc] initWithFrame:CGRectMake(CGRectGetMaxX(_valueField2.frame)+Intrale, CGRectGetMaxY(_identificationField.frame)+Intrale, (self.frame.size.width-2*LblWidth-5*Intrale)/3, LblHeight)];
@@ -146,13 +171,23 @@ static NSInteger const TextFont = 13;
     _holeStyleField = [[UITextField alloc] initWithFrame:CGRectMake(CGRectGetMaxX(_holeIdentificationField.frame)+2*Intrale+LblWidth, 2*Intrale+setButtonWidth,(self.frame.size.width-CGRectGetWidth(_holeIdentificationField.frame)-2*LblWidth-5*Intrale), LblHeight)];
     _holeStyleField.borderStyle = UITextBorderStyleRoundedRect;
     [self addSubview:_holeStyleField];
+    _holeStyleField.rightView = [self setFieldRightView];
+    _holeStyleField.rightViewMode = UITextFieldViewModeAlways;
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(0, 0, CGRectGetWidth(_holeStyleField.frame), CGRectGetHeight(_holeStyleField.frame));
+    button.tag = 3;
+    [button addTarget:self action:@selector(pushPickerViewWith:) forControlEvents:UIControlEventTouchUpInside];
+    [_holeStyleField addSubview:button];
     
     _holeNumberField = [[UITextField alloc] initWithFrame:CGRectMake(LblWidth+2*Intrale, CGRectGetMaxY(_holeIdentificationField.frame)+Intrale, (self.frame.size.width-LblWidth-3*Intrale)/3, LblHeight)];
     _holeNumberField.borderStyle = UITextBorderStyleRoundedRect;
+    _holeNumberField.keyboardType = UIKeyboardTypeNumberPad;
     [self addSubview:_holeNumberField];
     
     _holeDiameterField = [[UITextField alloc] initWithFrame:CGRectMake(CGRectGetMaxX(_holeIdentificationField.frame)+2*Intrale+LblWidth, CGRectGetMaxY(_holeIdentificationField.frame)+Intrale,(self.frame.size.width-CGRectGetWidth(_holeIdentificationField.frame)-2*LblWidth-5*Intrale), LblHeight)];
     _holeDiameterField.borderStyle = UITextBorderStyleRoundedRect;
+    _holeDiameterField.keyboardType = UIKeyboardTypeNumberPad;
     [self addSubview:_holeDiameterField];
     [self addFieldRightLbl:_holeDiameterField];
     
@@ -189,21 +224,32 @@ static NSInteger const TextFont = 13;
     
     _toothNumberField = [[UITextField alloc] initWithFrame:CGRectMake(LblWidth+2*Intrale, CGRectGetMaxY(_toothIdentificationField.frame)+Intrale, (self.frame.size.width-LblWidth-3*Intrale)/3, LblHeight)];
     _toothNumberField.borderStyle = UITextBorderStyleRoundedRect;
+    _toothNumberField.keyboardType = UIKeyboardTypeNumberPad;
     [self addSubview:_toothNumberField];
     
     _toothDiameterField = [[UITextField alloc] initWithFrame:CGRectMake(CGRectGetMaxX(_toothIdentificationField.frame)+2*Intrale+LblWidth, CGRectGetMaxY(_toothIdentificationField.frame)+Intrale, (self.frame.size.width-LblWidth-3*Intrale)/3, LblHeight)];
     _toothDiameterField.borderStyle = UITextBorderStyleRoundedRect;
+    _toothDiameterField.keyboardType = UIKeyboardTypeNumberPad;
     [self addSubview:_toothDiameterField];
     [self addFieldRightLbl:_toothDiameterField];
     
     _toothThickField = [[UITextField alloc] initWithFrame:CGRectMake(LblWidth+2*Intrale, CGRectGetMaxY(_toothNumberField.frame)+Intrale, (self.frame.size.width-LblWidth-3*Intrale)/3, LblHeight)];
     _toothThickField.borderStyle = UITextBorderStyleRoundedRect;
+    _toothThickField.keyboardType = UIKeyboardTypeNumberPad;
     [self addSubview:_toothThickField];
     [self addFieldRightLbl:_toothThickField];
     
     _toothStyleField = [[UITextField alloc] initWithFrame:CGRectMake(CGRectGetMaxX(_toothIdentificationField.frame)+2*Intrale+LblWidth, CGRectGetMaxY(_toothNumberField.frame)+Intrale, (self.frame.size.width-LblWidth-3*Intrale)/3, LblHeight)];
     _toothStyleField.borderStyle = UITextBorderStyleRoundedRect;
     [self addSubview:_toothStyleField];
+    _toothStyleField.rightView = [self setFieldRightView];
+    _toothStyleField.rightViewMode = UITextFieldViewModeAlways;
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(0, 0, CGRectGetWidth(_toothStyleField.frame), CGRectGetHeight(_toothStyleField.frame));
+    button.tag = 4;
+    [button addTarget:self action:@selector(pushPickerViewWith:) forControlEvents:UIControlEventTouchUpInside];
+    [_toothStyleField addSubview:button];
     
     _customField = [[UITextField alloc] initWithFrame:CGRectMake(LblWidth+2*Intrale, CGRectGetMaxY(_toothStyleField.frame)+Intrale, self.frame.size.width-LblWidth-3*Intrale, LblHeight)];
     _customField.borderStyle = UITextBorderStyleRoundedRect;
@@ -239,14 +285,17 @@ static NSInteger const TextFont = 13;
     [self addVoltageLeftLbl];
     _voltageField = [[UITextField alloc] initWithFrame:CGRectMake(LblWidth+2*Intrale, 2*Intrale+setButtonWidth, (self.frame.size.width-LblWidth-3*Intrale)/3, LblHeight)];
     _voltageField.borderStyle = UITextBorderStyleRoundedRect;
+    _voltageField.keyboardType = UIKeyboardTypeNumberPad;
     [self addSubview:_voltageField];
     
     _currentField = [[UITextField alloc] initWithFrame:CGRectMake((self.frame.size.width-LblWidth-3*Intrale)/2+3*Intrale+2*LblWidth, 2*Intrale+setButtonWidth,(self.frame.size.width-(self.frame.size.width-LblWidth-3*Intrale)/2-2*LblWidth-5*Intrale), LblHeight)];
     _currentField.borderStyle = UITextBorderStyleRoundedRect;
+    _currentField.keyboardType = UIKeyboardTypeNumberPad;
     [self addSubview:_currentField];
     
     _powerField = [[UITextField alloc] initWithFrame:CGRectMake(LblWidth+2*Intrale, CGRectGetMaxY(_currentField.frame)+Intrale, (self.frame.size.width-LblWidth-3*Intrale)/3, LblHeight)];
     _powerField.borderStyle = UITextBorderStyleRoundedRect;
+    _powerField.keyboardType = UIKeyboardTypeNumberPad;
     [self addSubview:_powerField];
     
     _customField = [[UITextField alloc] initWithFrame:CGRectMake(LblWidth+2*Intrale, CGRectGetMaxY(_powerField.frame)+Intrale, self.frame.size.width-LblWidth-3*Intrale, LblHeight)];
@@ -300,22 +349,22 @@ static NSInteger const TextFont = 13;
 - (void)setFieldInitialTextWithInfo:(YGSetPropertyInfo *)info {
     _identificationField.text = info.identification?:@"";
     _valueField1.text = info.type?:@"长度L";
-    _valueField2.text = info.number?:@"1";
+    _valueField2.text = info.number?:@"";
     _valueField3.text = info.unit?:@"mm";
     _customField.text = info.custom?:@"";
     
     _plainTextField.text = info.plainText;
     
     _holeIdentificationField.text = info.holeIdentification;
-    _holeStyleField.text = info.holeStyle?:@"通孔";
-    _holeNumberField.text = info.holeNumber?:@"1";
-    _holeDiameterField.text = info.holeDiameter?:@"0";
+    _holeStyleField.text = info.holeStyle?:@"";
+    _holeNumberField.text = info.holeNumber?:@"";
+    _holeDiameterField.text = info.holeDiameter?:@"";
     
-    _toothIdentificationField.text = info.toothIdentification?:@"齿";
-    _toothNumberField.text = info.toothNumber?:@"1";
-    _toothDiameterField.text = info.toothDiameter?:@"0";
-    _toothThickField.text = info.toothThick?:@"0";
-    _toothStyleField.text = info.toothStyle?:@"直齿";
+    _toothIdentificationField.text = info.toothIdentification?:@"";
+    _toothNumberField.text = info.toothNumber?:@"";
+    _toothDiameterField.text = info.toothDiameter?:@"";
+    _toothThickField.text = info.toothThick?:@"";
+    _toothStyleField.text = info.toothStyle?:@"";
     
     _voltageField.text = info.voltage;
     _currentField.text = info.current;
@@ -325,21 +374,19 @@ static NSInteger const TextFont = 13;
 - (void)pushPickerViewWith:(UIButton *)send {
     if (send.tag == 1) {
         _chooseStr = TypeArray[0];
-        UIPickerView *pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width-20, 180)];
-        pickerView.showsSelectionIndicator = YES;
-        pickerView.delegate = self;
-        pickerView.dataSource = self;
-        pickerView.tag = send.tag;
-        [self buildActionSheetWithView:pickerView tag:send.tag];
     } else if (send.tag == 2) {
         _chooseStr = UnitArray[0];
-        UIPickerView *pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width-20, 180)];
-        pickerView.showsSelectionIndicator = YES;
-        pickerView.delegate = self;
-        pickerView.dataSource = self;
-        pickerView.tag = send.tag;
-        [self buildActionSheetWithView:pickerView tag:send.tag];
+    } else if (send.tag == 3) {
+        _chooseStr = HoleStyleArray[0];
+    } else if (send.tag == 4) {
+        _chooseStr = ToothStyleArray[0];
     }
+    UIPickerView *pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width-20, 180)];
+    pickerView.showsSelectionIndicator = YES;
+    pickerView.delegate = self;
+    pickerView.dataSource = self;
+    pickerView.tag = send.tag;
+    [self buildActionSheetWithView:pickerView tag:send.tag];
 }
 
 - (void)buildActionSheetWithView:(UIView *)view tag:(NSInteger)tag{
@@ -353,6 +400,10 @@ static NSInteger const TextFont = 13;
                 _valueField1.text = _chooseStr;
             } else if (tag == 2) {
                 _valueField3.text = _chooseStr;
+            } else if (tag == 3) {
+                _holeStyleField.text = _chooseStr;
+            } else if (tag == 4) {
+                _toothStyleField.text = _chooseStr;
             }
             if (_fieldButtonPress) {
                 _fieldButtonPress();
@@ -389,6 +440,10 @@ static NSInteger const TextFont = 13;
             _valueField1.text = _chooseStr;
         } else if (actionSheet.tag == 2) {
             _valueField3.text = _chooseStr;
+        } else if (actionSheet.tag == 3) {
+            _holeStyleField.text = _chooseStr;
+        } else if (actionSheet.tag == 4) {
+            _toothStyleField.text = _chooseStr;
         }
         if (_fieldButtonPress) {
             _fieldButtonPress();
@@ -405,6 +460,10 @@ static NSInteger const TextFont = 13;
         return TypeArray.count;
     } else if (pickerView.tag == 2) {
         return UnitArray.count;
+    } else if (pickerView.tag == 3) {
+        return HoleStyleArray.count;
+    } else if (pickerView.tag == 4) {
+        return ToothStyleArray.count;
     }
     return 0;
 }
@@ -415,6 +474,10 @@ static NSInteger const TextFont = 13;
         return TypeArray[row];
     } else if (pickerView.tag == 2) {
         return UnitArray[row];
+    } else if (pickerView.tag == 3) {
+        return HoleStyleArray[row];
+    } else if (pickerView.tag == 4) {
+        return ToothStyleArray[row];
     }
     return @"";
 }
@@ -423,6 +486,10 @@ static NSInteger const TextFont = 13;
         _chooseStr = TypeArray[row];
     } else if (pickerView.tag == 2) {
         _chooseStr = UnitArray[row];
+    } else if (pickerView.tag == 3) {
+        _chooseStr = HoleStyleArray[row];
+    } else if (pickerView.tag == 4) {
+        _chooseStr = ToothStyleArray[row];
     }
 }
 

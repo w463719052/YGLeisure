@@ -13,7 +13,7 @@
 @interface YGDrawingLineView : UIView
 
 @property (nonatomic,strong) UIView *centView;
-@property (nonatomic,strong) UITextField *field;
+@property (nonatomic,strong) UILabel *field;
 @property (nonatomic,assign) CGPoint loaction;
 @property (nonatomic,assign) CGSize currentSize;
 @property (nonatomic) CGAffineTransform fieldTransform;
