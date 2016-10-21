@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "YGSetPropertyInfo.h"
+#import "YGStrokeTextView.h"
 
 @interface YGInputTextField : UIView
 
-@property (nonatomic,strong) UITextView *textView;
+@property (nonatomic,strong) YGStrokeTextView *textView;
 
 @property (nonatomic,assign) BOOL isSetProperty;
 

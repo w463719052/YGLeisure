@@ -55,14 +55,12 @@ static NSInteger const ClickRange = 30;
     _centView.userInteractionEnabled = NO;
     [self.superview addSubview:_centView];
     
-    _field = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 1, Height)];
+    _field = [[YGStrokeLabel alloc] initWithFrame:CGRectMake(0, 0, 1, Height)];
     _field.textColor = [UIColor redColor];
     _field.textAlignment = NSTextAlignmentCenter;
     _field.text = @"请输入";
-    _field.font = [UIFont systemFontOfSize:19];
+    _field.font = [UIFont systemFontOfSize:16];
     _field.userInteractionEnabled = NO;
-    _field.shadowColor = [UIColor blackColor];
-    _field.shadowOffset = CGSizeMake(0, 0.8);
     [_field sizeToFit];
     _field.center = CGPointMake(0.5, 0);
     [_centView addSubview:_field];

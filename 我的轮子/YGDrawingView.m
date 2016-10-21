@@ -113,7 +113,7 @@
     backView.backgroundColor = RGBCOLOR(243, 243, 243);
     [self addSubview:backView];
     
-    NSArray *array = @[@"箭",@"线",@"孔",@"齿",@"电",@"普",@"二",@"LG"];
+    NSArray *array = @[@"箭",@"线",@"孔",@"齿",@"电",@"文",@"二",@"LG"];
     for (int i=0; i<array.count; i++) {
         YGMyButton *addButton = [YGMyButton buttonWithType:UIButtonTypeCustom];
         addButton.tag = i;
@@ -154,6 +154,15 @@
         _setPropertyView.hidden = NO;
     } else if (send.tag == 2 || send.tag == 3 || send.tag == 4 || send.tag == 5) {
         YGInputTextField *field = [[YGInputTextField alloc] init];
+//        NSMutableAttributedString *colorStr = [[NSMutableAttributedString alloc] initWithString:send.buttonInfo];
+//        NSDictionary *attrs =@{NSFontAttributeName:[UIFont systemFontOfSize:16],//文本的颜色 字体 大小
+//                               NSStrokeWidthAttributeName:@-5, //描边宽度
+//                               NSStrokeColorAttributeName:[UIColor whiteColor],//设置 描边颜色，和NSStrokeWidthAttributeName配合使用,设置了这个NSForegroundColorAttributeName就失效了
+//                               NSForegroundColorAttributeName:[UIColor redColor],//文字颜色
+//                               
+//                               };
+//        [colorStr addAttributes:attrs range:NSMakeRange(0, colorStr.length)];
+//        field.textView.attributedText = colorStr;
         field.textView.text = send.buttonInfo;
         field.tag = send.tag;
         field.isSetProperty = YES;

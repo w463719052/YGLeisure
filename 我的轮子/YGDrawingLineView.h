@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "YGMagnifierView.h"
 #import "YGSetPropertyInfo.h"
+#import "YGStrokeLabel.h"
 
 @interface YGDrawingLineView : UIView
 
 @property (nonatomic,strong) UIView *centView;
-@property (nonatomic,strong) UILabel *field;
+@property (nonatomic,strong) YGStrokeLabel *field;
 @property (nonatomic,assign) CGPoint loaction;
 @property (nonatomic,assign) CGSize currentSize;
 @property (nonatomic) CGAffineTransform fieldTransform;

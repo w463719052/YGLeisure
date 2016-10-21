@@ -38,6 +38,8 @@
 		15BE48D51D94CC8F0081E051 /* YGDrawingLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BE48D41D94CC8F0081E051 /* YGDrawingLineView.m */; };
 		15C4C1721DB4CB24000DAE28 /* YGInputTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C4C1711DB4CB24000DAE28 /* YGInputTextField.m */; };
 		15CA57D01D87EAE500AFD555 /* YGMosaicImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15CA57CF1D87EAE500AFD555 /* YGMosaicImageView.m */; };
+		15CD63EF1DB9ABF300883BBE /* YGStrokeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 15CD63EE1DB9ABF300883BBE /* YGStrokeLabel.m */; };
+		15CD63F21DB9B7A000883BBE /* YGStrokeTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15CD63F11DB9B7A000883BBE /* YGStrokeTextView.m */; };
 		15D0C5D01D82A9E7000A9575 /* YGPiceModifyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 15D0C5CF1D82A9E7000A9575 /* YGPiceModifyVC.m */; };
 		15F4A6831DB5F53400EAAF83 /* YGArrowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F4A6821DB5F53400EAAF83 /* YGArrowView.m */; };
 		15FBDD641DACB6E600D978DF /* YGSetPropertyInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 15FBDD631DACB6E600D978DF /* YGSetPropertyInfo.m */; };
@@ -106,6 +108,10 @@
 		15C4C1711DB4CB24000DAE28 /* YGInputTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGInputTextField.m; sourceTree = "<group>"; };
 		15CA57CE1D87EAE500AFD555 /* YGMosaicImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGMosaicImageView.h; sourceTree = "<group>"; };
 		15CA57CF1D87EAE500AFD555 /* YGMosaicImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGMosaicImageView.m; sourceTree = "<group>"; };
+		15CD63ED1DB9ABF300883BBE /* YGStrokeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGStrokeLabel.h; sourceTree = "<group>"; };
+		15CD63EE1DB9ABF300883BBE /* YGStrokeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGStrokeLabel.m; sourceTree = "<group>"; };
+		15CD63F01DB9B7A000883BBE /* YGStrokeTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGStrokeTextView.h; sourceTree = "<group>"; };
+		15CD63F11DB9B7A000883BBE /* YGStrokeTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGStrokeTextView.m; sourceTree = "<group>"; };
 		15D0C5CE1D82A9E7000A9575 /* YGPiceModifyVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGPiceModifyVC.h; sourceTree = "<group>"; };
 		15D0C5CF1D82A9E7000A9575 /* YGPiceModifyVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGPiceModifyVC.m; sourceTree = "<group>"; };
 		15F4A6811DB5F53400EAAF83 /* YGArrowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGArrowView.h; sourceTree = "<group>"; };
@@ -253,6 +259,10 @@
 				15FBDD631DACB6E600D978DF /* YGSetPropertyInfo.m */,
 				15ABC1FD1DB74DBD00D22351 /* YGSetPropertyTextOptionsView.h */,
 				15ABC1FE1DB74DBD00D22351 /* YGSetPropertyTextOptionsView.m */,
+				15CD63ED1DB9ABF300883BBE /* YGStrokeLabel.h */,
+				15CD63EE1DB9ABF300883BBE /* YGStrokeLabel.m */,
+				15CD63F01DB9B7A000883BBE /* YGStrokeTextView.h */,
+				15CD63F11DB9B7A000883BBE /* YGStrokeTextView.m */,
 			);
 			name = "图片标注";
 			sourceTree = "<group>";
@@ -372,6 +382,7 @@
 			files = (
 				15F4A6831DB5F53400EAAF83 /* YGArrowView.m in Sources */,
 				15B6984E1D7968F700883F3F /* YGDingDangVC.m in Sources */,
+				15CD63EF1DB9ABF300883BBE /* YGStrokeLabel.m in Sources */,
 				15A3E0481DAA14D200707203 /* YGMagnifierView.m in Sources */,
 				15AA46F11D2F556C00E4AD97 /* YGLogisticsInformationCell.m in Sources */,
 				15AA47161D2F5D1200E4AD97 /* YGTool.m in Sources */,
@@ -388,6 +399,7 @@
 				15C4C1721DB4CB24000DAE28 /* YGInputTextField.m in Sources */,
 				15AA46F31D2F556C00E4AD97 /* YGLogisticsInformationDetailCell.m in Sources */,
 				15B555751D38D39E00DD7233 /* YGPersonalProfileVC.m in Sources */,
+				15CD63F21DB9B7A000883BBE /* YGStrokeTextView.m in Sources */,
 				15AA46F21D2F556C00E4AD97 /* YGTextView.m in Sources */,
 				15ABC1FF1DB74DBD00D22351 /* YGSetPropertyTextOptionsView.m in Sources */,
 				15BE48CF1D94C4A20081E051 /* YGDrawingView.m in Sources */,

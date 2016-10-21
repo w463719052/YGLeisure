@@ -19,19 +19,19 @@ static NSInteger const Height = 35;
     if (self = [super init]) {
         self.frame = CGRectMake(Intrale, Intrale, Width, Height);
         self.userInteractionEnabled = YES;
-        _textView = [[UITextView alloc] initWithFrame:self.bounds];
+        _textView = [[YGStrokeTextView alloc] initWithFrame:self.bounds];
         _textView.layer.borderWidth = 1;
         _textView.layer.borderColor = [UIColor redColor].CGColor;
         _textView.layer.cornerRadius = 3;
         _textView.backgroundColor = [UIColor clearColor];
         _textView.userInteractionEnabled = NO;
-        _textView.font = [UIFont systemFontOfSize:18];
-        _textView.textColor = [UIColor redColor];
-        _textView.layoutManager.allowsNonContiguousLayout = NO;
-        _textView.layer.shadowOpacity = 1.0;
-        _textView.layer.shadowRadius = 1.0;
-        _textView.layer.shadowColor = [UIColor blackColor].CGColor;
-        _textView.layer.shadowOffset = CGSizeMake(0, 0.8);
+        _textView.strokeLabel.font = [UIFont systemFontOfSize:18];
+        _textView.strokeLabel.textColor = [UIColor redColor];
+//        _textView.layoutManager.allowsNonContiguousLayout = NO;
+//        _textView.layer.shadowOpacity = 1.0;
+//        _textView.layer.shadowRadius = 1.0;
+//        _textView.layer.shadowColor = [UIColor blackColor].CGColor;
+//        _textView.layer.shadowOffset = CGSizeMake(0, 0.8);
         [self addSubview:_textView];
     }
     return self;
@@ -105,7 +105,7 @@ static NSInteger const Height = 35;
         }
         _textView.text = [NSString stringWithFormat:@"%@%@%@%@",voltage,current,power,custom];
     }
-    [_textView scrollRangeToVisible:NSMakeRange(_textView.text.length, 1)];
+//    [_textView scrollRangeToVisible:NSMakeRange(_textView.text.length, 1)];
 }
 
 - (void)setViewBorderHide {
@@ -129,6 +129,7 @@ static NSInteger const Height = 35;
         frame.size.height += currentP.y-previousP.y;
         self.frame = frame;
         _textView.frame = self.bounds;
+        [_textView setStrokeLabelSizeToFit];
     } else {
         self.transform = CGAffineTransformTranslate(self.transform, currentP.x-previousP.x, currentP.y-previousP.y);
     }

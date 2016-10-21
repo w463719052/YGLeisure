@@ -25,14 +25,16 @@ static NSInteger const TextFont = 13;
         _topView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, LblHeight)];
         [self addSubview:_topView];
         
-        _setButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _setButton.frame = CGRectMake(Intrale, Intrale/2, setButtonWidth, setButtonWidth);
-        _setButton.backgroundColor = [UIColor lightGrayColor];
-        [_topView addSubview:_setButton];
+//        _setButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//        _setButton.frame = CGRectMake(Intrale, Intrale/2, setButtonWidth, setButtonWidth);
+//        _setButton.backgroundColor = [UIColor lightGrayColor];
+//        [_topView addSubview:_setButton];
         
         _deleteButton = [YGMyButton buttonWithType:UIButtonTypeCustom];
         _deleteButton.frame = CGRectMake(self.frame.size.width-2*Intrale-3*setButtonWidth, Intrale/2, setButtonWidth, setButtonWidth);
         _deleteButton.backgroundColor = [UIColor lightGrayColor];
+        [_deleteButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [_deleteButton setTitle:@"删" forState:UIControlStateNormal];
         [_topView addSubview:_deleteButton];
         
         _confirmButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -81,6 +83,8 @@ static NSInteger const TextFont = 13;
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(0, 0, LblHeight, LblHeight);
     button.backgroundColor = [UIColor lightGrayColor];
+    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [button setTitle:@"加" forState:UIControlStateNormal];
     [button addTarget:self action:@selector(plainTextFieldRightButtonPress:) forControlEvents:UIControlEventTouchUpInside];
     _plainTextField.rightView = button;
     _plainTextField.rightViewMode = UITextFieldViewModeAlways;
