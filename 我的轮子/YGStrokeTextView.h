@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "YGStrokeLabel.h"
 
-@interface YGStrokeTextView : UIScrollView<UIScrollViewDelegate>
+@interface YGStrokeTextView : UIScrollView
 
 @property (nonatomic,strong) YGStrokeLabel *strokeLabel;
 

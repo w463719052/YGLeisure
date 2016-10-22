@@ -11,7 +11,7 @@
 
 static NSInteger const Intrale = 10;
 static NSInteger const Width = 200;
-static NSInteger const Height = 35;
+static NSInteger const Height = 30;
 
 @implementation YGInputTextField
 
@@ -27,11 +27,6 @@ static NSInteger const Height = 35;
         _textView.userInteractionEnabled = NO;
         _textView.strokeLabel.font = [UIFont systemFontOfSize:18];
         _textView.strokeLabel.textColor = [UIColor redColor];
-//        _textView.layoutManager.allowsNonContiguousLayout = NO;
-//        _textView.layer.shadowOpacity = 1.0;
-//        _textView.layer.shadowRadius = 1.0;
-//        _textView.layer.shadowColor = [UIColor blackColor].CGColor;
-//        _textView.layer.shadowOffset = CGSizeMake(0, 0.8);
         [self addSubview:_textView];
     }
     return self;

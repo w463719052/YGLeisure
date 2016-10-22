@@ -14,8 +14,8 @@
     if (self=[super initWithFrame:frame]) {
         self.scrollEnabled = YES;
         self.userInteractionEnabled = YES;
-        self.delegate = self;
-        _strokeLabel = [[YGStrokeLabel alloc] initWithFrame:self.bounds];
+        self.bouncesZoom = NO;
+        _strokeLabel = [[YGStrokeLabel alloc] initWithFrame:CGRectMake(0, 5, frame.size.width, frame.size.height)];
         _strokeLabel.numberOfLines = 0;
         _strokeLabel.backgroundColor = [UIColor clearColor];
         [self addSubview:_strokeLabel];
@@ -23,9 +23,6 @@
     return self;
 }
 
-//- (void)setFrame:(CGRect)frame {
-////    [self setStrokeLabelSizeToFit];
-//}
 
 - (void)setText:(NSString *)text {
     _strokeLabel.text = text;
@@ -34,11 +31,13 @@
 
 - (void)setStrokeLabelSizeToFit {
     CGSize size = [_strokeLabel sizeThatFits:self.frame.size];
-    self.contentSize = size;
-    _strokeLabel.frame = self.frame;
+    self.contentSize = CGSizeMake(size.width, size.height+10);
+    
+    _strokeLabel.frame = CGRectMake(0, 5, self.frame.size.width, self.frame.size.height+10);
     [_strokeLabel sizeToFit];
-    [self scrollRectToVisible:CGRectMake(20, 200, 100, 200) animated:YES];
-    NSLog(@"%f,%f",size.width,size.height);
+    if (self.contentSize.height>self.frame.size.height) {
+        [self setContentOffset:CGPointMake(0, self.contentSize.height-self.frame.size.height) animated:NO];
+    }
 }
 
 @end
