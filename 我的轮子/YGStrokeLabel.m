@@ -14,7 +14,7 @@
 - (void)drawTextInRect:(CGRect)rect {
     UIColor *textColor = self.textColor;
     CGContextRef c = UIGraphicsGetCurrentContext();
-    CGContextSetLineWidth(c, 2);
+    CGContextSetLineWidth(c, 1.8);
     CGContextSetLineJoin(c, kCGLineJoinRound);
     CGContextSetTextDrawingMode(c, kCGTextStroke);
     self.textColor = [UIColor whiteColor];

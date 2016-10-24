@@ -17,7 +17,7 @@
 
 #define TypeArray @[@"长度L",@"高度h",@"宽度b",@"厚度t",@"中距a",@"弧长⌒",@"直径φ",@"盘径φ",@"牙径M"]
 #define UnitArray @[@"mm",@"cm",@"m"]
-#define HoleStyleArray @[@"",@"通孔",@"牙孔"]
+#define HoleStyleArray @[@"通孔",@"牙孔"]
 #define ToothStyleArray @[@"",@"斜齿",@"直齿"]
 
 @interface YGSetPropertyView : UIView <UIPickerViewDelegate,UIPickerViewDataSource,UIActionSheetDelegate>

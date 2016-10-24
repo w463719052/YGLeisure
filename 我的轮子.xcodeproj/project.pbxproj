@@ -30,6 +30,8 @@
 		15B33F741D88FF0300247239 /* YGMosaicImageInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B33F731D88FF0300247239 /* YGMosaicImageInfo.m */; };
 		15B555751D38D39E00DD7233 /* YGPersonalProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B555741D38D39E00DD7233 /* YGPersonalProfileVC.m */; };
 		15B555781D38DD7300DD7233 /* YGBaseMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B555771D38DD7300DD7233 /* YGBaseMapView.m */; };
+		15B60E771DBD9951008B5A14 /* MBProgressHUD+NSString.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B60E741DBD9951008B5A14 /* MBProgressHUD+NSString.m */; };
+		15B60E781DBD9951008B5A14 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B60E761DBD9951008B5A14 /* MBProgressHUD.m */; };
 		15B6984E1D7968F700883F3F /* YGDingDangVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B6984D1D7968F700883F3F /* YGDingDangVC.m */; };
 		15B698511D796A8C00883F3F /* YGDingDangCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B698501D796A8C00883F3F /* YGDingDangCell.m */; };
 		15B933A01D7D4B6A007C178D /* YGCustomerInformationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B9339F1D7D4B6A007C178D /* YGCustomerInformationCell.m */; };
@@ -92,6 +94,10 @@
 		15B555741D38D39E00DD7233 /* YGPersonalProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGPersonalProfileVC.m; sourceTree = "<group>"; };
 		15B555761D38DD7300DD7233 /* YGBaseMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGBaseMapView.h; sourceTree = "<group>"; };
 		15B555771D38DD7300DD7233 /* YGBaseMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGBaseMapView.m; sourceTree = "<group>"; };
+		15B60E731DBD9951008B5A14 /* MBProgressHUD+NSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+NSString.h"; sourceTree = "<group>"; };
+		15B60E741DBD9951008B5A14 /* MBProgressHUD+NSString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+NSString.m"; sourceTree = "<group>"; };
+		15B60E751DBD9951008B5A14 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		15B60E761DBD9951008B5A14 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		15B6984C1D7968F700883F3F /* YGDingDangVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGDingDangVC.h; sourceTree = "<group>"; };
 		15B6984D1D7968F700883F3F /* YGDingDangVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGDingDangVC.m; sourceTree = "<group>"; };
 		15B6984F1D796A8C00883F3F /* YGDingDangCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGDingDangCell.h; sourceTree = "<group>"; };
@@ -163,6 +169,7 @@
 				15B6984B1D79684400883F3F /* 订单详情页 */,
 				15B5556F1D38D32900DD7233 /* 个人简介界面 */,
 				15AA470F1D2F5C5900E4AD97 /* 物流详情页面 */,
+				15B60E721DBD9951008B5A14 /* MBProgressHUD */,
 				15AA46D11D2F515100E4AD97 /* AppDelegate.h */,
 				15AA46D21D2F515100E4AD97 /* AppDelegate.m */,
 				15AA46D41D2F515100E4AD97 /* ViewController.h */,
@@ -215,6 +222,17 @@
 				15B555771D38DD7300DD7233 /* YGBaseMapView.m */,
 			);
 			name = "个人简介界面";
+			sourceTree = "<group>";
+		};
+		15B60E721DBD9951008B5A14 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				15B60E731DBD9951008B5A14 /* MBProgressHUD+NSString.h */,
+				15B60E741DBD9951008B5A14 /* MBProgressHUD+NSString.m */,
+				15B60E751DBD9951008B5A14 /* MBProgressHUD.h */,
+				15B60E761DBD9951008B5A14 /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
 		15B6984B1D79684400883F3F /* 订单详情页 */ = {
@@ -393,6 +411,7 @@
 				15AA46F01D2F556C00E4AD97 /* YGLogisticsInformationInfo.m in Sources */,
 				15A926E21DAC7FB00041BC27 /* YGMyButton.m in Sources */,
 				15A3E0451DA9E90B00707203 /* YGDrawingArrowView.m in Sources */,
+				15B60E771DBD9951008B5A14 /* MBProgressHUD+NSString.m in Sources */,
 				15B555781D38DD7300DD7233 /* YGBaseMapView.m in Sources */,
 				15BE48D21D94C5210081E051 /* YGDrawingVC.m in Sources */,
 				15AA47121D2F5CC000E4AD97 /* YGBaseViewController.m in Sources */,
@@ -406,6 +425,7 @@
 				15A3E04B1DAA304000707203 /* YGTwoBarCodeView.m in Sources */,
 				15CA57D01D87EAE500AFD555 /* YGMosaicImageView.m in Sources */,
 				15AA46E71D2F545B00E4AD97 /* YGLogisticsInformationVC.m in Sources */,
+				15B60E781DBD9951008B5A14 /* MBProgressHUD.m in Sources */,
 				15AA46D31D2F515100E4AD97 /* AppDelegate.m in Sources */,
 				15B698511D796A8C00883F3F /* YGDingDangCell.m in Sources */,
 				15BE48D51D94CC8F0081E051 /* YGDrawingLineView.m in Sources */,

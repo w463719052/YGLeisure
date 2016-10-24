@@ -143,6 +143,7 @@
 - (void)addLine:(YGMyButton *)send {
     if (send.tag == 0) {
         YGArrowView *arrowView = [[YGArrowView alloc] init];
+        arrowView.tag = send.tag;
         [_imageView addSubview:arrowView];
         [arrowView addImageView];
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapPress:)];
@@ -154,15 +155,6 @@
         _setPropertyView.hidden = NO;
     } else if (send.tag == 2 || send.tag == 3 || send.tag == 4 || send.tag == 5) {
         YGInputTextField *field = [[YGInputTextField alloc] init];
-//        NSMutableAttributedString *colorStr = [[NSMutableAttributedString alloc] initWithString:send.buttonInfo];
-//        NSDictionary *attrs =@{NSFontAttributeName:[UIFont systemFontOfSize:16],//文本的颜色 字体 大小
-//                               NSStrokeWidthAttributeName:@-5, //描边宽度
-//                               NSStrokeColorAttributeName:[UIColor whiteColor],//设置 描边颜色，和NSStrokeWidthAttributeName配合使用,设置了这个NSForegroundColorAttributeName就失效了
-//                               NSForegroundColorAttributeName:[UIColor redColor],//文字颜色
-//                               
-//                               };
-//        [colorStr addAttributes:attrs range:NSMakeRange(0, colorStr.length)];
-//        field.textView.attributedText = colorStr;
         field.textView.text = send.buttonInfo;
         field.tag = send.tag;
         field.isSetProperty = YES;
@@ -177,6 +169,7 @@
         _setPropertyView.hidden = NO;
     } else if (send.tag == 1) {
         YGDrawingLineView *lineView = [[YGDrawingLineView alloc] init];
+        lineView.tag = send.tag;
         [_imageView addSubview:lineView];
         [lineView addField];
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapPress:)];
@@ -190,6 +183,7 @@
     } else if (send.tag == 6) {
         if (!_twoBarCodeView) {
             _twoBarCodeView = [[YGTwoBarCodeView alloc] initWithX:Intrale y:ScreenHeight-64-ButtonWidth-Intrale-70-Intrale width:70 string:@"哈哈哈哈哈哈哈哈哈哈哈"];
+            _twoBarCodeView.tag = send.tag;
             UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapPress:)];
             [_twoBarCodeView addGestureRecognizer:tap];
         }
@@ -202,6 +196,7 @@
     } else if (send.tag == 7) {
         if (!_companyLogoView) {
             _companyLogoView = [[YGCompanyLogoView alloc] initWithFrame:CGRectMake(ScreenWidth-70-Intrale, ScreenHeight-64-ButtonWidth-Intrale-70-Intrale, 70, 70) logo:@"logo"];
+            _companyLogoView.tag = send.tag;
             UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapPress:)];
             [_companyLogoView addGestureRecognizer:tap];
         }
@@ -240,6 +235,12 @@
 }
 
 - (void)tapPress:(UITapGestureRecognizer *)send {
+    if ([_setPropertyView.selectView isKindOfClass:[YGInputTextField class]]) {
+        [(YGInputTextField *)_setPropertyView.selectView borderHide];
+    }
+    _setPropertyViewHeight = [_setPropertyView addContentVieWithTag:send.view.tag];
+    _setPropertyView.frame = CGRectMake(0, ScreenHeight-64-_setPropertyViewHeight, ScreenWidth, _setPropertyViewHeight);
+    [self setPropertyViewFieldDelegate];
     if ([send.view isKindOfClass:[YGDrawingLineView class]]) {
         YGDrawingLineView *view = (YGDrawingLineView *)send.view;
         [_setPropertyView setFieldInitialTextWithInfo:view.info];
@@ -249,6 +250,7 @@
         YGInputTextField *view = (YGInputTextField *)send.view;
         [_setPropertyView setFieldInitialTextWithInfo:view.info];
         view.isSetProperty = YES;
+        [view borderShow];
         _setPropertyView.deleteButton.buttonInfo = view;
         _setPropertyView.selectView = view;
     } else if ([send.view isKindOfClass:[YGArrowView class]]) {

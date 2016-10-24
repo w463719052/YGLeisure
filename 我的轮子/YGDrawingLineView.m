@@ -59,7 +59,7 @@ static NSInteger const ClickRange = 30;
     _field.textColor = [UIColor redColor];
     _field.textAlignment = NSTextAlignmentCenter;
     _field.text = @"请输入";
-    _field.font = [UIFont systemFontOfSize:16];
+    _field.font = [UIFont systemFontOfSize:14];
     _field.userInteractionEnabled = NO;
     [_field sizeToFit];
     _field.center = CGPointMake(0.5, 0);

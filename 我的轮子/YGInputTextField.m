@@ -25,7 +25,7 @@ static NSInteger const Height = 30;
         _textView.layer.cornerRadius = 3;
         _textView.backgroundColor = [UIColor clearColor];
         _textView.userInteractionEnabled = NO;
-        _textView.strokeLabel.font = [UIFont systemFontOfSize:18];
+        _textView.strokeLabel.font = [UIFont systemFontOfSize:14];
         _textView.strokeLabel.textColor = [UIColor redColor];
         [self addSubview:_textView];
     }
@@ -41,31 +41,42 @@ static NSInteger const Height = 30;
         if (![YGTool isBlankString:info.holeIdentification]) {
             identification = [NSString stringWithFormat:@"%@:",info.holeIdentification];
         }
-        NSString *type = @"";
+        NSString *diameter = @"";
         if (![YGTool isBlankString:info.holeStyle]) {
             if ([info.holeStyle isEqualToString:@"通孔"]) {
-                type = @"-Φ";
+                if (![YGTool isBlankString:info.holeDiameter]) {
+                    diameter = [NSString stringWithFormat:@"Φ%@mm",info.holeDiameter];
+                }
             } else if ([info.holeStyle isEqualToString:@"牙孔"]) {
-                type = @"-M";
+                if (![YGTool isBlankString:info.holeDiameter]) {
+                    diameter = [NSString stringWithFormat:@"M%@",info.holeDiameter];
+                }
             }
-        }
-        NSString *diameter = @"";
-        if (![YGTool isBlankString:info.holeDiameter]) {
-            diameter = [NSString stringWithFormat:@"%@mm",info.holeDiameter];
+            
+            if (![YGTool isBlankString:info.holeNumber]) {
+                diameter = [NSString stringWithFormat:@"-%@",diameter];
+            }
         }
         NSString *custom = @"";
         if (![YGTool isBlankString:info.custom]) {
             custom = [NSString stringWithFormat:@",%@",info.custom];
         }
-        _textView.text = [NSString stringWithFormat:@"%@%@%@%@%@",identification,info.holeNumber,type,diameter,custom];
+        _textView.text = [NSString stringWithFormat:@"%@%@%@%@",identification,info.holeNumber,diameter,custom];
     } else if (self.tag == 3) {
         NSString *identification = @"";
         if (![YGTool isBlankString:info.toothIdentification]) {
             identification = [NSString stringWithFormat:@"%@:",info.toothIdentification];
         }
+        NSString *number = @"";
+        if (![YGTool isBlankString:info.toothNumber]) {
+            number = [NSString stringWithFormat:@"%@c",info.toothNumber];
+        }
         NSString *diameter = @"";
         if (![YGTool isBlankString:info.toothDiameter]) {
-            diameter = [NSString stringWithFormat:@"c-D%@mm",info.toothDiameter];
+            diameter = [NSString stringWithFormat:@"Φ%@mm",info.toothDiameter];
+            if (![YGTool isBlankString:info.toothNumber]) {
+                diameter = [NSString stringWithFormat:@"-%@",diameter];
+            }
         }
         NSString *thick = @"";
         if (![YGTool isBlankString:info.toothThick]) {
@@ -80,7 +91,7 @@ static NSInteger const Height = 30;
         if (![YGTool isBlankString:info.custom]) {
             custom = [NSString stringWithFormat:@",%@",info.custom];
         }
-        _textView.text = [NSString stringWithFormat:@"%@%@%@%@%@%@",identification,info.toothNumber,diameter,thick,type,custom];
+        _textView.text = [NSString stringWithFormat:@"%@%@%@%@%@%@",identification,number,diameter,thick,type,custom];
     } else if (self.tag == 4) {
         NSString *voltage = @"";
         if (![YGTool isBlankString:info.voltage]) {
@@ -100,16 +111,23 @@ static NSInteger const Height = 30;
         }
         _textView.text = [NSString stringWithFormat:@"%@%@%@%@",voltage,current,power,custom];
     }
-//    [_textView scrollRangeToVisible:NSMakeRange(_textView.text.length, 1)];
 }
 
 - (void)setViewBorderHide {
     _isSetProperty = NO;
+    [self borderHide];
+}
+
+- (void)borderShow {
+    _textView.layer.borderColor = [UIColor redColor].CGColor;
+}
+
+- (void)borderHide {
     _textView.layer.borderColor = [UIColor clearColor].CGColor;
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    _textView.layer.borderColor = [UIColor redColor].CGColor;
+//    _textView.layer.borderColor = [UIColor redColor].CGColor;
 }
 
 - (void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

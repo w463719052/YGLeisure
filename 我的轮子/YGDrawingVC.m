@@ -10,6 +10,7 @@
 
 #import "YGDrawingVC.h"
 #import "YGDrawingView.h"
+#import "MBProgressHUD+NSString.h"
 
 @interface YGDrawingVC ()
 {
@@ -55,6 +56,8 @@
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();/**<生成图片*/
     UIGraphicsEndImageContext();
     UIImageWriteToSavedPhotosAlbum(newImage, nil, nil, nil);
+    
+    [MBProgressHUD myShowTextOnly:@"保存成功" toView:self.view];
 }
 
 - (void)didReceiveMemoryWarning {

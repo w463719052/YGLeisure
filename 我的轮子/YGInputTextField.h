@@ -20,5 +20,7 @@
 
 - (void)setTextFieldMessageWithInfo:(YGSetPropertyInfo *)info;
 - (void)setViewBorderHide;
+- (void)borderShow;
+- (void)borderHide;
 
 @end

@@ -360,7 +360,7 @@ static NSInteger const TextFont = 13;
     _plainTextField.text = info.plainText;
     
     _holeIdentificationField.text = info.holeIdentification;
-    _holeStyleField.text = info.holeStyle?:@"";
+    _holeStyleField.text = info.holeStyle?:HoleStyleArray[0];
     _holeNumberField.text = info.holeNumber?:@"";
     _holeDiameterField.text = info.holeDiameter?:@"";
     
