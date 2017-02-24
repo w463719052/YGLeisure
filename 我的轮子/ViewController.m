@@ -13,6 +13,11 @@
 #import "YGDingDangVC.h"
 #import "YGPiceModifyVC.h"
 #import "YGDrawingVC.h"
+#import "YGCardFlipVCViewController.h"
+#import "YGNewMainVC.h"
+#import "YGNewBluetoothPrintingVC.h"
+#import "BLKWrite.h"
+#import "AppDelegate.h"
 
 @interface ViewController ()
 {
@@ -29,7 +34,7 @@ static NSInteger const BUTTONHEIGTH = 40;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _buttonArray = @[@"物流详情",@"个人简介",@"订单详情页",@"图片拼接",@"图片标注"];
+    _buttonArray = @[@"物流详情",@"个人简介",@"订单详情页",@"图片拼接",@"图片标注",@"卡牌翻页",@"新主页",@"条码打印"];
     for (int i = 0; i<_buttonArray.count; i++) {
         int column = i%5;
         int line = i/5;
@@ -70,7 +75,20 @@ static NSInteger const BUTTONHEIGTH = 40;
         UINavigationController *naVC = [[UINavigationController alloc] initWithRootViewController:myVC];
         [self presentViewController:naVC animated:YES completion:nil];
     } else if (send.tag == 5) {
-        
+        YGCardFlipVCViewController *myVC = [[YGCardFlipVCViewController alloc] init];
+        UINavigationController *naVC = [[UINavigationController alloc] initWithRootViewController:myVC];
+        [self presentViewController:naVC animated:YES completion:nil];
+    } else if (send.tag == 6) {
+        YGNewMainVC *myVC = [[YGNewMainVC alloc] init];
+        UINavigationController *naVC = [[UINavigationController alloc] initWithRootViewController:myVC];
+        [self presentViewController:naVC animated:YES completion:nil];
+    } else if (send.tag == 7) {
+        [[BLKWrite Instance] setBWiFiMode:NO];
+        //        AppDelegate *dele = [UIApplication sharedApplication].delegate;
+        //        [self.navigationController pushViewController:dele.mConnBLE animated:YES];
+        YGNewBluetoothPrintingVC *myVC = [YGNewBluetoothPrintingVC sharedInstance];
+        UINavigationController *naVC = [[UINavigationController alloc] initWithRootViewController:myVC];
+        [self presentViewController:naVC animated:YES completion:nil];
     }
 }
 

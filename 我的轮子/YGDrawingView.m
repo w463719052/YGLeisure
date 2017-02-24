@@ -63,10 +63,10 @@
     _setPropertyView.frame = frame;
     _setPropertyView.textOptionsView.hidden = YES;
     if ([_setPropertyView.selectView isKindOfClass:[YGDrawingLineView class]]) {
-        _imageView.transform = CGAffineTransformMake(_setPropertyView.selectView.transform.d, _setPropertyView.selectView.transform.c, -_setPropertyView.selectView.transform.c, _setPropertyView.selectView.transform.d, 0, 0 - (((CGRectGetMidX(_setPropertyView.selectView.frame)-ScreenWidth/2)*(_setPropertyView.selectView.transform.c))+((CGRectGetMidY(_setPropertyView.selectView.frame)-ScreenWidth/2)*(_setPropertyView.selectView.transform.d)))-(_imageView.center.y-CGRectGetMinY(_setPropertyView.frame)+20));
+        _imageView.transform = CGAffineTransformMake(_setPropertyView.selectView.transform.d, _setPropertyView.selectView.transform.c, -_setPropertyView.selectView.transform.c, _setPropertyView.selectView.transform.d, 0, 0 - (((CGRectGetMidX(_setPropertyView.selectView.frame)-ScreenWidth/2)*(_setPropertyView.selectView.transform.c))+((CGRectGetMidY(_setPropertyView.selectView.frame)-ScreenWidth/2)*(_setPropertyView.selectView.transform.d)))-(_imageView.center.y-CGRectGetMinY(_setPropertyView.frame)+10));
     } else if ([_setPropertyView.selectView isKindOfClass:[YGInputTextField class]]) {
         if ((CGRectGetMaxY(_setPropertyView.selectView.frame)+CGRectGetMinY(_imageView.frame)-CGRectGetMinY(_setPropertyView.frame))>0) {
-            _imageView.transform = CGAffineTransformMake(1, 0, 0, 1, 0, - (CGRectGetMaxY(_setPropertyView.selectView.frame)+CGRectGetMinY(_imageView.frame)-CGRectGetMinY(_setPropertyView.frame))-20);
+            _imageView.transform = CGAffineTransformMake(1, 0, 0, 1, 0, - (CGRectGetMaxY(_setPropertyView.selectView.frame)+CGRectGetMinY(_imageView.frame)-CGRectGetMinY(_setPropertyView.frame))-10);
         }
     }
 }

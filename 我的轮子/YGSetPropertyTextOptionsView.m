@@ -8,7 +8,7 @@
 
 #import "YGSetPropertyTextOptionsView.h"
 
-#define TextArray @[@"车型",@"图号",@"编码",@"规格",@"特征",@"配件名",@"型号",@"电话",@"地址",@"公司名",@"换行",@"Ω",@"Φ"]
+#define TextArray @[@"车型",@"图号",@"编码",@"规格",@"特征",@"配件名",@"型号",@"电话",@"地址",@"公司名",@"Ω",@"Φ"]
 
 @implementation YGSetPropertyTextOptionsView
 
@@ -65,13 +65,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (_cellPress) {
-        NSString *text;
-        if ([TextArray[indexPath.row] isEqualToString:@"换行"]) {
-            text = @"\n";
-        } else {
-            text = TextArray[indexPath.row];
-        }
-        _cellPress(text);
+        _cellPress(TextArray[indexPath.row]);
     }
 }
 

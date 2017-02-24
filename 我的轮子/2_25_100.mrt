@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="0" />
+    <Databases isList="true" count="0" />
+    <DataSources isList="true" count="1">
+      <Table Ref="2" type="DataTableSource" isKey="true">
+        <Alias>Table</Alias>
+        <Columns isList="true" count="95">
+          <value>打印张数,System.Decimal</value>
+          <value>配件编码,System.String</value>
+          <value>配件名称,System.String</value>
+          <value>规格,System.String</value>
+          <value>图号,System.String</value>
+          <value>适用车型,System.String</value>
+          <value>产地,System.String</value>
+          <value>特征码,System.String</value>
+          <value>仓库,System.String</value>
+          <value>仓位,System.String</value>
+          <value>是否管制,System.String</value>
+          <value>基本条码,System.String</value>
+          <value>包装数,System.String</value>
+          <value>条形码,System.String</value>
+          <value>ADDRESSNAME,System.String</value>
+          <value>数量,System.Decimal</value>
+          <value>单价,System.Decimal</value>
+          <value>金额,System.Decimal</value>
+          <value>单位,System.String</value>
+          <value>厂牌,System.String</value>
+          <value>所属经营名称,System.String</value>
+          <value>A,System.String</value>
+          <value>发动机,System.String</value>
+          <value>入库日期,System.DateTime</value>
+          <value>打印中间列,System.String</value>
+          <value>FEATURECODES,System.String</value>
+          <value>DOCNO,System.String</value>
+          <value>NAME,System.String</value>
+          <value>ID,System.Decimal</value>
+          <value>MID,System.Decimal</value>
+          <value>PRODCODE,System.String</value>
+          <value>PRODID,System.Decimal</value>
+          <value>PRODNAME,System.String</value>
+          <value>SPEC,System.String</value>
+          <value>UNITNAME,System.String</value>
+          <value>FITCAR,System.String</value>
+          <value>BRANDNAME,System.String</value>
+          <value>PRODAREA,System.String</value>
+          <value>DROWINGNO,System.String</value>
+          <value>WHID,System.String</value>
+          <value>STKID,System.String</value>
+          <value>QTY,System.Decimal</value>
+          <value>ORPRICE,System.Decimal</value>
+          <value>PRICE,System.Decimal</value>
+          <value>AMT,System.Decimal</value>
+          <value>REMARKS,System.String</value>
+          <value>SINGLEWEIGHT,System.Decimal</value>
+          <value>TOTALWEIGHT,System.Decimal</value>
+          <value>REFDCONO,System.String</value>
+          <value>REFBILLTYPE,System.String</value>
+          <value>REFIORDER,System.String</value>
+          <value>RETURNQTY,System.Decimal</value>
+          <value>RENTID,System.Decimal</value>
+          <value>CHAINID,System.Decimal</value>
+          <value>ENGINENAME,System.String</value>
+          <value>FSTATE,System.Decimal</value>
+          <value>FLAGID,System.Decimal</value>
+          <value>REFPRODCODE,System.String</value>
+          <value>PARTID,System.Decimal</value>
+          <value>VENDORID,System.Decimal</value>
+          <value>FEATURECODE,System.String</value>
+          <value>RANGEID,System.Decimal</value>
+          <value>RANGENAME,System.String</value>
+          <value>WHOLESALEPRICE,System.Decimal</value>
+          <value>INSTATE,System.Decimal</value>
+          <value>ISMODIFY,System.Decimal</value>
+          <value>VENDORNAME,System.String</value>
+          <value>WHIDNAME,System.String</value>
+          <value>打印时间,System.String</value>
+          <value>PRODWHOLESALEPRICE,System.Decimal</value>
+          <value>BARCODE,System.String</value>
+          <value>ROWNUMBERID,System.Decimal</value>
+          <value>PRINTBARCODE,System.String</value>
+          <value>PRINTNUMBER,System.Decimal</value>
+          <value>BZNUMBER,System.String</value>
+          <value>简称,System.String</value>
+          <value>CODEPRICE,System.String</value>
+          <value>RETAILPRICE,System.Decimal</value>
+          <value>CONSULTPRICE,System.Decimal</value>
+          <value>BATCHPRICE,System.Decimal</value>
+          <value>STANDBYPRICE1,System.Decimal</value>
+          <value>STANDBYPRICE2,System.Decimal</value>
+          <value>STANDBYPRICE3,System.Decimal</value>
+          <value>SALMINUMUMPRICE,System.Decimal</value>
+          <value>SALSPECIAL,System.Decimal</value>
+          <value>TRANSFERPRICE,System.Decimal</value>
+          <value>COUNTERCLAIMPRICE,System.Decimal</value>
+          <value>LIMITPRICE,System.Decimal</value>
+          <value>LASTPURPRICE,System.Decimal</value>
+          <value>PURHIGHESTPRICE,System.Decimal</value>
+          <value>PURNOWPRICE,System.Decimal</value>
+          <value>PURMINIMUMPRICE,System.Decimal</value>
+          <value>PURLASTPRICE,System.Decimal</value>
+          <value>XPARTSPRICE,System.Decimal</value>
+          <value>FEATURECODEs,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Name>Table</Name>
+        <NameInSource>Table</NameInSource>
+      </Table>
+    </DataSources>
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="0" />
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="3" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Columns>2</Columns>
+      <Components isList="true" count="1">
+        <DataBand1 Ref="4" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,0.4,5,2.2</ClientRectangle>
+          <Components isList="true" count="7">
+            <Text1 Ref="5" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.2,0,4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>黑体,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>型号:{Substring(Table.适用车型,0,18)}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text1>
+            <Text2 Ref="6" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.2,0.4,4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>黑体,7</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text2</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>品名:{Substring(Table.配件名称,0,18)}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text2>
+            <Text3 Ref="7" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.2,0.8,4,0.2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>黑体,7</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text3</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>{Table.FEATURECODEs}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text3>
+            <BarCode1 Ref="8" type="Stimulsoft.Report.BarCodes.StiBarCode" isKey="true">
+              <BackColor>White</BackColor>
+              <BarCodeType Ref="9" type="Stimulsoft.Report.BarCodes.StiQRCodeBarCodeType" isKey="true" />
+              <ClientRectangle>0.2,1,4,0.8</ClientRectangle>
+              <Code>http://lushun.qpyun.cn?pcd={Table.条形码}&amp;pid={Table.PRODID}</Code>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Bold,Pixel</Font>
+              <ForeColor>Black</ForeColor>
+              <Name>BarCode1</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+            </BarCode1>
+            <Text4 Ref="10" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.2,1.8,3,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>黑体,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text4</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>{Table.配件编码}({int.Parse(Table.包装数)})</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text4>
+            <Text5 Ref="11" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>3.2,1.8,1,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>黑体,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text5</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>{Table.仓库}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>DataColumn</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text5>
+            <Text6 Ref="12" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>4.2,0,0.4,2</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,7</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text6</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>{Table.DOCNO}({Abs(Table.QTY)})</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=False, Angle=90, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text6>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>Table</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Name>DataBand1</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Sort isList="true" count="0" />
+        </DataBand1>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>025bb2eb76ca413bad68fbb01ff2e1b1</Guid>
+      <Margins>0,0,0,0</Margins>
+      <Name>Page1</Name>
+      <Orientation>Landscape</Orientation>
+      <PageHeight>2.6</PageHeight>
+      <PageWidth>10</PageWidth>
+      <Report isRef="0" />
+      <Watermark Ref="13" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="14" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>4/15/2016 4:27:07 PM</ReportChanged>
+  <ReportCreated>12/21/2011 3:29:37 PM</ReportCreated>
+  <ReportFile>.\2_25_100.mrt</ReportFile>
+  <ReportGuid>5398f7a1fced46b0aa25e8aa84ae78a4</ReportGuid>
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2011.2.1026</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+        #endregion StiReport Designer generated code - do not modify
+    }
+}</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="0" />
+</StiSerializer>

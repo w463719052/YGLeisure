@@ -98,7 +98,7 @@ static NSInteger const TextFont = 13;
     if (!send.selected) {
         send.selected = YES;
         if (!_textOptionsView) {
-            _textOptionsView = [[YGSetPropertyTextOptionsView alloc] initWithFrame:CGRectMake(ScreenWidth-80-Intrale, ScreenHeight-CGRectGetMaxY(_plainTextField.frame)-2*Intrale-390, 80, 390)];
+            _textOptionsView = [[YGSetPropertyTextOptionsView alloc] initWithFrame:CGRectMake(ScreenWidth-80-Intrale, ScreenHeight-CGRectGetMaxY(_plainTextField.frame)-2*Intrale-360, 80, 360)];
             __weak typeof(self) vc = self;
             _textOptionsView.cellPress = ^(NSString *text){
                 vc.plainTextField.text = [vc.plainTextField.text stringByAppendingString:text];
@@ -120,9 +120,10 @@ static NSInteger const TextFont = 13;
     _identificationField.borderStyle = UITextBorderStyleRoundedRect;
     [self addSubview:_identificationField];
     
-    _valueField1 = [[UITextField alloc] initWithFrame:CGRectMake(CGRectGetMinX(_identificationField.frame), CGRectGetMaxY(_identificationField.frame)+Intrale, (self.frame.size.width-2*LblWidth-5*Intrale)/3, LblHeight)];
+    _valueField1 = [[UITextField alloc] initWithFrame:CGRectMake(CGRectGetMinX(_identificationField.frame), CGRectGetMaxY(_identificationField.frame)+Intrale, (self.frame.size.width-2*LblWidth-3*Intrale)/3, LblHeight)];
     _valueField1.borderStyle = UITextBorderStyleRoundedRect;
     [self addSubview:_valueField1];
+    _valueField1.font = [UIFont systemFontOfSize:15];
     _valueField1.rightView = [self setFieldRightView];
     _valueField1.rightViewMode = UITextFieldViewModeAlways;
     
@@ -132,12 +133,12 @@ static NSInteger const TextFont = 13;
     [button1 addTarget:self action:@selector(pushPickerViewWith:) forControlEvents:UIControlEventTouchUpInside];
     [_valueField1 addSubview:button1];
     
-    _valueField2 = [[UITextField alloc] initWithFrame:CGRectMake(CGRectGetMaxX(_valueField1.frame)+Intrale, CGRectGetMaxY(_identificationField.frame)+Intrale, (self.frame.size.width-2*LblWidth-5*Intrale)/3, LblHeight)];
+    _valueField2 = [[UITextField alloc] initWithFrame:CGRectMake(CGRectGetMaxX(_valueField1.frame)+Intrale, CGRectGetMaxY(_identificationField.frame)+Intrale, (self.frame.size.width-2*LblWidth-3*Intrale)/3, LblHeight)];
     _valueField2.borderStyle = UITextBorderStyleRoundedRect;
     _valueField2.keyboardType = UIKeyboardTypeNumberPad;
     [self addSubview:_valueField2];
     
-    _valueField3 = [[UITextField alloc] initWithFrame:CGRectMake(CGRectGetMaxX(_valueField2.frame)+Intrale, CGRectGetMaxY(_identificationField.frame)+Intrale, (self.frame.size.width-2*LblWidth-5*Intrale)/3, LblHeight)];
+    _valueField3 = [[UITextField alloc] initWithFrame:CGRectMake(CGRectGetMaxX(_valueField2.frame)+Intrale, CGRectGetMaxY(_identificationField.frame)+Intrale, (self.frame.size.width-2*LblWidth-3*Intrale)/3, LblHeight)];
     _valueField3.borderStyle = UITextBorderStyleRoundedRect;
     [self addSubview:_valueField3];
     _valueField3.rightView = [self setFieldRightView];
@@ -231,7 +232,7 @@ static NSInteger const TextFont = 13;
     _toothNumberField.keyboardType = UIKeyboardTypeNumberPad;
     [self addSubview:_toothNumberField];
     
-    _toothDiameterField = [[UITextField alloc] initWithFrame:CGRectMake(CGRectGetMaxX(_toothIdentificationField.frame)+2*Intrale+LblWidth, CGRectGetMaxY(_toothIdentificationField.frame)+Intrale, (self.frame.size.width-LblWidth-3*Intrale)/3, LblHeight)];
+    _toothDiameterField = [[UITextField alloc] initWithFrame:CGRectMake(CGRectGetMaxX(_toothIdentificationField.frame)+Intrale+LblWidth, CGRectGetMaxY(_toothIdentificationField.frame)+Intrale, (self.frame.size.width-LblWidth-3*Intrale)/3, LblHeight)];
     _toothDiameterField.borderStyle = UITextBorderStyleRoundedRect;
     _toothDiameterField.keyboardType = UIKeyboardTypeNumberPad;
     [self addSubview:_toothDiameterField];
@@ -243,7 +244,7 @@ static NSInteger const TextFont = 13;
     [self addSubview:_toothThickField];
     [self addFieldRightLbl:_toothThickField];
     
-    _toothStyleField = [[UITextField alloc] initWithFrame:CGRectMake(CGRectGetMaxX(_toothIdentificationField.frame)+2*Intrale+LblWidth, CGRectGetMaxY(_toothNumberField.frame)+Intrale, (self.frame.size.width-LblWidth-3*Intrale)/3, LblHeight)];
+    _toothStyleField = [[UITextField alloc] initWithFrame:CGRectMake(CGRectGetMaxX(_toothIdentificationField.frame)+Intrale+LblWidth, CGRectGetMaxY(_toothNumberField.frame)+Intrale, (self.frame.size.width-LblWidth-3*Intrale)/3, LblHeight)];
     _toothStyleField.borderStyle = UITextBorderStyleRoundedRect;
     [self addSubview:_toothStyleField];
     _toothStyleField.rightView = [self setFieldRightView];
