@@ -7,6 +7,141 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		153DD5241EAEFBEC006C89A7 /* SKP_Silk_A2NLSF.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4871EAEFBEB006C89A7 /* SKP_Silk_A2NLSF.c */; };
+		153DD5251EAEFBEC006C89A7 /* SKP_Silk_A2NLSF_arm.S in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4881EAEFBEB006C89A7 /* SKP_Silk_A2NLSF_arm.S */; };
+		153DD5261EAEFBEC006C89A7 /* SKP_Silk_allpass_int_arm.S in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4891EAEFBEB006C89A7 /* SKP_Silk_allpass_int_arm.S */; };
+		153DD5271EAEFBEC006C89A7 /* SKP_Silk_ana_filt_bank_1.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD48A1EAEFBEB006C89A7 /* SKP_Silk_ana_filt_bank_1.c */; };
+		153DD5281EAEFBEC006C89A7 /* SKP_Silk_ana_filt_bank_1_arm.S in Sources */ = {isa = PBXBuildFile; fileRef = 153DD48B1EAEFBEB006C89A7 /* SKP_Silk_ana_filt_bank_1_arm.S */; };
+		153DD5291EAEFBEC006C89A7 /* SKP_Silk_apply_sine_window.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD48C1EAEFBEB006C89A7 /* SKP_Silk_apply_sine_window.c */; };
+		153DD52A1EAEFBEC006C89A7 /* SKP_Silk_array_maxabs.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD48D1EAEFBEB006C89A7 /* SKP_Silk_array_maxabs.c */; };
+		153DD52B1EAEFBEC006C89A7 /* SKP_Silk_array_maxabs_arm.S in Sources */ = {isa = PBXBuildFile; fileRef = 153DD48E1EAEFBEB006C89A7 /* SKP_Silk_array_maxabs_arm.S */; };
+		153DD52C1EAEFBEC006C89A7 /* SKP_Silk_autocorr.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4911EAEFBEB006C89A7 /* SKP_Silk_autocorr.c */; };
+		153DD52D1EAEFBEC006C89A7 /* SKP_Silk_biquad.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4921EAEFBEB006C89A7 /* SKP_Silk_biquad.c */; };
+		153DD52E1EAEFBEC006C89A7 /* SKP_Silk_biquad_alt.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4931EAEFBEB006C89A7 /* SKP_Silk_biquad_alt.c */; };
+		153DD52F1EAEFBEC006C89A7 /* SKP_Silk_burg_modified.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4941EAEFBEB006C89A7 /* SKP_Silk_burg_modified.c */; };
+		153DD5301EAEFBEC006C89A7 /* SKP_Silk_bwexpander.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4951EAEFBEB006C89A7 /* SKP_Silk_bwexpander.c */; };
+		153DD5311EAEFBEC006C89A7 /* SKP_Silk_bwexpander_32.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4961EAEFBEB006C89A7 /* SKP_Silk_bwexpander_32.c */; };
+		153DD5321EAEFBEC006C89A7 /* SKP_Silk_clz_arm.S in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4971EAEFBEB006C89A7 /* SKP_Silk_clz_arm.S */; };
+		153DD5331EAEFBEC006C89A7 /* SKP_Silk_CNG.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4981EAEFBEB006C89A7 /* SKP_Silk_CNG.c */; };
+		153DD5341EAEFBEC006C89A7 /* SKP_Silk_code_signs.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4991EAEFBEB006C89A7 /* SKP_Silk_code_signs.c */; };
+		153DD5351EAEFBEC006C89A7 /* SKP_Silk_control_audio_bandwidth.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD49B1EAEFBEB006C89A7 /* SKP_Silk_control_audio_bandwidth.c */; };
+		153DD5361EAEFBEC006C89A7 /* SKP_Silk_control_codec_FIX.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD49C1EAEFBEB006C89A7 /* SKP_Silk_control_codec_FIX.c */; };
+		153DD5371EAEFBEC006C89A7 /* SKP_Silk_corrMatrix_FIX.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD49D1EAEFBEB006C89A7 /* SKP_Silk_corrMatrix_FIX.c */; };
+		153DD5381EAEFBEC006C89A7 /* SKP_Silk_create_init_destroy.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD49E1EAEFBEB006C89A7 /* SKP_Silk_create_init_destroy.c */; };
+		153DD5391EAEFBEC006C89A7 /* SKP_Silk_dec_API.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD49F1EAEFBEB006C89A7 /* SKP_Silk_dec_API.c */; };
+		153DD53A1EAEFBEC006C89A7 /* SKP_Silk_decode_core.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4A01EAEFBEB006C89A7 /* SKP_Silk_decode_core.c */; };
+		153DD53B1EAEFBEC006C89A7 /* SKP_Silk_decode_core_arm.S in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4A11EAEFBEB006C89A7 /* SKP_Silk_decode_core_arm.S */; };
+		153DD53C1EAEFBEC006C89A7 /* SKP_Silk_decode_frame.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4A21EAEFBEB006C89A7 /* SKP_Silk_decode_frame.c */; };
+		153DD53D1EAEFBEC006C89A7 /* SKP_Silk_decode_parameters.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4A31EAEFBEB006C89A7 /* SKP_Silk_decode_parameters.c */; };
+		153DD53E1EAEFBEC006C89A7 /* SKP_Silk_decode_pitch.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4A41EAEFBEB006C89A7 /* SKP_Silk_decode_pitch.c */; };
+		153DD53F1EAEFBEC006C89A7 /* SKP_Silk_decode_pulses.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4A51EAEFBEB006C89A7 /* SKP_Silk_decode_pulses.c */; };
+		153DD5401EAEFBEC006C89A7 /* SKP_Silk_decoder_set_fs.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4A61EAEFBEB006C89A7 /* SKP_Silk_decoder_set_fs.c */; };
+		153DD5411EAEFBEC006C89A7 /* SKP_Silk_detect_SWB_input.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4A81EAEFBEB006C89A7 /* SKP_Silk_detect_SWB_input.c */; };
+		153DD5421EAEFBEC006C89A7 /* SKP_Silk_div_oabi.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4A91EAEFBEB006C89A7 /* SKP_Silk_div_oabi.c */; };
+		153DD5431EAEFBEC006C89A7 /* SKP_Silk_enc_API.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4AA1EAEFBEB006C89A7 /* SKP_Silk_enc_API.c */; };
+		153DD5441EAEFBEC006C89A7 /* SKP_Silk_encode_frame_FIX.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4AB1EAEFBEB006C89A7 /* SKP_Silk_encode_frame_FIX.c */; };
+		153DD5451EAEFBEC006C89A7 /* SKP_Silk_encode_parameters.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4AC1EAEFBEB006C89A7 /* SKP_Silk_encode_parameters.c */; };
+		153DD5461EAEFBEC006C89A7 /* SKP_Silk_encode_pulses.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4AD1EAEFBEB006C89A7 /* SKP_Silk_encode_pulses.c */; };
+		153DD5471EAEFBEC006C89A7 /* SKP_Silk_find_LPC_FIX.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4AE1EAEFBEB006C89A7 /* SKP_Silk_find_LPC_FIX.c */; };
+		153DD5481EAEFBEC006C89A7 /* SKP_Silk_find_LTP_FIX.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4AF1EAEFBEB006C89A7 /* SKP_Silk_find_LTP_FIX.c */; };
+		153DD5491EAEFBEC006C89A7 /* SKP_Silk_find_pitch_lags_FIX.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4B01EAEFBEB006C89A7 /* SKP_Silk_find_pitch_lags_FIX.c */; };
+		153DD54A1EAEFBEC006C89A7 /* SKP_Silk_find_pred_coefs_FIX.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4B11EAEFBEB006C89A7 /* SKP_Silk_find_pred_coefs_FIX.c */; };
+		153DD54B1EAEFBEC006C89A7 /* SKP_Silk_gain_quant.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4B21EAEFBEB006C89A7 /* SKP_Silk_gain_quant.c */; };
+		153DD54C1EAEFBEC006C89A7 /* SKP_Silk_HP_variable_cutoff_FIX.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4B31EAEFBEB006C89A7 /* SKP_Silk_HP_variable_cutoff_FIX.c */; };
+		153DD54D1EAEFBEC006C89A7 /* SKP_Silk_init_encoder_FIX.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4B41EAEFBEB006C89A7 /* SKP_Silk_init_encoder_FIX.c */; };
+		153DD54E1EAEFBEC006C89A7 /* SKP_Silk_inner_prod_aligned.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4B61EAEFBEB006C89A7 /* SKP_Silk_inner_prod_aligned.c */; };
+		153DD54F1EAEFBEC006C89A7 /* SKP_Silk_inner_prod_aligned_arm.S in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4B71EAEFBEB006C89A7 /* SKP_Silk_inner_prod_aligned_arm.S */; };
+		153DD5501EAEFBEC006C89A7 /* SKP_Silk_interpolate.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4B81EAEFBEB006C89A7 /* SKP_Silk_interpolate.c */; };
+		153DD5511EAEFBEC006C89A7 /* SKP_Silk_k2a.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4B91EAEFBEB006C89A7 /* SKP_Silk_k2a.c */; };
+		153DD5521EAEFBEC006C89A7 /* SKP_Silk_k2a_Q16.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4BA1EAEFBEB006C89A7 /* SKP_Silk_k2a_Q16.c */; };
+		153DD5531EAEFBEC006C89A7 /* SKP_Silk_LBRR_reset.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4BB1EAEFBEC006C89A7 /* SKP_Silk_LBRR_reset.c */; };
+		153DD5541EAEFBEC006C89A7 /* SKP_Silk_lin2log.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4BC1EAEFBEC006C89A7 /* SKP_Silk_lin2log.c */; };
+		153DD5551EAEFBEC006C89A7 /* SKP_Silk_lin2log_arm.S in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4BD1EAEFBEC006C89A7 /* SKP_Silk_lin2log_arm.S */; };
+		153DD5561EAEFBEC006C89A7 /* SKP_Silk_log2lin.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4BE1EAEFBEC006C89A7 /* SKP_Silk_log2lin.c */; };
+		153DD5571EAEFBEC006C89A7 /* SKP_Silk_LP_variable_cutoff.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4BF1EAEFBEC006C89A7 /* SKP_Silk_LP_variable_cutoff.c */; };
+		153DD5581EAEFBEC006C89A7 /* SKP_Silk_LPC_inv_pred_gain.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4C01EAEFBEC006C89A7 /* SKP_Silk_LPC_inv_pred_gain.c */; };
+		153DD5591EAEFBEC006C89A7 /* SKP_Silk_LPC_synthesis_filter.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4C11EAEFBEC006C89A7 /* SKP_Silk_LPC_synthesis_filter.c */; };
+		153DD55A1EAEFBEC006C89A7 /* SKP_Silk_LPC_synthesis_order16.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4C21EAEFBEC006C89A7 /* SKP_Silk_LPC_synthesis_order16.c */; };
+		153DD55B1EAEFBEC006C89A7 /* SKP_Silk_LSF_cos_table.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4C31EAEFBEC006C89A7 /* SKP_Silk_LSF_cos_table.c */; };
+		153DD55C1EAEFBEC006C89A7 /* SKP_Silk_LTP_analysis_filter_FIX.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4C41EAEFBEC006C89A7 /* SKP_Silk_LTP_analysis_filter_FIX.c */; };
+		153DD55D1EAEFBEC006C89A7 /* SKP_Silk_LTP_scale_ctrl_FIX.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4C51EAEFBEC006C89A7 /* SKP_Silk_LTP_scale_ctrl_FIX.c */; };
+		153DD55E1EAEFBEC006C89A7 /* SKP_Silk_MA.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4C61EAEFBEC006C89A7 /* SKP_Silk_MA.c */; };
+		153DD55F1EAEFBEC006C89A7 /* SKP_Silk_MA_arm.S in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4C71EAEFBEC006C89A7 /* SKP_Silk_MA_arm.S */; };
+		153DD5601EAEFBEC006C89A7 /* SKP_Silk_NLSF2A.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4CC1EAEFBEC006C89A7 /* SKP_Silk_NLSF2A.c */; };
+		153DD5611EAEFBEC006C89A7 /* SKP_Silk_NLSF2A_stable.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4CD1EAEFBEC006C89A7 /* SKP_Silk_NLSF2A_stable.c */; };
+		153DD5621EAEFBEC006C89A7 /* SKP_Silk_NLSF_MSVQ_decode.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4CE1EAEFBEC006C89A7 /* SKP_Silk_NLSF_MSVQ_decode.c */; };
+		153DD5631EAEFBEC006C89A7 /* SKP_Silk_NLSF_MSVQ_encode_FIX.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4CF1EAEFBEC006C89A7 /* SKP_Silk_NLSF_MSVQ_encode_FIX.c */; };
+		153DD5641EAEFBEC006C89A7 /* SKP_Silk_NLSF_stabilize.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4D01EAEFBEC006C89A7 /* SKP_Silk_NLSF_stabilize.c */; };
+		153DD5651EAEFBEC006C89A7 /* SKP_Silk_NLSF_VQ_rate_distortion_FIX.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4D11EAEFBEC006C89A7 /* SKP_Silk_NLSF_VQ_rate_distortion_FIX.c */; };
+		153DD5661EAEFBEC006C89A7 /* SKP_Silk_NLSF_VQ_sum_error_FIX.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4D21EAEFBEC006C89A7 /* SKP_Silk_NLSF_VQ_sum_error_FIX.c */; };
+		153DD5671EAEFBEC006C89A7 /* SKP_Silk_NLSF_VQ_sum_error_FIX_arm.S in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4D31EAEFBEC006C89A7 /* SKP_Silk_NLSF_VQ_sum_error_FIX_arm.S */; };
+		153DD5681EAEFBEC006C89A7 /* SKP_Silk_NLSF_VQ_weights_laroia.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4D41EAEFBEC006C89A7 /* SKP_Silk_NLSF_VQ_weights_laroia.c */; };
+		153DD5691EAEFBEC006C89A7 /* SKP_Silk_noise_shape_analysis_FIX.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4D51EAEFBEC006C89A7 /* SKP_Silk_noise_shape_analysis_FIX.c */; };
+		153DD56A1EAEFBEC006C89A7 /* SKP_Silk_NSQ.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4D61EAEFBEC006C89A7 /* SKP_Silk_NSQ.c */; };
+		153DD56B1EAEFBEC006C89A7 /* SKP_Silk_NSQ_del_dec.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4D71EAEFBEC006C89A7 /* SKP_Silk_NSQ_del_dec.c */; };
+		153DD56C1EAEFBEC006C89A7 /* SKP_Silk_pitch_analysis_core.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4D81EAEFBEC006C89A7 /* SKP_Silk_pitch_analysis_core.c */; };
+		153DD56D1EAEFBEC006C89A7 /* SKP_Silk_pitch_est_tables.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4DA1EAEFBEC006C89A7 /* SKP_Silk_pitch_est_tables.c */; };
+		153DD56E1EAEFBEC006C89A7 /* SKP_Silk_PLC.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4DB1EAEFBEC006C89A7 /* SKP_Silk_PLC.c */; };
+		153DD56F1EAEFBEC006C89A7 /* SKP_Silk_prefilter_FIX.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4DD1EAEFBEC006C89A7 /* SKP_Silk_prefilter_FIX.c */; };
+		153DD5701EAEFBEC006C89A7 /* SKP_Silk_prefilter_FIX_arm.S in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4DE1EAEFBEC006C89A7 /* SKP_Silk_prefilter_FIX_arm.S */; };
+		153DD5711EAEFBEC006C89A7 /* SKP_Silk_process_gains_FIX.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4DF1EAEFBEC006C89A7 /* SKP_Silk_process_gains_FIX.c */; };
+		153DD5721EAEFBEC006C89A7 /* SKP_Silk_process_NLSFs_FIX.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4E01EAEFBEC006C89A7 /* SKP_Silk_process_NLSFs_FIX.c */; };
+		153DD5731EAEFBEC006C89A7 /* SKP_Silk_quant_LTP_gains_FIX.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4E11EAEFBEC006C89A7 /* SKP_Silk_quant_LTP_gains_FIX.c */; };
+		153DD5741EAEFBEC006C89A7 /* SKP_Silk_range_coder.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4E21EAEFBEC006C89A7 /* SKP_Silk_range_coder.c */; };
+		153DD5751EAEFBEC006C89A7 /* SKP_Silk_regularize_correlations_FIX.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4E31EAEFBEC006C89A7 /* SKP_Silk_regularize_correlations_FIX.c */; };
+		153DD5761EAEFBEC006C89A7 /* SKP_Silk_resampler.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4E41EAEFBEC006C89A7 /* SKP_Silk_resampler.c */; };
+		153DD5771EAEFBEC006C89A7 /* SKP_Silk_resampler_down2.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4E51EAEFBEC006C89A7 /* SKP_Silk_resampler_down2.c */; };
+		153DD5781EAEFBEC006C89A7 /* SKP_Silk_resampler_down2_3.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4E61EAEFBEC006C89A7 /* SKP_Silk_resampler_down2_3.c */; };
+		153DD5791EAEFBEC006C89A7 /* SKP_Silk_resampler_down2_arm.S in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4E71EAEFBEC006C89A7 /* SKP_Silk_resampler_down2_arm.S */; };
+		153DD57A1EAEFBEC006C89A7 /* SKP_Silk_resampler_down3.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4E81EAEFBEC006C89A7 /* SKP_Silk_resampler_down3.c */; };
+		153DD57B1EAEFBEC006C89A7 /* SKP_Silk_resampler_private_AR2.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4EA1EAEFBEC006C89A7 /* SKP_Silk_resampler_private_AR2.c */; };
+		153DD57C1EAEFBEC006C89A7 /* SKP_Silk_resampler_private_AR2_arm.S in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4EB1EAEFBEC006C89A7 /* SKP_Silk_resampler_private_AR2_arm.S */; };
+		153DD57D1EAEFBEC006C89A7 /* SKP_Silk_resampler_private_ARMA4.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4EC1EAEFBEC006C89A7 /* SKP_Silk_resampler_private_ARMA4.c */; };
+		153DD57E1EAEFBEC006C89A7 /* SKP_Silk_resampler_private_ARMA4_arm.S in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4ED1EAEFBEC006C89A7 /* SKP_Silk_resampler_private_ARMA4_arm.S */; };
+		153DD57F1EAEFBEC006C89A7 /* SKP_Silk_resampler_private_copy.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4EE1EAEFBEC006C89A7 /* SKP_Silk_resampler_private_copy.c */; };
+		153DD5801EAEFBEC006C89A7 /* SKP_Silk_resampler_private_down4.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4EF1EAEFBEC006C89A7 /* SKP_Silk_resampler_private_down4.c */; };
+		153DD5811EAEFBEC006C89A7 /* SKP_Silk_resampler_private_down_FIR.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4F01EAEFBEC006C89A7 /* SKP_Silk_resampler_private_down_FIR.c */; };
+		153DD5821EAEFBEC006C89A7 /* SKP_Silk_resampler_private_down_FIR_arm.S in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4F11EAEFBEC006C89A7 /* SKP_Silk_resampler_private_down_FIR_arm.S */; };
+		153DD5831EAEFBEC006C89A7 /* SKP_Silk_resampler_private_IIR_FIR.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4F21EAEFBEC006C89A7 /* SKP_Silk_resampler_private_IIR_FIR.c */; };
+		153DD5841EAEFBEC006C89A7 /* SKP_Silk_resampler_private_IIR_FIR_arm.S in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4F31EAEFBEC006C89A7 /* SKP_Silk_resampler_private_IIR_FIR_arm.S */; };
+		153DD5851EAEFBEC006C89A7 /* SKP_Silk_resampler_private_up2_HQ.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4F41EAEFBEC006C89A7 /* SKP_Silk_resampler_private_up2_HQ.c */; };
+		153DD5861EAEFBEC006C89A7 /* SKP_Silk_resampler_private_up2_HQ_arm.S in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4F51EAEFBEC006C89A7 /* SKP_Silk_resampler_private_up2_HQ_arm.S */; };
+		153DD5871EAEFBEC006C89A7 /* SKP_Silk_resampler_private_up4.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4F61EAEFBEC006C89A7 /* SKP_Silk_resampler_private_up4.c */; };
+		153DD5881EAEFBEC006C89A7 /* SKP_Silk_resampler_rom.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4F71EAEFBEC006C89A7 /* SKP_Silk_resampler_rom.c */; };
+		153DD5891EAEFBEC006C89A7 /* SKP_Silk_resampler_rom_arm.S in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4F91EAEFBEC006C89A7 /* SKP_Silk_resampler_rom_arm.S */; };
+		153DD58A1EAEFBEC006C89A7 /* SKP_Silk_resampler_up2.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4FB1EAEFBEC006C89A7 /* SKP_Silk_resampler_up2.c */; };
+		153DD58B1EAEFBEC006C89A7 /* SKP_Silk_resampler_up2_arm.S in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4FC1EAEFBEC006C89A7 /* SKP_Silk_resampler_up2_arm.S */; };
+		153DD58C1EAEFBEC006C89A7 /* SKP_Silk_residual_energy16_FIX.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4FD1EAEFBEC006C89A7 /* SKP_Silk_residual_energy16_FIX.c */; };
+		153DD58D1EAEFBEC006C89A7 /* SKP_Silk_residual_energy_FIX.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4FE1EAEFBEC006C89A7 /* SKP_Silk_residual_energy_FIX.c */; };
+		153DD58E1EAEFBEC006C89A7 /* SKP_Silk_scale_copy_vector16.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD4FF1EAEFBEC006C89A7 /* SKP_Silk_scale_copy_vector16.c */; };
+		153DD58F1EAEFBEC006C89A7 /* SKP_Silk_scale_vector.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD5001EAEFBEC006C89A7 /* SKP_Silk_scale_vector.c */; };
+		153DD5901EAEFBEC006C89A7 /* SKP_Silk_schur.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD5011EAEFBEC006C89A7 /* SKP_Silk_schur.c */; };
+		153DD5911EAEFBEC006C89A7 /* SKP_Silk_schur64.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD5021EAEFBEC006C89A7 /* SKP_Silk_schur64.c */; };
+		153DD5921EAEFBEC006C89A7 /* SKP_Silk_schur64_arm.S in Sources */ = {isa = PBXBuildFile; fileRef = 153DD5031EAEFBEC006C89A7 /* SKP_Silk_schur64_arm.S */; };
+		153DD5931EAEFBEC006C89A7 /* SKP_Silk_shell_coder.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD5051EAEFBEC006C89A7 /* SKP_Silk_shell_coder.c */; };
+		153DD5941EAEFBEC006C89A7 /* SKP_Silk_sigm_Q15.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD5061EAEFBEC006C89A7 /* SKP_Silk_sigm_Q15.c */; };
+		153DD5951EAEFBEC006C89A7 /* SKP_Silk_sigm_Q15_arm.S in Sources */ = {isa = PBXBuildFile; fileRef = 153DD5071EAEFBEC006C89A7 /* SKP_Silk_sigm_Q15_arm.S */; };
+		153DD5961EAEFBEC006C89A7 /* SKP_Silk_solve_LS_FIX.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD5091EAEFBEC006C89A7 /* SKP_Silk_solve_LS_FIX.c */; };
+		153DD5971EAEFBEC006C89A7 /* SKP_Silk_sort.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD50A1EAEFBEC006C89A7 /* SKP_Silk_sort.c */; };
+		153DD5981EAEFBEC006C89A7 /* SKP_Silk_sum_sqr_shift.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD50D1EAEFBEC006C89A7 /* SKP_Silk_sum_sqr_shift.c */; };
+		153DD5991EAEFBEC006C89A7 /* SKP_Silk_sum_sqr_shift_arm.S in Sources */ = {isa = PBXBuildFile; fileRef = 153DD50E1EAEFBEC006C89A7 /* SKP_Silk_sum_sqr_shift_arm.S */; };
+		153DD59A1EAEFBEC006C89A7 /* SKP_Silk_tables_gain.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD5101EAEFBEC006C89A7 /* SKP_Silk_tables_gain.c */; };
+		153DD59B1EAEFBEC006C89A7 /* SKP_Silk_tables_LTP.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD5111EAEFBEC006C89A7 /* SKP_Silk_tables_LTP.c */; };
+		153DD59C1EAEFBEC006C89A7 /* SKP_Silk_tables_NLSF_CB0_10.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD5121EAEFBEC006C89A7 /* SKP_Silk_tables_NLSF_CB0_10.c */; };
+		153DD59D1EAEFBEC006C89A7 /* SKP_Silk_tables_NLSF_CB0_16.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD5141EAEFBEC006C89A7 /* SKP_Silk_tables_NLSF_CB0_16.c */; };
+		153DD59E1EAEFBEC006C89A7 /* SKP_Silk_tables_NLSF_CB1_10.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD5161EAEFBEC006C89A7 /* SKP_Silk_tables_NLSF_CB1_10.c */; };
+		153DD59F1EAEFBEC006C89A7 /* SKP_Silk_tables_NLSF_CB1_16.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD5181EAEFBEC006C89A7 /* SKP_Silk_tables_NLSF_CB1_16.c */; };
+		153DD5A01EAEFBEC006C89A7 /* SKP_Silk_tables_other.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD51A1EAEFBEC006C89A7 /* SKP_Silk_tables_other.c */; };
+		153DD5A11EAEFBEC006C89A7 /* SKP_Silk_tables_pitch_lag.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD51B1EAEFBEC006C89A7 /* SKP_Silk_tables_pitch_lag.c */; };
+		153DD5A21EAEFBEC006C89A7 /* SKP_Silk_tables_pulses_per_block.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD51C1EAEFBEC006C89A7 /* SKP_Silk_tables_pulses_per_block.c */; };
+		153DD5A31EAEFBEC006C89A7 /* SKP_Silk_tables_sign.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD51D1EAEFBEC006C89A7 /* SKP_Silk_tables_sign.c */; };
+		153DD5A41EAEFBEC006C89A7 /* SKP_Silk_tables_type_offset.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD51E1EAEFBEC006C89A7 /* SKP_Silk_tables_type_offset.c */; };
+		153DD5A51EAEFBEC006C89A7 /* SKP_Silk_VAD.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD5201EAEFBEC006C89A7 /* SKP_Silk_VAD.c */; };
+		153DD5A61EAEFBEC006C89A7 /* SKP_Silk_VQ_nearest_neighbor_FIX.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD5211EAEFBEC006C89A7 /* SKP_Silk_VQ_nearest_neighbor_FIX.c */; };
+		153DD5A71EAEFBEC006C89A7 /* SKP_Silk_warped_autocorrelation_FIX.c in Sources */ = {isa = PBXBuildFile; fileRef = 153DD5221EAEFBEC006C89A7 /* SKP_Silk_warped_autocorrelation_FIX.c */; };
+		153DD5A81EAEFBEC006C89A7 /* SKP_Silk_warped_autocorrelation_FIX_arm.S in Sources */ = {isa = PBXBuildFile; fileRef = 153DD5231EAEFBEC006C89A7 /* SKP_Silk_warped_autocorrelation_FIX_arm.S */; };
+		15582F511EAD94F100C97238 /* libSKP_SILK_SDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 15582F501EAD94F100C97238 /* libSKP_SILK_SDK.a */; };
+		15582F531EAD94F600C97238 /* libSKP_SILK_SDK-arm64.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 15582F521EAD94F600C97238 /* libSKP_SILK_SDK-arm64.a */; };
 		158EFA121DAB857E007128FF /* YGSetPropertyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 158EFA111DAB857E007128FF /* YGSetPropertyView.m */; };
 		15A29FE01E5E774600F44817 /* logo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 15A29FDF1E5E774500F44817 /* logo2.png */; };
 		15A29FE31E5E8D0600F44817 /* YGPrintingSetingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15A29FE21E5E8D0600F44817 /* YGPrintingSetingView.m */; };
@@ -16,6 +151,7 @@
 		15A3E0481DAA14D200707203 /* YGMagnifierView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15A3E0471DAA14D200707203 /* YGMagnifierView.m */; };
 		15A3E04B1DAA304000707203 /* YGTwoBarCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15A3E04A1DAA304000707203 /* YGTwoBarCodeView.m */; };
 		15A3E04E1DAA34C800707203 /* YGCompanyLogoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15A3E04D1DAA34C800707203 /* YGCompanyLogoView.m */; };
+		15A42CA81E7F72B90090437F /* YGAppointmentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 15A42CA71E7F72B90090437F /* YGAppointmentVC.m */; };
 		15A6BF171E5D3FE20070678F /* YGPrintingInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 15A6BF161E5D3FE20070678F /* YGPrintingInfo.m */; };
 		15A6BF1E1E5D929B0070678F /* UIImage+Bitmap.m in Sources */ = {isa = PBXBuildFile; fileRef = 15A6BF1D1E5D929B0070678F /* UIImage+Bitmap.m */; };
 		15A6BF201E5D932E0070678F /* ico180.png in Resources */ = {isa = PBXBuildFile; fileRef = 15A6BF1F1E5D932E0070678F /* ico180.png */; };
@@ -36,6 +172,11 @@
 		15AA47161D2F5D1200E4AD97 /* YGTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 15AA47151D2F5D1200E4AD97 /* YGTool.m */; };
 		15ABC1FF1DB74DBD00D22351 /* YGSetPropertyTextOptionsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15ABC1FE1DB74DBD00D22351 /* YGSetPropertyTextOptionsView.m */; };
 		15B33F741D88FF0300247239 /* YGMosaicImageInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B33F731D88FF0300247239 /* YGMosaicImageInfo.m */; };
+		15B383FF1E650F64006904C0 /* YGWifiPrinterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B383FE1E650F64006904C0 /* YGWifiPrinterVC.m */; };
+		15B384051E651D94006904C0 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B384021E651D94006904C0 /* AsyncSocket.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		15B384061E651D94006904C0 /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B384041E651D94006904C0 /* AsyncUdpSocket.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		15B3840B1E652651006904C0 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B384081E652651006904C0 /* GCDAsyncSocket.m */; };
+		15B3840C1E652651006904C0 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B3840A1E652651006904C0 /* GCDAsyncUdpSocket.m */; };
 		15B4EF771DE7E1FD009CC32C /* YGCardFlipVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B4EF761DE7E1FD009CC32C /* YGCardFlipVCViewController.m */; };
 		15B4EF7A1DE808E7009CC32C /* YGCardFlipCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B4EF791DE808E7009CC32C /* YGCardFlipCell.m */; };
 		15B555751D38D39E00DD7233 /* YGPersonalProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B555741D38D39E00DD7233 /* YGPersonalProfileVC.m */; };
@@ -82,6 +223,169 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		153DD4871EAEFBEB006C89A7 /* SKP_Silk_A2NLSF.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_A2NLSF.c; sourceTree = "<group>"; };
+		153DD4881EAEFBEB006C89A7 /* SKP_Silk_A2NLSF_arm.S */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = SKP_Silk_A2NLSF_arm.S; sourceTree = "<group>"; };
+		153DD4891EAEFBEB006C89A7 /* SKP_Silk_allpass_int_arm.S */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = SKP_Silk_allpass_int_arm.S; sourceTree = "<group>"; };
+		153DD48A1EAEFBEB006C89A7 /* SKP_Silk_ana_filt_bank_1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_ana_filt_bank_1.c; sourceTree = "<group>"; };
+		153DD48B1EAEFBEB006C89A7 /* SKP_Silk_ana_filt_bank_1_arm.S */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = SKP_Silk_ana_filt_bank_1_arm.S; sourceTree = "<group>"; };
+		153DD48C1EAEFBEB006C89A7 /* SKP_Silk_apply_sine_window.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_apply_sine_window.c; sourceTree = "<group>"; };
+		153DD48D1EAEFBEB006C89A7 /* SKP_Silk_array_maxabs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_array_maxabs.c; sourceTree = "<group>"; };
+		153DD48E1EAEFBEB006C89A7 /* SKP_Silk_array_maxabs_arm.S */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = SKP_Silk_array_maxabs_arm.S; sourceTree = "<group>"; };
+		153DD48F1EAEFBEB006C89A7 /* SKP_Silk_AsmHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKP_Silk_AsmHelper.h; sourceTree = "<group>"; };
+		153DD4901EAEFBEB006C89A7 /* SKP_Silk_AsmPreproc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKP_Silk_AsmPreproc.h; sourceTree = "<group>"; };
+		153DD4911EAEFBEB006C89A7 /* SKP_Silk_autocorr.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_autocorr.c; sourceTree = "<group>"; };
+		153DD4921EAEFBEB006C89A7 /* SKP_Silk_biquad.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_biquad.c; sourceTree = "<group>"; };
+		153DD4931EAEFBEB006C89A7 /* SKP_Silk_biquad_alt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_biquad_alt.c; sourceTree = "<group>"; };
+		153DD4941EAEFBEB006C89A7 /* SKP_Silk_burg_modified.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_burg_modified.c; sourceTree = "<group>"; };
+		153DD4951EAEFBEB006C89A7 /* SKP_Silk_bwexpander.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_bwexpander.c; sourceTree = "<group>"; };
+		153DD4961EAEFBEB006C89A7 /* SKP_Silk_bwexpander_32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_bwexpander_32.c; sourceTree = "<group>"; };
+		153DD4971EAEFBEB006C89A7 /* SKP_Silk_clz_arm.S */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = SKP_Silk_clz_arm.S; sourceTree = "<group>"; };
+		153DD4981EAEFBEB006C89A7 /* SKP_Silk_CNG.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_CNG.c; sourceTree = "<group>"; };
+		153DD4991EAEFBEB006C89A7 /* SKP_Silk_code_signs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_code_signs.c; sourceTree = "<group>"; };
+		153DD49A1EAEFBEB006C89A7 /* SKP_Silk_common_pitch_est_defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKP_Silk_common_pitch_est_defines.h; sourceTree = "<group>"; };
+		153DD49B1EAEFBEB006C89A7 /* SKP_Silk_control_audio_bandwidth.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_control_audio_bandwidth.c; sourceTree = "<group>"; };
+		153DD49C1EAEFBEB006C89A7 /* SKP_Silk_control_codec_FIX.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_control_codec_FIX.c; sourceTree = "<group>"; };
+		153DD49D1EAEFBEB006C89A7 /* SKP_Silk_corrMatrix_FIX.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_corrMatrix_FIX.c; sourceTree = "<group>"; };
+		153DD49E1EAEFBEB006C89A7 /* SKP_Silk_create_init_destroy.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_create_init_destroy.c; sourceTree = "<group>"; };
+		153DD49F1EAEFBEB006C89A7 /* SKP_Silk_dec_API.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_dec_API.c; sourceTree = "<group>"; };
+		153DD4A01EAEFBEB006C89A7 /* SKP_Silk_decode_core.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_decode_core.c; sourceTree = "<group>"; };
+		153DD4A11EAEFBEB006C89A7 /* SKP_Silk_decode_core_arm.S */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = SKP_Silk_decode_core_arm.S; sourceTree = "<group>"; };
+		153DD4A21EAEFBEB006C89A7 /* SKP_Silk_decode_frame.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_decode_frame.c; sourceTree = "<group>"; };
+		153DD4A31EAEFBEB006C89A7 /* SKP_Silk_decode_parameters.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_decode_parameters.c; sourceTree = "<group>"; };
+		153DD4A41EAEFBEB006C89A7 /* SKP_Silk_decode_pitch.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_decode_pitch.c; sourceTree = "<group>"; };
+		153DD4A51EAEFBEB006C89A7 /* SKP_Silk_decode_pulses.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_decode_pulses.c; sourceTree = "<group>"; };
+		153DD4A61EAEFBEB006C89A7 /* SKP_Silk_decoder_set_fs.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_decoder_set_fs.c; sourceTree = "<group>"; };
+		153DD4A71EAEFBEB006C89A7 /* SKP_Silk_define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKP_Silk_define.h; sourceTree = "<group>"; };
+		153DD4A81EAEFBEB006C89A7 /* SKP_Silk_detect_SWB_input.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_detect_SWB_input.c; sourceTree = "<group>"; };
+		153DD4A91EAEFBEB006C89A7 /* SKP_Silk_div_oabi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_div_oabi.c; sourceTree = "<group>"; };
+		153DD4AA1EAEFBEB006C89A7 /* SKP_Silk_enc_API.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_enc_API.c; sourceTree = "<group>"; };
+		153DD4AB1EAEFBEB006C89A7 /* SKP_Silk_encode_frame_FIX.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_encode_frame_FIX.c; sourceTree = "<group>"; };
+		153DD4AC1EAEFBEB006C89A7 /* SKP_Silk_encode_parameters.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_encode_parameters.c; sourceTree = "<group>"; };
+		153DD4AD1EAEFBEB006C89A7 /* SKP_Silk_encode_pulses.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_encode_pulses.c; sourceTree = "<group>"; };
+		153DD4AE1EAEFBEB006C89A7 /* SKP_Silk_find_LPC_FIX.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_find_LPC_FIX.c; sourceTree = "<group>"; };
+		153DD4AF1EAEFBEB006C89A7 /* SKP_Silk_find_LTP_FIX.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_find_LTP_FIX.c; sourceTree = "<group>"; };
+		153DD4B01EAEFBEB006C89A7 /* SKP_Silk_find_pitch_lags_FIX.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_find_pitch_lags_FIX.c; sourceTree = "<group>"; };
+		153DD4B11EAEFBEB006C89A7 /* SKP_Silk_find_pred_coefs_FIX.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_find_pred_coefs_FIX.c; sourceTree = "<group>"; };
+		153DD4B21EAEFBEB006C89A7 /* SKP_Silk_gain_quant.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_gain_quant.c; sourceTree = "<group>"; };
+		153DD4B31EAEFBEB006C89A7 /* SKP_Silk_HP_variable_cutoff_FIX.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_HP_variable_cutoff_FIX.c; sourceTree = "<group>"; };
+		153DD4B41EAEFBEB006C89A7 /* SKP_Silk_init_encoder_FIX.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_init_encoder_FIX.c; sourceTree = "<group>"; };
+		153DD4B51EAEFBEB006C89A7 /* SKP_Silk_Inlines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKP_Silk_Inlines.h; sourceTree = "<group>"; };
+		153DD4B61EAEFBEB006C89A7 /* SKP_Silk_inner_prod_aligned.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_inner_prod_aligned.c; sourceTree = "<group>"; };
+		153DD4B71EAEFBEB006C89A7 /* SKP_Silk_inner_prod_aligned_arm.S */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = SKP_Silk_inner_prod_aligned_arm.S; sourceTree = "<group>"; };
+		153DD4B81EAEFBEB006C89A7 /* SKP_Silk_interpolate.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_interpolate.c; sourceTree = "<group>"; };
+		153DD4B91EAEFBEB006C89A7 /* SKP_Silk_k2a.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_k2a.c; sourceTree = "<group>"; };
+		153DD4BA1EAEFBEB006C89A7 /* SKP_Silk_k2a_Q16.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_k2a_Q16.c; sourceTree = "<group>"; };
+		153DD4BB1EAEFBEC006C89A7 /* SKP_Silk_LBRR_reset.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_LBRR_reset.c; sourceTree = "<group>"; };
+		153DD4BC1EAEFBEC006C89A7 /* SKP_Silk_lin2log.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_lin2log.c; sourceTree = "<group>"; };
+		153DD4BD1EAEFBEC006C89A7 /* SKP_Silk_lin2log_arm.S */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = SKP_Silk_lin2log_arm.S; sourceTree = "<group>"; };
+		153DD4BE1EAEFBEC006C89A7 /* SKP_Silk_log2lin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_log2lin.c; sourceTree = "<group>"; };
+		153DD4BF1EAEFBEC006C89A7 /* SKP_Silk_LP_variable_cutoff.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_LP_variable_cutoff.c; sourceTree = "<group>"; };
+		153DD4C01EAEFBEC006C89A7 /* SKP_Silk_LPC_inv_pred_gain.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_LPC_inv_pred_gain.c; sourceTree = "<group>"; };
+		153DD4C11EAEFBEC006C89A7 /* SKP_Silk_LPC_synthesis_filter.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_LPC_synthesis_filter.c; sourceTree = "<group>"; };
+		153DD4C21EAEFBEC006C89A7 /* SKP_Silk_LPC_synthesis_order16.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_LPC_synthesis_order16.c; sourceTree = "<group>"; };
+		153DD4C31EAEFBEC006C89A7 /* SKP_Silk_LSF_cos_table.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_LSF_cos_table.c; sourceTree = "<group>"; };
+		153DD4C41EAEFBEC006C89A7 /* SKP_Silk_LTP_analysis_filter_FIX.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_LTP_analysis_filter_FIX.c; sourceTree = "<group>"; };
+		153DD4C51EAEFBEC006C89A7 /* SKP_Silk_LTP_scale_ctrl_FIX.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_LTP_scale_ctrl_FIX.c; sourceTree = "<group>"; };
+		153DD4C61EAEFBEC006C89A7 /* SKP_Silk_MA.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_MA.c; sourceTree = "<group>"; };
+		153DD4C71EAEFBEC006C89A7 /* SKP_Silk_MA_arm.S */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = SKP_Silk_MA_arm.S; sourceTree = "<group>"; };
+		153DD4C81EAEFBEC006C89A7 /* SKP_Silk_macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKP_Silk_macros.h; sourceTree = "<group>"; };
+		153DD4C91EAEFBEC006C89A7 /* SKP_Silk_macros_arm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKP_Silk_macros_arm.h; sourceTree = "<group>"; };
+		153DD4CA1EAEFBEC006C89A7 /* SKP_Silk_main.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKP_Silk_main.h; sourceTree = "<group>"; };
+		153DD4CB1EAEFBEC006C89A7 /* SKP_Silk_main_FIX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKP_Silk_main_FIX.h; sourceTree = "<group>"; };
+		153DD4CC1EAEFBEC006C89A7 /* SKP_Silk_NLSF2A.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_NLSF2A.c; sourceTree = "<group>"; };
+		153DD4CD1EAEFBEC006C89A7 /* SKP_Silk_NLSF2A_stable.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_NLSF2A_stable.c; sourceTree = "<group>"; };
+		153DD4CE1EAEFBEC006C89A7 /* SKP_Silk_NLSF_MSVQ_decode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_NLSF_MSVQ_decode.c; sourceTree = "<group>"; };
+		153DD4CF1EAEFBEC006C89A7 /* SKP_Silk_NLSF_MSVQ_encode_FIX.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_NLSF_MSVQ_encode_FIX.c; sourceTree = "<group>"; };
+		153DD4D01EAEFBEC006C89A7 /* SKP_Silk_NLSF_stabilize.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_NLSF_stabilize.c; sourceTree = "<group>"; };
+		153DD4D11EAEFBEC006C89A7 /* SKP_Silk_NLSF_VQ_rate_distortion_FIX.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_NLSF_VQ_rate_distortion_FIX.c; sourceTree = "<group>"; };
+		153DD4D21EAEFBEC006C89A7 /* SKP_Silk_NLSF_VQ_sum_error_FIX.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_NLSF_VQ_sum_error_FIX.c; sourceTree = "<group>"; };
+		153DD4D31EAEFBEC006C89A7 /* SKP_Silk_NLSF_VQ_sum_error_FIX_arm.S */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = SKP_Silk_NLSF_VQ_sum_error_FIX_arm.S; sourceTree = "<group>"; };
+		153DD4D41EAEFBEC006C89A7 /* SKP_Silk_NLSF_VQ_weights_laroia.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_NLSF_VQ_weights_laroia.c; sourceTree = "<group>"; };
+		153DD4D51EAEFBEC006C89A7 /* SKP_Silk_noise_shape_analysis_FIX.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_noise_shape_analysis_FIX.c; sourceTree = "<group>"; };
+		153DD4D61EAEFBEC006C89A7 /* SKP_Silk_NSQ.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_NSQ.c; sourceTree = "<group>"; };
+		153DD4D71EAEFBEC006C89A7 /* SKP_Silk_NSQ_del_dec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_NSQ_del_dec.c; sourceTree = "<group>"; };
+		153DD4D81EAEFBEC006C89A7 /* SKP_Silk_pitch_analysis_core.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_pitch_analysis_core.c; sourceTree = "<group>"; };
+		153DD4D91EAEFBEC006C89A7 /* SKP_Silk_pitch_est_defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKP_Silk_pitch_est_defines.h; sourceTree = "<group>"; };
+		153DD4DA1EAEFBEC006C89A7 /* SKP_Silk_pitch_est_tables.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_pitch_est_tables.c; sourceTree = "<group>"; };
+		153DD4DB1EAEFBEC006C89A7 /* SKP_Silk_PLC.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_PLC.c; sourceTree = "<group>"; };
+		153DD4DC1EAEFBEC006C89A7 /* SKP_Silk_PLC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKP_Silk_PLC.h; sourceTree = "<group>"; };
+		153DD4DD1EAEFBEC006C89A7 /* SKP_Silk_prefilter_FIX.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_prefilter_FIX.c; sourceTree = "<group>"; };
+		153DD4DE1EAEFBEC006C89A7 /* SKP_Silk_prefilter_FIX_arm.S */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = SKP_Silk_prefilter_FIX_arm.S; sourceTree = "<group>"; };
+		153DD4DF1EAEFBEC006C89A7 /* SKP_Silk_process_gains_FIX.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_process_gains_FIX.c; sourceTree = "<group>"; };
+		153DD4E01EAEFBEC006C89A7 /* SKP_Silk_process_NLSFs_FIX.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_process_NLSFs_FIX.c; sourceTree = "<group>"; };
+		153DD4E11EAEFBEC006C89A7 /* SKP_Silk_quant_LTP_gains_FIX.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_quant_LTP_gains_FIX.c; sourceTree = "<group>"; };
+		153DD4E21EAEFBEC006C89A7 /* SKP_Silk_range_coder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_range_coder.c; sourceTree = "<group>"; };
+		153DD4E31EAEFBEC006C89A7 /* SKP_Silk_regularize_correlations_FIX.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_regularize_correlations_FIX.c; sourceTree = "<group>"; };
+		153DD4E41EAEFBEC006C89A7 /* SKP_Silk_resampler.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_resampler.c; sourceTree = "<group>"; };
+		153DD4E51EAEFBEC006C89A7 /* SKP_Silk_resampler_down2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_resampler_down2.c; sourceTree = "<group>"; };
+		153DD4E61EAEFBEC006C89A7 /* SKP_Silk_resampler_down2_3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_resampler_down2_3.c; sourceTree = "<group>"; };
+		153DD4E71EAEFBEC006C89A7 /* SKP_Silk_resampler_down2_arm.S */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = SKP_Silk_resampler_down2_arm.S; sourceTree = "<group>"; };
+		153DD4E81EAEFBEC006C89A7 /* SKP_Silk_resampler_down3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_resampler_down3.c; sourceTree = "<group>"; };
+		153DD4E91EAEFBEC006C89A7 /* SKP_Silk_resampler_private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKP_Silk_resampler_private.h; sourceTree = "<group>"; };
+		153DD4EA1EAEFBEC006C89A7 /* SKP_Silk_resampler_private_AR2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_resampler_private_AR2.c; sourceTree = "<group>"; };
+		153DD4EB1EAEFBEC006C89A7 /* SKP_Silk_resampler_private_AR2_arm.S */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = SKP_Silk_resampler_private_AR2_arm.S; sourceTree = "<group>"; };
+		153DD4EC1EAEFBEC006C89A7 /* SKP_Silk_resampler_private_ARMA4.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_resampler_private_ARMA4.c; sourceTree = "<group>"; };
+		153DD4ED1EAEFBEC006C89A7 /* SKP_Silk_resampler_private_ARMA4_arm.S */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = SKP_Silk_resampler_private_ARMA4_arm.S; sourceTree = "<group>"; };
+		153DD4EE1EAEFBEC006C89A7 /* SKP_Silk_resampler_private_copy.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_resampler_private_copy.c; sourceTree = "<group>"; };
+		153DD4EF1EAEFBEC006C89A7 /* SKP_Silk_resampler_private_down4.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_resampler_private_down4.c; sourceTree = "<group>"; };
+		153DD4F01EAEFBEC006C89A7 /* SKP_Silk_resampler_private_down_FIR.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_resampler_private_down_FIR.c; sourceTree = "<group>"; };
+		153DD4F11EAEFBEC006C89A7 /* SKP_Silk_resampler_private_down_FIR_arm.S */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = SKP_Silk_resampler_private_down_FIR_arm.S; sourceTree = "<group>"; };
+		153DD4F21EAEFBEC006C89A7 /* SKP_Silk_resampler_private_IIR_FIR.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_resampler_private_IIR_FIR.c; sourceTree = "<group>"; };
+		153DD4F31EAEFBEC006C89A7 /* SKP_Silk_resampler_private_IIR_FIR_arm.S */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = SKP_Silk_resampler_private_IIR_FIR_arm.S; sourceTree = "<group>"; };
+		153DD4F41EAEFBEC006C89A7 /* SKP_Silk_resampler_private_up2_HQ.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_resampler_private_up2_HQ.c; sourceTree = "<group>"; };
+		153DD4F51EAEFBEC006C89A7 /* SKP_Silk_resampler_private_up2_HQ_arm.S */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = SKP_Silk_resampler_private_up2_HQ_arm.S; sourceTree = "<group>"; };
+		153DD4F61EAEFBEC006C89A7 /* SKP_Silk_resampler_private_up4.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_resampler_private_up4.c; sourceTree = "<group>"; };
+		153DD4F71EAEFBEC006C89A7 /* SKP_Silk_resampler_rom.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_resampler_rom.c; sourceTree = "<group>"; };
+		153DD4F81EAEFBEC006C89A7 /* SKP_Silk_resampler_rom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKP_Silk_resampler_rom.h; sourceTree = "<group>"; };
+		153DD4F91EAEFBEC006C89A7 /* SKP_Silk_resampler_rom_arm.S */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = SKP_Silk_resampler_rom_arm.S; sourceTree = "<group>"; };
+		153DD4FA1EAEFBEC006C89A7 /* SKP_Silk_resampler_structs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKP_Silk_resampler_structs.h; sourceTree = "<group>"; };
+		153DD4FB1EAEFBEC006C89A7 /* SKP_Silk_resampler_up2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_resampler_up2.c; sourceTree = "<group>"; };
+		153DD4FC1EAEFBEC006C89A7 /* SKP_Silk_resampler_up2_arm.S */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = SKP_Silk_resampler_up2_arm.S; sourceTree = "<group>"; };
+		153DD4FD1EAEFBEC006C89A7 /* SKP_Silk_residual_energy16_FIX.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_residual_energy16_FIX.c; sourceTree = "<group>"; };
+		153DD4FE1EAEFBEC006C89A7 /* SKP_Silk_residual_energy_FIX.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_residual_energy_FIX.c; sourceTree = "<group>"; };
+		153DD4FF1EAEFBEC006C89A7 /* SKP_Silk_scale_copy_vector16.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_scale_copy_vector16.c; sourceTree = "<group>"; };
+		153DD5001EAEFBEC006C89A7 /* SKP_Silk_scale_vector.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_scale_vector.c; sourceTree = "<group>"; };
+		153DD5011EAEFBEC006C89A7 /* SKP_Silk_schur.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_schur.c; sourceTree = "<group>"; };
+		153DD5021EAEFBEC006C89A7 /* SKP_Silk_schur64.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_schur64.c; sourceTree = "<group>"; };
+		153DD5031EAEFBEC006C89A7 /* SKP_Silk_schur64_arm.S */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = SKP_Silk_schur64_arm.S; sourceTree = "<group>"; };
+		153DD5041EAEFBEC006C89A7 /* SKP_Silk_setup_complexity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKP_Silk_setup_complexity.h; sourceTree = "<group>"; };
+		153DD5051EAEFBEC006C89A7 /* SKP_Silk_shell_coder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_shell_coder.c; sourceTree = "<group>"; };
+		153DD5061EAEFBEC006C89A7 /* SKP_Silk_sigm_Q15.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_sigm_Q15.c; sourceTree = "<group>"; };
+		153DD5071EAEFBEC006C89A7 /* SKP_Silk_sigm_Q15_arm.S */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = SKP_Silk_sigm_Q15_arm.S; sourceTree = "<group>"; };
+		153DD5081EAEFBEC006C89A7 /* SKP_Silk_SigProc_FIX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKP_Silk_SigProc_FIX.h; sourceTree = "<group>"; };
+		153DD5091EAEFBEC006C89A7 /* SKP_Silk_solve_LS_FIX.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_solve_LS_FIX.c; sourceTree = "<group>"; };
+		153DD50A1EAEFBEC006C89A7 /* SKP_Silk_sort.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_sort.c; sourceTree = "<group>"; };
+		153DD50B1EAEFBEC006C89A7 /* SKP_Silk_structs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKP_Silk_structs.h; sourceTree = "<group>"; };
+		153DD50C1EAEFBEC006C89A7 /* SKP_Silk_structs_FIX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKP_Silk_structs_FIX.h; sourceTree = "<group>"; };
+		153DD50D1EAEFBEC006C89A7 /* SKP_Silk_sum_sqr_shift.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_sum_sqr_shift.c; sourceTree = "<group>"; };
+		153DD50E1EAEFBEC006C89A7 /* SKP_Silk_sum_sqr_shift_arm.S */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = SKP_Silk_sum_sqr_shift_arm.S; sourceTree = "<group>"; };
+		153DD50F1EAEFBEC006C89A7 /* SKP_Silk_tables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKP_Silk_tables.h; sourceTree = "<group>"; };
+		153DD5101EAEFBEC006C89A7 /* SKP_Silk_tables_gain.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_tables_gain.c; sourceTree = "<group>"; };
+		153DD5111EAEFBEC006C89A7 /* SKP_Silk_tables_LTP.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_tables_LTP.c; sourceTree = "<group>"; };
+		153DD5121EAEFBEC006C89A7 /* SKP_Silk_tables_NLSF_CB0_10.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_tables_NLSF_CB0_10.c; sourceTree = "<group>"; };
+		153DD5131EAEFBEC006C89A7 /* SKP_Silk_tables_NLSF_CB0_10.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKP_Silk_tables_NLSF_CB0_10.h; sourceTree = "<group>"; };
+		153DD5141EAEFBEC006C89A7 /* SKP_Silk_tables_NLSF_CB0_16.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_tables_NLSF_CB0_16.c; sourceTree = "<group>"; };
+		153DD5151EAEFBEC006C89A7 /* SKP_Silk_tables_NLSF_CB0_16.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKP_Silk_tables_NLSF_CB0_16.h; sourceTree = "<group>"; };
+		153DD5161EAEFBEC006C89A7 /* SKP_Silk_tables_NLSF_CB1_10.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_tables_NLSF_CB1_10.c; sourceTree = "<group>"; };
+		153DD5171EAEFBEC006C89A7 /* SKP_Silk_tables_NLSF_CB1_10.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKP_Silk_tables_NLSF_CB1_10.h; sourceTree = "<group>"; };
+		153DD5181EAEFBEC006C89A7 /* SKP_Silk_tables_NLSF_CB1_16.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_tables_NLSF_CB1_16.c; sourceTree = "<group>"; };
+		153DD5191EAEFBEC006C89A7 /* SKP_Silk_tables_NLSF_CB1_16.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKP_Silk_tables_NLSF_CB1_16.h; sourceTree = "<group>"; };
+		153DD51A1EAEFBEC006C89A7 /* SKP_Silk_tables_other.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_tables_other.c; sourceTree = "<group>"; };
+		153DD51B1EAEFBEC006C89A7 /* SKP_Silk_tables_pitch_lag.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_tables_pitch_lag.c; sourceTree = "<group>"; };
+		153DD51C1EAEFBEC006C89A7 /* SKP_Silk_tables_pulses_per_block.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_tables_pulses_per_block.c; sourceTree = "<group>"; };
+		153DD51D1EAEFBEC006C89A7 /* SKP_Silk_tables_sign.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_tables_sign.c; sourceTree = "<group>"; };
+		153DD51E1EAEFBEC006C89A7 /* SKP_Silk_tables_type_offset.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_tables_type_offset.c; sourceTree = "<group>"; };
+		153DD51F1EAEFBEC006C89A7 /* SKP_Silk_tuning_parameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKP_Silk_tuning_parameters.h; sourceTree = "<group>"; };
+		153DD5201EAEFBEC006C89A7 /* SKP_Silk_VAD.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_VAD.c; sourceTree = "<group>"; };
+		153DD5211EAEFBEC006C89A7 /* SKP_Silk_VQ_nearest_neighbor_FIX.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_VQ_nearest_neighbor_FIX.c; sourceTree = "<group>"; };
+		153DD5221EAEFBEC006C89A7 /* SKP_Silk_warped_autocorrelation_FIX.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SKP_Silk_warped_autocorrelation_FIX.c; sourceTree = "<group>"; };
+		153DD5231EAEFBEC006C89A7 /* SKP_Silk_warped_autocorrelation_FIX_arm.S */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = SKP_Silk_warped_autocorrelation_FIX_arm.S; sourceTree = "<group>"; };
+		15582F501EAD94F100C97238 /* libSKP_SILK_SDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSKP_SILK_SDK.a; sourceTree = "<group>"; };
+		15582F521EAD94F600C97238 /* libSKP_SILK_SDK-arm64.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libSKP_SILK_SDK-arm64.a"; sourceTree = "<group>"; };
+		15582F541EAD951200C97238 /* SKP_Silk_control.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKP_Silk_control.h; sourceTree = "<group>"; };
+		15582F551EAD951200C97238 /* SKP_Silk_errors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKP_Silk_errors.h; sourceTree = "<group>"; };
+		15582F561EAD951200C97238 /* SKP_Silk_SDK_API.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKP_Silk_SDK_API.h; sourceTree = "<group>"; };
+		15582F571EAD951200C97238 /* SKP_Silk_typedef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SKP_Silk_typedef.h; sourceTree = "<group>"; };
 		158EFA101DAB857E007128FF /* YGSetPropertyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGSetPropertyView.h; sourceTree = "<group>"; };
 		158EFA111DAB857E007128FF /* YGSetPropertyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGSetPropertyView.m; sourceTree = "<group>"; };
 		15A29FDF1E5E774500F44817 /* logo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo2.png; sourceTree = "<group>"; };
@@ -98,6 +402,8 @@
 		15A3E04A1DAA304000707203 /* YGTwoBarCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGTwoBarCodeView.m; sourceTree = "<group>"; };
 		15A3E04C1DAA34C800707203 /* YGCompanyLogoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGCompanyLogoView.h; sourceTree = "<group>"; };
 		15A3E04D1DAA34C800707203 /* YGCompanyLogoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGCompanyLogoView.m; sourceTree = "<group>"; };
+		15A42CA61E7F72B90090437F /* YGAppointmentVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGAppointmentVC.h; sourceTree = "<group>"; };
+		15A42CA71E7F72B90090437F /* YGAppointmentVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGAppointmentVC.m; sourceTree = "<group>"; };
 		15A6BF151E5D3FE20070678F /* YGPrintingInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGPrintingInfo.h; sourceTree = "<group>"; };
 		15A6BF161E5D3FE20070678F /* YGPrintingInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGPrintingInfo.m; sourceTree = "<group>"; };
 		15A6BF1C1E5D929B0070678F /* UIImage+Bitmap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Bitmap.h"; sourceTree = "<group>"; };
@@ -136,6 +442,16 @@
 		15ABC1FE1DB74DBD00D22351 /* YGSetPropertyTextOptionsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGSetPropertyTextOptionsView.m; sourceTree = "<group>"; };
 		15B33F721D88FF0300247239 /* YGMosaicImageInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGMosaicImageInfo.h; sourceTree = "<group>"; };
 		15B33F731D88FF0300247239 /* YGMosaicImageInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGMosaicImageInfo.m; sourceTree = "<group>"; };
+		15B383FD1E650F64006904C0 /* YGWifiPrinterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGWifiPrinterVC.h; sourceTree = "<group>"; };
+		15B383FE1E650F64006904C0 /* YGWifiPrinterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGWifiPrinterVC.m; sourceTree = "<group>"; };
+		15B384011E651D94006904C0 /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncSocket.h; sourceTree = "<group>"; };
+		15B384021E651D94006904C0 /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
+		15B384031E651D94006904C0 /* AsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncUdpSocket.h; sourceTree = "<group>"; };
+		15B384041E651D94006904C0 /* AsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncUdpSocket.m; sourceTree = "<group>"; };
+		15B384071E652651006904C0 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
+		15B384081E652651006904C0 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
+		15B384091E652651006904C0 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
+		15B3840A1E652651006904C0 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
 		15B4EF751DE7E1FD009CC32C /* YGCardFlipVCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGCardFlipVCViewController.h; sourceTree = "<group>"; };
 		15B4EF761DE7E1FD009CC32C /* YGCardFlipVCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGCardFlipVCViewController.m; sourceTree = "<group>"; };
 		15B4EF781DE808E7009CC32C /* YGCardFlipCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGCardFlipCell.h; sourceTree = "<group>"; };
@@ -235,6 +551,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15582F511EAD94F100C97238 /* libSKP_SILK_SDK.a in Frameworks */,
+				15582F531EAD94F600C97238 /* libSKP_SILK_SDK-arm64.a in Frameworks */,
 				15C24A421E5AEC2E00DC3E45 /* libGSDK.a in Frameworks */,
 				3DC608705D4914B8E9216DE4 /* libPods-我的轮子.a in Frameworks */,
 			);
@@ -250,6 +568,194 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		153DD4861EAEFBEB006C89A7 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				153DD4871EAEFBEB006C89A7 /* SKP_Silk_A2NLSF.c */,
+				153DD4881EAEFBEB006C89A7 /* SKP_Silk_A2NLSF_arm.S */,
+				153DD4891EAEFBEB006C89A7 /* SKP_Silk_allpass_int_arm.S */,
+				153DD48A1EAEFBEB006C89A7 /* SKP_Silk_ana_filt_bank_1.c */,
+				153DD48B1EAEFBEB006C89A7 /* SKP_Silk_ana_filt_bank_1_arm.S */,
+				153DD48C1EAEFBEB006C89A7 /* SKP_Silk_apply_sine_window.c */,
+				153DD48D1EAEFBEB006C89A7 /* SKP_Silk_array_maxabs.c */,
+				153DD48E1EAEFBEB006C89A7 /* SKP_Silk_array_maxabs_arm.S */,
+				153DD48F1EAEFBEB006C89A7 /* SKP_Silk_AsmHelper.h */,
+				153DD4901EAEFBEB006C89A7 /* SKP_Silk_AsmPreproc.h */,
+				153DD4911EAEFBEB006C89A7 /* SKP_Silk_autocorr.c */,
+				153DD4921EAEFBEB006C89A7 /* SKP_Silk_biquad.c */,
+				153DD4931EAEFBEB006C89A7 /* SKP_Silk_biquad_alt.c */,
+				153DD4941EAEFBEB006C89A7 /* SKP_Silk_burg_modified.c */,
+				153DD4951EAEFBEB006C89A7 /* SKP_Silk_bwexpander.c */,
+				153DD4961EAEFBEB006C89A7 /* SKP_Silk_bwexpander_32.c */,
+				153DD4971EAEFBEB006C89A7 /* SKP_Silk_clz_arm.S */,
+				153DD4981EAEFBEB006C89A7 /* SKP_Silk_CNG.c */,
+				153DD4991EAEFBEB006C89A7 /* SKP_Silk_code_signs.c */,
+				153DD49A1EAEFBEB006C89A7 /* SKP_Silk_common_pitch_est_defines.h */,
+				153DD49B1EAEFBEB006C89A7 /* SKP_Silk_control_audio_bandwidth.c */,
+				153DD49C1EAEFBEB006C89A7 /* SKP_Silk_control_codec_FIX.c */,
+				153DD49D1EAEFBEB006C89A7 /* SKP_Silk_corrMatrix_FIX.c */,
+				153DD49E1EAEFBEB006C89A7 /* SKP_Silk_create_init_destroy.c */,
+				153DD49F1EAEFBEB006C89A7 /* SKP_Silk_dec_API.c */,
+				153DD4A01EAEFBEB006C89A7 /* SKP_Silk_decode_core.c */,
+				153DD4A11EAEFBEB006C89A7 /* SKP_Silk_decode_core_arm.S */,
+				153DD4A21EAEFBEB006C89A7 /* SKP_Silk_decode_frame.c */,
+				153DD4A31EAEFBEB006C89A7 /* SKP_Silk_decode_parameters.c */,
+				153DD4A41EAEFBEB006C89A7 /* SKP_Silk_decode_pitch.c */,
+				153DD4A51EAEFBEB006C89A7 /* SKP_Silk_decode_pulses.c */,
+				153DD4A61EAEFBEB006C89A7 /* SKP_Silk_decoder_set_fs.c */,
+				153DD4A71EAEFBEB006C89A7 /* SKP_Silk_define.h */,
+				153DD4A81EAEFBEB006C89A7 /* SKP_Silk_detect_SWB_input.c */,
+				153DD4A91EAEFBEB006C89A7 /* SKP_Silk_div_oabi.c */,
+				153DD4AA1EAEFBEB006C89A7 /* SKP_Silk_enc_API.c */,
+				153DD4AB1EAEFBEB006C89A7 /* SKP_Silk_encode_frame_FIX.c */,
+				153DD4AC1EAEFBEB006C89A7 /* SKP_Silk_encode_parameters.c */,
+				153DD4AD1EAEFBEB006C89A7 /* SKP_Silk_encode_pulses.c */,
+				153DD4AE1EAEFBEB006C89A7 /* SKP_Silk_find_LPC_FIX.c */,
+				153DD4AF1EAEFBEB006C89A7 /* SKP_Silk_find_LTP_FIX.c */,
+				153DD4B01EAEFBEB006C89A7 /* SKP_Silk_find_pitch_lags_FIX.c */,
+				153DD4B11EAEFBEB006C89A7 /* SKP_Silk_find_pred_coefs_FIX.c */,
+				153DD4B21EAEFBEB006C89A7 /* SKP_Silk_gain_quant.c */,
+				153DD4B31EAEFBEB006C89A7 /* SKP_Silk_HP_variable_cutoff_FIX.c */,
+				153DD4B41EAEFBEB006C89A7 /* SKP_Silk_init_encoder_FIX.c */,
+				153DD4B51EAEFBEB006C89A7 /* SKP_Silk_Inlines.h */,
+				153DD4B61EAEFBEB006C89A7 /* SKP_Silk_inner_prod_aligned.c */,
+				153DD4B71EAEFBEB006C89A7 /* SKP_Silk_inner_prod_aligned_arm.S */,
+				153DD4B81EAEFBEB006C89A7 /* SKP_Silk_interpolate.c */,
+				153DD4B91EAEFBEB006C89A7 /* SKP_Silk_k2a.c */,
+				153DD4BA1EAEFBEB006C89A7 /* SKP_Silk_k2a_Q16.c */,
+				153DD4BB1EAEFBEC006C89A7 /* SKP_Silk_LBRR_reset.c */,
+				153DD4BC1EAEFBEC006C89A7 /* SKP_Silk_lin2log.c */,
+				153DD4BD1EAEFBEC006C89A7 /* SKP_Silk_lin2log_arm.S */,
+				153DD4BE1EAEFBEC006C89A7 /* SKP_Silk_log2lin.c */,
+				153DD4BF1EAEFBEC006C89A7 /* SKP_Silk_LP_variable_cutoff.c */,
+				153DD4C01EAEFBEC006C89A7 /* SKP_Silk_LPC_inv_pred_gain.c */,
+				153DD4C11EAEFBEC006C89A7 /* SKP_Silk_LPC_synthesis_filter.c */,
+				153DD4C21EAEFBEC006C89A7 /* SKP_Silk_LPC_synthesis_order16.c */,
+				153DD4C31EAEFBEC006C89A7 /* SKP_Silk_LSF_cos_table.c */,
+				153DD4C41EAEFBEC006C89A7 /* SKP_Silk_LTP_analysis_filter_FIX.c */,
+				153DD4C51EAEFBEC006C89A7 /* SKP_Silk_LTP_scale_ctrl_FIX.c */,
+				153DD4C61EAEFBEC006C89A7 /* SKP_Silk_MA.c */,
+				153DD4C71EAEFBEC006C89A7 /* SKP_Silk_MA_arm.S */,
+				153DD4C81EAEFBEC006C89A7 /* SKP_Silk_macros.h */,
+				153DD4C91EAEFBEC006C89A7 /* SKP_Silk_macros_arm.h */,
+				153DD4CA1EAEFBEC006C89A7 /* SKP_Silk_main.h */,
+				153DD4CB1EAEFBEC006C89A7 /* SKP_Silk_main_FIX.h */,
+				153DD4CC1EAEFBEC006C89A7 /* SKP_Silk_NLSF2A.c */,
+				153DD4CD1EAEFBEC006C89A7 /* SKP_Silk_NLSF2A_stable.c */,
+				153DD4CE1EAEFBEC006C89A7 /* SKP_Silk_NLSF_MSVQ_decode.c */,
+				153DD4CF1EAEFBEC006C89A7 /* SKP_Silk_NLSF_MSVQ_encode_FIX.c */,
+				153DD4D01EAEFBEC006C89A7 /* SKP_Silk_NLSF_stabilize.c */,
+				153DD4D11EAEFBEC006C89A7 /* SKP_Silk_NLSF_VQ_rate_distortion_FIX.c */,
+				153DD4D21EAEFBEC006C89A7 /* SKP_Silk_NLSF_VQ_sum_error_FIX.c */,
+				153DD4D31EAEFBEC006C89A7 /* SKP_Silk_NLSF_VQ_sum_error_FIX_arm.S */,
+				153DD4D41EAEFBEC006C89A7 /* SKP_Silk_NLSF_VQ_weights_laroia.c */,
+				153DD4D51EAEFBEC006C89A7 /* SKP_Silk_noise_shape_analysis_FIX.c */,
+				153DD4D61EAEFBEC006C89A7 /* SKP_Silk_NSQ.c */,
+				153DD4D71EAEFBEC006C89A7 /* SKP_Silk_NSQ_del_dec.c */,
+				153DD4D81EAEFBEC006C89A7 /* SKP_Silk_pitch_analysis_core.c */,
+				153DD4D91EAEFBEC006C89A7 /* SKP_Silk_pitch_est_defines.h */,
+				153DD4DA1EAEFBEC006C89A7 /* SKP_Silk_pitch_est_tables.c */,
+				153DD4DB1EAEFBEC006C89A7 /* SKP_Silk_PLC.c */,
+				153DD4DC1EAEFBEC006C89A7 /* SKP_Silk_PLC.h */,
+				153DD4DD1EAEFBEC006C89A7 /* SKP_Silk_prefilter_FIX.c */,
+				153DD4DE1EAEFBEC006C89A7 /* SKP_Silk_prefilter_FIX_arm.S */,
+				153DD4DF1EAEFBEC006C89A7 /* SKP_Silk_process_gains_FIX.c */,
+				153DD4E01EAEFBEC006C89A7 /* SKP_Silk_process_NLSFs_FIX.c */,
+				153DD4E11EAEFBEC006C89A7 /* SKP_Silk_quant_LTP_gains_FIX.c */,
+				153DD4E21EAEFBEC006C89A7 /* SKP_Silk_range_coder.c */,
+				153DD4E31EAEFBEC006C89A7 /* SKP_Silk_regularize_correlations_FIX.c */,
+				153DD4E41EAEFBEC006C89A7 /* SKP_Silk_resampler.c */,
+				153DD4E51EAEFBEC006C89A7 /* SKP_Silk_resampler_down2.c */,
+				153DD4E61EAEFBEC006C89A7 /* SKP_Silk_resampler_down2_3.c */,
+				153DD4E71EAEFBEC006C89A7 /* SKP_Silk_resampler_down2_arm.S */,
+				153DD4E81EAEFBEC006C89A7 /* SKP_Silk_resampler_down3.c */,
+				153DD4E91EAEFBEC006C89A7 /* SKP_Silk_resampler_private.h */,
+				153DD4EA1EAEFBEC006C89A7 /* SKP_Silk_resampler_private_AR2.c */,
+				153DD4EB1EAEFBEC006C89A7 /* SKP_Silk_resampler_private_AR2_arm.S */,
+				153DD4EC1EAEFBEC006C89A7 /* SKP_Silk_resampler_private_ARMA4.c */,
+				153DD4ED1EAEFBEC006C89A7 /* SKP_Silk_resampler_private_ARMA4_arm.S */,
+				153DD4EE1EAEFBEC006C89A7 /* SKP_Silk_resampler_private_copy.c */,
+				153DD4EF1EAEFBEC006C89A7 /* SKP_Silk_resampler_private_down4.c */,
+				153DD4F01EAEFBEC006C89A7 /* SKP_Silk_resampler_private_down_FIR.c */,
+				153DD4F11EAEFBEC006C89A7 /* SKP_Silk_resampler_private_down_FIR_arm.S */,
+				153DD4F21EAEFBEC006C89A7 /* SKP_Silk_resampler_private_IIR_FIR.c */,
+				153DD4F31EAEFBEC006C89A7 /* SKP_Silk_resampler_private_IIR_FIR_arm.S */,
+				153DD4F41EAEFBEC006C89A7 /* SKP_Silk_resampler_private_up2_HQ.c */,
+				153DD4F51EAEFBEC006C89A7 /* SKP_Silk_resampler_private_up2_HQ_arm.S */,
+				153DD4F61EAEFBEC006C89A7 /* SKP_Silk_resampler_private_up4.c */,
+				153DD4F71EAEFBEC006C89A7 /* SKP_Silk_resampler_rom.c */,
+				153DD4F81EAEFBEC006C89A7 /* SKP_Silk_resampler_rom.h */,
+				153DD4F91EAEFBEC006C89A7 /* SKP_Silk_resampler_rom_arm.S */,
+				153DD4FA1EAEFBEC006C89A7 /* SKP_Silk_resampler_structs.h */,
+				153DD4FB1EAEFBEC006C89A7 /* SKP_Silk_resampler_up2.c */,
+				153DD4FC1EAEFBEC006C89A7 /* SKP_Silk_resampler_up2_arm.S */,
+				153DD4FD1EAEFBEC006C89A7 /* SKP_Silk_residual_energy16_FIX.c */,
+				153DD4FE1EAEFBEC006C89A7 /* SKP_Silk_residual_energy_FIX.c */,
+				153DD4FF1EAEFBEC006C89A7 /* SKP_Silk_scale_copy_vector16.c */,
+				153DD5001EAEFBEC006C89A7 /* SKP_Silk_scale_vector.c */,
+				153DD5011EAEFBEC006C89A7 /* SKP_Silk_schur.c */,
+				153DD5021EAEFBEC006C89A7 /* SKP_Silk_schur64.c */,
+				153DD5031EAEFBEC006C89A7 /* SKP_Silk_schur64_arm.S */,
+				153DD5041EAEFBEC006C89A7 /* SKP_Silk_setup_complexity.h */,
+				153DD5051EAEFBEC006C89A7 /* SKP_Silk_shell_coder.c */,
+				153DD5061EAEFBEC006C89A7 /* SKP_Silk_sigm_Q15.c */,
+				153DD5071EAEFBEC006C89A7 /* SKP_Silk_sigm_Q15_arm.S */,
+				153DD5081EAEFBEC006C89A7 /* SKP_Silk_SigProc_FIX.h */,
+				153DD5091EAEFBEC006C89A7 /* SKP_Silk_solve_LS_FIX.c */,
+				153DD50A1EAEFBEC006C89A7 /* SKP_Silk_sort.c */,
+				153DD50B1EAEFBEC006C89A7 /* SKP_Silk_structs.h */,
+				153DD50C1EAEFBEC006C89A7 /* SKP_Silk_structs_FIX.h */,
+				153DD50D1EAEFBEC006C89A7 /* SKP_Silk_sum_sqr_shift.c */,
+				153DD50E1EAEFBEC006C89A7 /* SKP_Silk_sum_sqr_shift_arm.S */,
+				153DD50F1EAEFBEC006C89A7 /* SKP_Silk_tables.h */,
+				153DD5101EAEFBEC006C89A7 /* SKP_Silk_tables_gain.c */,
+				153DD5111EAEFBEC006C89A7 /* SKP_Silk_tables_LTP.c */,
+				153DD5121EAEFBEC006C89A7 /* SKP_Silk_tables_NLSF_CB0_10.c */,
+				153DD5131EAEFBEC006C89A7 /* SKP_Silk_tables_NLSF_CB0_10.h */,
+				153DD5141EAEFBEC006C89A7 /* SKP_Silk_tables_NLSF_CB0_16.c */,
+				153DD5151EAEFBEC006C89A7 /* SKP_Silk_tables_NLSF_CB0_16.h */,
+				153DD5161EAEFBEC006C89A7 /* SKP_Silk_tables_NLSF_CB1_10.c */,
+				153DD5171EAEFBEC006C89A7 /* SKP_Silk_tables_NLSF_CB1_10.h */,
+				153DD5181EAEFBEC006C89A7 /* SKP_Silk_tables_NLSF_CB1_16.c */,
+				153DD5191EAEFBEC006C89A7 /* SKP_Silk_tables_NLSF_CB1_16.h */,
+				153DD51A1EAEFBEC006C89A7 /* SKP_Silk_tables_other.c */,
+				153DD51B1EAEFBEC006C89A7 /* SKP_Silk_tables_pitch_lag.c */,
+				153DD51C1EAEFBEC006C89A7 /* SKP_Silk_tables_pulses_per_block.c */,
+				153DD51D1EAEFBEC006C89A7 /* SKP_Silk_tables_sign.c */,
+				153DD51E1EAEFBEC006C89A7 /* SKP_Silk_tables_type_offset.c */,
+				153DD51F1EAEFBEC006C89A7 /* SKP_Silk_tuning_parameters.h */,
+				153DD5201EAEFBEC006C89A7 /* SKP_Silk_VAD.c */,
+				153DD5211EAEFBEC006C89A7 /* SKP_Silk_VQ_nearest_neighbor_FIX.c */,
+				153DD5221EAEFBEC006C89A7 /* SKP_Silk_warped_autocorrelation_FIX.c */,
+				153DD5231EAEFBEC006C89A7 /* SKP_Silk_warped_autocorrelation_FIX_arm.S */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		15582F4F1EAD94E400C97238 /* silk */ = {
+			isa = PBXGroup;
+			children = (
+				153DD4861EAEFBEB006C89A7 /* src */,
+				15582F541EAD951200C97238 /* SKP_Silk_control.h */,
+				15582F551EAD951200C97238 /* SKP_Silk_errors.h */,
+				15582F561EAD951200C97238 /* SKP_Silk_SDK_API.h */,
+				15582F571EAD951200C97238 /* SKP_Silk_typedef.h */,
+				15582F501EAD94F100C97238 /* libSKP_SILK_SDK.a */,
+				15582F521EAD94F600C97238 /* libSKP_SILK_SDK-arm64.a */,
+			);
+			name = silk;
+			sourceTree = "<group>";
+		};
+		15A42CA21E7F70B50090437F /* 养车邦 */ = {
+			isa = PBXGroup;
+			children = (
+				15582F4F1EAD94E400C97238 /* silk */,
+				15A42CA61E7F72B90090437F /* YGAppointmentVC.h */,
+				15A42CA71E7F72B90090437F /* YGAppointmentVC.m */,
+			);
+			name = "养车邦";
+			sourceTree = "<group>";
+		};
 		15AA46C21D2F515100E4AD97 = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +778,7 @@
 		15AA46CD1D2F515100E4AD97 /* 我的轮子 */ = {
 			isa = PBXGroup;
 			children = (
+				15A42CA21E7F70B50090437F /* 养车邦 */,
 				15C1BA941E56A3DE00804A41 /* 条码打印 */,
 				15BADEA91DF5455A00205CD5 /* 新主页 */,
 				15B4EF711DE7DF97009CC32C /* 卡牌翻页 */,
@@ -324,6 +831,21 @@
 				15AA46ED1D2F556C00E4AD97 /* YGTextView.m */,
 			);
 			name = "物流详情页面";
+			sourceTree = "<group>";
+		};
+		15B384001E651D94006904C0 /* AsyncSocket */ = {
+			isa = PBXGroup;
+			children = (
+				15B384071E652651006904C0 /* GCDAsyncSocket.h */,
+				15B384081E652651006904C0 /* GCDAsyncSocket.m */,
+				15B384091E652651006904C0 /* GCDAsyncUdpSocket.h */,
+				15B3840A1E652651006904C0 /* GCDAsyncUdpSocket.m */,
+				15B384011E651D94006904C0 /* AsyncSocket.h */,
+				15B384021E651D94006904C0 /* AsyncSocket.m */,
+				15B384031E651D94006904C0 /* AsyncUdpSocket.h */,
+				15B384041E651D94006904C0 /* AsyncUdpSocket.m */,
+			);
+			path = AsyncSocket;
 			sourceTree = "<group>";
 		};
 		15B4EF711DE7DF97009CC32C /* 卡牌翻页 */ = {
@@ -472,6 +994,7 @@
 		15C1BA941E56A3DE00804A41 /* 条码打印 */ = {
 			isa = PBXGroup;
 			children = (
+				15B384001E651D94006904C0 /* AsyncSocket */,
 				15A29FE41E5EDF1800F44817 /* 2_25_100.mrt */,
 				15A29FDF1E5E774500F44817 /* logo2.png */,
 				15A6BF231E5D94900070678F /* SystemReport.pdf */,
@@ -489,6 +1012,8 @@
 				15A29FE71E5EE0B600F44817 /* YGPrintingPerson.m */,
 				15A6BF1C1E5D929B0070678F /* UIImage+Bitmap.h */,
 				15A6BF1D1E5D929B0070678F /* UIImage+Bitmap.m */,
+				15B383FD1E650F64006904C0 /* YGWifiPrinterVC.h */,
+				15B383FE1E650F64006904C0 /* YGWifiPrinterVC.m */,
 			);
 			name = "条码打印";
 			sourceTree = "<group>";
@@ -695,67 +1220,206 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				153DD52F1EAEFBEC006C89A7 /* SKP_Silk_burg_modified.c in Sources */,
+				153DD56C1EAEFBEC006C89A7 /* SKP_Silk_pitch_analysis_core.c in Sources */,
+				153DD5781EAEFBEC006C89A7 /* SKP_Silk_resampler_down2_3.c in Sources */,
+				153DD5681EAEFBEC006C89A7 /* SKP_Silk_NLSF_VQ_weights_laroia.c in Sources */,
+				153DD57E1EAEFBEC006C89A7 /* SKP_Silk_resampler_private_ARMA4_arm.S in Sources */,
+				153DD5911EAEFBEC006C89A7 /* SKP_Silk_schur64.c in Sources */,
+				153DD57D1EAEFBEC006C89A7 /* SKP_Silk_resampler_private_ARMA4.c in Sources */,
 				15BADEDC1DF566DC00205CD5 /* UIButton+WebCache.m in Sources */,
+				15B3840B1E652651006904C0 /* GCDAsyncSocket.m in Sources */,
+				153DD5341EAEFBEC006C89A7 /* SKP_Silk_code_signs.c in Sources */,
 				15F4A6831DB5F53400EAAF83 /* YGArrowView.m in Sources */,
+				153DD56E1EAEFBEC006C89A7 /* SKP_Silk_PLC.c in Sources */,
+				153DD5461EAEFBEC006C89A7 /* SKP_Silk_encode_pulses.c in Sources */,
 				15B4EF771DE7E1FD009CC32C /* YGCardFlipVCViewController.m in Sources */,
+				153DD5601EAEFBEC006C89A7 /* SKP_Silk_NLSF2A.c in Sources */,
 				15B6984E1D7968F700883F3F /* YGDingDangVC.m in Sources */,
+				153DD54A1EAEFBEC006C89A7 /* SKP_Silk_find_pred_coefs_FIX.c in Sources */,
+				153DD5611EAEFBEC006C89A7 /* SKP_Silk_NLSF2A_stable.c in Sources */,
 				15C1BA971E56C35A00804A41 /* YGBluetoothPrintingVC.m in Sources */,
+				153DD5281EAEFBEC006C89A7 /* SKP_Silk_ana_filt_bank_1_arm.S in Sources */,
+				153DD5621EAEFBEC006C89A7 /* SKP_Silk_NLSF_MSVQ_decode.c in Sources */,
+				153DD59E1EAEFBEC006C89A7 /* SKP_Silk_tables_NLSF_CB1_10.c in Sources */,
+				153DD5351EAEFBEC006C89A7 /* SKP_Silk_control_audio_bandwidth.c in Sources */,
 				15CD63EF1DB9ABF300883BBE /* YGStrokeLabel.m in Sources */,
+				153DD5741EAEFBEC006C89A7 /* SKP_Silk_range_coder.c in Sources */,
+				153DD57B1EAEFBEC006C89A7 /* SKP_Silk_resampler_private_AR2.c in Sources */,
 				15BADEE01DF566DC00205CD5 /* UIImageView+HighlightedWebCache.m in Sources */,
 				15A3E0481DAA14D200707203 /* YGMagnifierView.m in Sources */,
 				15BADED41DF566DC00205CD5 /* NSData+ImageContentType.m in Sources */,
+				153DD58D1EAEFBEC006C89A7 /* SKP_Silk_residual_energy_FIX.c in Sources */,
+				153DD59D1EAEFBEC006C89A7 /* SKP_Silk_tables_NLSF_CB0_16.c in Sources */,
+				153DD5A41EAEFBEC006C89A7 /* SKP_Silk_tables_type_offset.c in Sources */,
 				15AA46F11D2F556C00E4AD97 /* YGLogisticsInformationCell.m in Sources */,
+				153DD5311EAEFBEC006C89A7 /* SKP_Silk_bwexpander_32.c in Sources */,
+				153DD5711EAEFBEC006C89A7 /* SKP_Silk_process_gains_FIX.c in Sources */,
+				153DD58F1EAEFBEC006C89A7 /* SKP_Silk_scale_vector.c in Sources */,
+				153DD5A01EAEFBEC006C89A7 /* SKP_Silk_tables_other.c in Sources */,
+				153DD55B1EAEFBEC006C89A7 /* SKP_Silk_LSF_cos_table.c in Sources */,
+				153DD5361EAEFBEC006C89A7 /* SKP_Silk_control_codec_FIX.c in Sources */,
+				153DD53F1EAEFBEC006C89A7 /* SKP_Silk_decode_pulses.c in Sources */,
+				153DD5951EAEFBEC006C89A7 /* SKP_Silk_sigm_Q15_arm.S in Sources */,
+				153DD5A31EAEFBEC006C89A7 /* SKP_Silk_tables_sign.c in Sources */,
+				153DD5261EAEFBEC006C89A7 /* SKP_Silk_allpass_int_arm.S in Sources */,
 				15AA47161D2F5D1200E4AD97 /* YGTool.m in Sources */,
 				15AA46D61D2F515100E4AD97 /* ViewController.m in Sources */,
 				15BADEAC1DF545AB00205CD5 /* YGNewMainVC.m in Sources */,
 				15D0C5D01D82A9E7000A9575 /* YGPiceModifyVC.m in Sources */,
+				153DD5961EAEFBEC006C89A7 /* SKP_Silk_solve_LS_FIX.c in Sources */,
 				15B33F741D88FF0300247239 /* YGMosaicImageInfo.m in Sources */,
 				15BADED61DF566DC00205CD5 /* SDWebImageCompat.m in Sources */,
 				15BADEDA1DF566DC00205CD5 /* SDWebImageManager.m in Sources */,
+				153DD5301EAEFBEC006C89A7 /* SKP_Silk_bwexpander.c in Sources */,
+				153DD58C1EAEFBEC006C89A7 /* SKP_Silk_residual_energy16_FIX.c in Sources */,
 				15FBDD641DACB6E600D978DF /* YGSetPropertyInfo.m in Sources */,
+				153DD5761EAEFBEC006C89A7 /* SKP_Silk_resampler.c in Sources */,
 				15BADED51DF566DC00205CD5 /* SDImageCache.m in Sources */,
+				153DD5811EAEFBEC006C89A7 /* SKP_Silk_resampler_private_down_FIR.c in Sources */,
+				153DD56B1EAEFBEC006C89A7 /* SKP_Silk_NSQ_del_dec.c in Sources */,
+				153DD5441EAEFBEC006C89A7 /* SKP_Silk_encode_frame_FIX.c in Sources */,
+				153DD54F1EAEFBEC006C89A7 /* SKP_Silk_inner_prod_aligned_arm.S in Sources */,
 				15AA46F01D2F556C00E4AD97 /* YGLogisticsInformationInfo.m in Sources */,
 				15A29FE81E5EE0B600F44817 /* YGPrintingPerson.m in Sources */,
+				153DD56D1EAEFBEC006C89A7 /* SKP_Silk_pitch_est_tables.c in Sources */,
+				153DD5381EAEFBEC006C89A7 /* SKP_Silk_create_init_destroy.c in Sources */,
 				15BADED71DF566DC00205CD5 /* SDWebImageDecoder.m in Sources */,
 				15A926E21DAC7FB00041BC27 /* YGMyButton.m in Sources */,
+				153DD53D1EAEFBEC006C89A7 /* SKP_Silk_decode_parameters.c in Sources */,
+				153DD5581EAEFBEC006C89A7 /* SKP_Silk_LPC_inv_pred_gain.c in Sources */,
+				153DD53C1EAEFBEC006C89A7 /* SKP_Silk_decode_frame.c in Sources */,
 				15A3E0451DA9E90B00707203 /* YGDrawingArrowView.m in Sources */,
+				153DD5571EAEFBEC006C89A7 /* SKP_Silk_LP_variable_cutoff.c in Sources */,
 				15BADED81DF566DC00205CD5 /* SDWebImageDownloader.m in Sources */,
+				153DD58A1EAEFBEC006C89A7 /* SKP_Silk_resampler_up2.c in Sources */,
+				153DD5591EAEFBEC006C89A7 /* SKP_Silk_LPC_synthesis_filter.c in Sources */,
 				15B60E771DBD9951008B5A14 /* MBProgressHUD+NSString.m in Sources */,
 				15B555781D38DD7300DD7233 /* YGBaseMapView.m in Sources */,
+				153DD5251EAEFBEC006C89A7 /* SKP_Silk_A2NLSF_arm.S in Sources */,
+				153DD5A61EAEFBEC006C89A7 /* SKP_Silk_VQ_nearest_neighbor_FIX.c in Sources */,
+				153DD5501EAEFBEC006C89A7 /* SKP_Silk_interpolate.c in Sources */,
 				15BE48D21D94C5210081E051 /* YGDrawingVC.m in Sources */,
 				15BADEDE1DF566DC00205CD5 /* UIImage+MultiFormat.m in Sources */,
 				15AA47121D2F5CC000E4AD97 /* YGBaseViewController.m in Sources */,
+				153DD5241EAEFBEC006C89A7 /* SKP_Silk_A2NLSF.c in Sources */,
+				153DD5931EAEFBEC006C89A7 /* SKP_Silk_shell_coder.c in Sources */,
+				153DD5701EAEFBEC006C89A7 /* SKP_Silk_prefilter_FIX_arm.S in Sources */,
+				153DD5771EAEFBEC006C89A7 /* SKP_Silk_resampler_down2.c in Sources */,
+				153DD55D1EAEFBEC006C89A7 /* SKP_Silk_LTP_scale_ctrl_FIX.c in Sources */,
+				153DD5731EAEFBEC006C89A7 /* SKP_Silk_quant_LTP_gains_FIX.c in Sources */,
 				15BADEDF1DF566DC00205CD5 /* UIImage+WebP.m in Sources */,
+				153DD5841EAEFBEC006C89A7 /* SKP_Silk_resampler_private_IIR_FIR_arm.S in Sources */,
+				153DD59B1EAEFBEC006C89A7 /* SKP_Silk_tables_LTP.c in Sources */,
+				153DD57C1EAEFBEC006C89A7 /* SKP_Silk_resampler_private_AR2_arm.S in Sources */,
 				15C4C1721DB4CB24000DAE28 /* YGInputTextField.m in Sources */,
 				15A6BF1E1E5D929B0070678F /* UIImage+Bitmap.m in Sources */,
+				15B3840C1E652651006904C0 /* GCDAsyncUdpSocket.m in Sources */,
+				153DD52A1EAEFBEC006C89A7 /* SKP_Silk_array_maxabs.c in Sources */,
+				153DD5861EAEFBEC006C89A7 /* SKP_Silk_resampler_private_up2_HQ_arm.S in Sources */,
 				15BADEAF1DF5480B00205CD5 /* YGCommunityTopScrollerView.m in Sources */,
+				153DD55C1EAEFBEC006C89A7 /* SKP_Silk_LTP_analysis_filter_FIX.c in Sources */,
+				153DD5A81EAEFBEC006C89A7 /* SKP_Silk_warped_autocorrelation_FIX_arm.S in Sources */,
+				153DD5431EAEFBEC006C89A7 /* SKP_Silk_enc_API.c in Sources */,
+				153DD55A1EAEFBEC006C89A7 /* SKP_Silk_LPC_synthesis_order16.c in Sources */,
 				15AA46F31D2F556C00E4AD97 /* YGLogisticsInformationDetailCell.m in Sources */,
+				153DD5981EAEFBEC006C89A7 /* SKP_Silk_sum_sqr_shift.c in Sources */,
 				15B555751D38D39E00DD7233 /* YGPersonalProfileVC.m in Sources */,
+				153DD5881EAEFBEC006C89A7 /* SKP_Silk_resampler_rom.c in Sources */,
+				153DD57A1EAEFBEC006C89A7 /* SKP_Silk_resampler_down3.c in Sources */,
+				153DD53A1EAEFBEC006C89A7 /* SKP_Silk_decode_core.c in Sources */,
+				153DD5691EAEFBEC006C89A7 /* SKP_Silk_noise_shape_analysis_FIX.c in Sources */,
 				15CD63F21DB9B7A000883BBE /* YGStrokeTextView.m in Sources */,
 				15B4EF7A1DE808E7009CC32C /* YGCardFlipCell.m in Sources */,
+				153DD5891EAEFBEC006C89A7 /* SKP_Silk_resampler_rom_arm.S in Sources */,
 				15AA46F21D2F556C00E4AD97 /* YGTextView.m in Sources */,
+				153DD53B1EAEFBEC006C89A7 /* SKP_Silk_decode_core_arm.S in Sources */,
+				153DD5901EAEFBEC006C89A7 /* SKP_Silk_schur.c in Sources */,
 				15ABC1FF1DB74DBD00D22351 /* YGSetPropertyTextOptionsView.m in Sources */,
 				15BADEE21DF566DC00205CD5 /* UIView+WebCacheOperation.m in Sources */,
 				15BADEDB1DF566DC00205CD5 /* SDWebImagePrefetcher.m in Sources */,
 				15BE48CF1D94C4A20081E051 /* YGDrawingView.m in Sources */,
 				15A3E04B1DAA304000707203 /* YGTwoBarCodeView.m in Sources */,
 				15A6BF171E5D3FE20070678F /* YGPrintingInfo.m in Sources */,
+				15A42CA81E7F72B90090437F /* YGAppointmentVC.m in Sources */,
 				15CA57D01D87EAE500AFD555 /* YGMosaicImageView.m in Sources */,
+				153DD5A71EAEFBEC006C89A7 /* SKP_Silk_warped_autocorrelation_FIX.c in Sources */,
+				153DD57F1EAEFBEC006C89A7 /* SKP_Silk_resampler_private_copy.c in Sources */,
+				153DD5401EAEFBEC006C89A7 /* SKP_Silk_decoder_set_fs.c in Sources */,
+				153DD5871EAEFBEC006C89A7 /* SKP_Silk_resampler_private_up4.c in Sources */,
+				153DD5991EAEFBEC006C89A7 /* SKP_Silk_sum_sqr_shift_arm.S in Sources */,
+				153DD5541EAEFBEC006C89A7 /* SKP_Silk_lin2log.c in Sources */,
 				15A29FE31E5E8D0600F44817 /* YGPrintingSetingView.m in Sources */,
+				153DD5511EAEFBEC006C89A7 /* SKP_Silk_k2a.c in Sources */,
+				153DD5671EAEFBEC006C89A7 /* SKP_Silk_NLSF_VQ_sum_error_FIX_arm.S in Sources */,
+				153DD5471EAEFBEC006C89A7 /* SKP_Silk_find_LPC_FIX.c in Sources */,
 				15BADEDD1DF566DC00205CD5 /* UIImage+GIF.m in Sources */,
+				153DD5661EAEFBEC006C89A7 /* SKP_Silk_NLSF_VQ_sum_error_FIX.c in Sources */,
+				153DD5651EAEFBEC006C89A7 /* SKP_Silk_NLSF_VQ_rate_distortion_FIX.c in Sources */,
+				15B384051E651D94006904C0 /* AsyncSocket.m in Sources */,
+				153DD5551EAEFBEC006C89A7 /* SKP_Silk_lin2log_arm.S in Sources */,
+				153DD56F1EAEFBEC006C89A7 /* SKP_Silk_prefilter_FIX.c in Sources */,
+				153DD53E1EAEFBEC006C89A7 /* SKP_Silk_decode_pitch.c in Sources */,
 				15AA46E71D2F545B00E4AD97 /* YGLogisticsInformationVC.m in Sources */,
 				15B60E781DBD9951008B5A14 /* MBProgressHUD.m in Sources */,
+				153DD5451EAEFBEC006C89A7 /* SKP_Silk_encode_parameters.c in Sources */,
+				153DD5321EAEFBEC006C89A7 /* SKP_Silk_clz_arm.S in Sources */,
+				153DD5631EAEFBEC006C89A7 /* SKP_Silk_NLSF_MSVQ_encode_FIX.c in Sources */,
 				15AA46D31D2F515100E4AD97 /* AppDelegate.m in Sources */,
+				153DD55E1EAEFBEC006C89A7 /* SKP_Silk_MA.c in Sources */,
+				153DD5641EAEFBEC006C89A7 /* SKP_Silk_NLSF_stabilize.c in Sources */,
+				153DD5331EAEFBEC006C89A7 /* SKP_Silk_CNG.c in Sources */,
 				15BADED31DF566DC00205CD5 /* MKAnnotationView+WebCache.m in Sources */,
+				153DD5971EAEFBEC006C89A7 /* SKP_Silk_sort.c in Sources */,
+				153DD5271EAEFBEC006C89A7 /* SKP_Silk_ana_filt_bank_1.c in Sources */,
+				153DD59F1EAEFBEC006C89A7 /* SKP_Silk_tables_NLSF_CB1_16.c in Sources */,
 				15B698511D796A8C00883F3F /* YGDingDangCell.m in Sources */,
 				15BADED91DF566DC00205CD5 /* SDWebImageDownloaderOperation.m in Sources */,
+				153DD5721EAEFBEC006C89A7 /* SKP_Silk_process_NLSFs_FIX.c in Sources */,
+				153DD5521EAEFBEC006C89A7 /* SKP_Silk_k2a_Q16.c in Sources */,
+				153DD59A1EAEFBEC006C89A7 /* SKP_Silk_tables_gain.c in Sources */,
+				153DD5821EAEFBEC006C89A7 /* SKP_Silk_resampler_private_down_FIR_arm.S in Sources */,
 				15BE48D51D94CC8F0081E051 /* YGDrawingLineView.m in Sources */,
+				153DD5491EAEFBEC006C89A7 /* SKP_Silk_find_pitch_lags_FIX.c in Sources */,
+				153DD5371EAEFBEC006C89A7 /* SKP_Silk_corrMatrix_FIX.c in Sources */,
+				153DD5291EAEFBEC006C89A7 /* SKP_Silk_apply_sine_window.c in Sources */,
+				153DD54B1EAEFBEC006C89A7 /* SKP_Silk_gain_quant.c in Sources */,
 				158EFA121DAB857E007128FF /* YGSetPropertyView.m in Sources */,
 				15BADEE11DF566DC00205CD5 /* UIImageView+WebCache.m in Sources */,
 				15A3E04E1DAA34C800707203 /* YGCompanyLogoView.m in Sources */,
+				153DD5A51EAEFBEC006C89A7 /* SKP_Silk_VAD.c in Sources */,
+				153DD5851EAEFBEC006C89A7 /* SKP_Silk_resampler_private_up2_HQ.c in Sources */,
+				153DD5421EAEFBEC006C89A7 /* SKP_Silk_div_oabi.c in Sources */,
+				153DD5801EAEFBEC006C89A7 /* SKP_Silk_resampler_private_down4.c in Sources */,
+				153DD52B1EAEFBEC006C89A7 /* SKP_Silk_array_maxabs_arm.S in Sources */,
+				153DD5831EAEFBEC006C89A7 /* SKP_Silk_resampler_private_IIR_FIR.c in Sources */,
+				153DD56A1EAEFBEC006C89A7 /* SKP_Silk_NSQ.c in Sources */,
+				153DD5531EAEFBEC006C89A7 /* SKP_Silk_LBRR_reset.c in Sources */,
+				153DD5791EAEFBEC006C89A7 /* SKP_Silk_resampler_down2_arm.S in Sources */,
+				153DD59C1EAEFBEC006C89A7 /* SKP_Silk_tables_NLSF_CB0_10.c in Sources */,
+				153DD5921EAEFBEC006C89A7 /* SKP_Silk_schur64_arm.S in Sources */,
+				153DD5481EAEFBEC006C89A7 /* SKP_Silk_find_LTP_FIX.c in Sources */,
+				153DD58B1EAEFBEC006C89A7 /* SKP_Silk_resampler_up2_arm.S in Sources */,
+				15B384061E651D94006904C0 /* AsyncUdpSocket.m in Sources */,
+				15B383FF1E650F64006904C0 /* YGWifiPrinterVC.m in Sources */,
+				153DD5A21EAEFBEC006C89A7 /* SKP_Silk_tables_pulses_per_block.c in Sources */,
+				153DD5391EAEFBEC006C89A7 /* SKP_Silk_dec_API.c in Sources */,
+				153DD5561EAEFBEC006C89A7 /* SKP_Silk_log2lin.c in Sources */,
 				15CC94341E5BD6D8004A4937 /* YGNewBluetoothPrintingVC.m in Sources */,
+				153DD54D1EAEFBEC006C89A7 /* SKP_Silk_init_encoder_FIX.c in Sources */,
 				15B933A01D7D4B6A007C178D /* YGCustomerInformationCell.m in Sources */,
+				153DD54C1EAEFBEC006C89A7 /* SKP_Silk_HP_variable_cutoff_FIX.c in Sources */,
+				153DD52C1EAEFBEC006C89A7 /* SKP_Silk_autocorr.c in Sources */,
+				153DD52D1EAEFBEC006C89A7 /* SKP_Silk_biquad.c in Sources */,
+				153DD55F1EAEFBEC006C89A7 /* SKP_Silk_MA_arm.S in Sources */,
+				153DD54E1EAEFBEC006C89A7 /* SKP_Silk_inner_prod_aligned.c in Sources */,
+				153DD58E1EAEFBEC006C89A7 /* SKP_Silk_scale_copy_vector16.c in Sources */,
+				153DD5751EAEFBEC006C89A7 /* SKP_Silk_regularize_correlations_FIX.c in Sources */,
 				15AA46D01D2F515100E4AD97 /* main.m in Sources */,
+				153DD5941EAEFBEC006C89A7 /* SKP_Silk_sigm_Q15.c in Sources */,
+				153DD52E1EAEFBEC006C89A7 /* SKP_Silk_biquad_alt.c in Sources */,
+				153DD5A11EAEFBEC006C89A7 /* SKP_Silk_tables_pitch_lag.c in Sources */,
+				153DD5411EAEFBEC006C89A7 /* SKP_Silk_detect_SWB_input.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,6 +18,8 @@
 #import "YGNewBluetoothPrintingVC.h"
 #import "BLKWrite.h"
 #import "AppDelegate.h"
+#import "YGWifiPrinterVC.h"
+#import "YGAppointmentVC.h"
 
 @interface ViewController ()
 {
@@ -34,7 +36,7 @@ static NSInteger const BUTTONHEIGTH = 40;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _buttonArray = @[@"物流详情",@"个人简介",@"订单详情页",@"图片拼接",@"图片标注",@"卡牌翻页",@"新主页",@"条码打印"];
+    _buttonArray = @[@"物流详情",@"个人简介",@"订单详情页",@"图片拼接",@"图片标注",@"卡牌翻页",@"新主页",@"条码打印",@"Wifi打印",@"silk语音"];
     for (int i = 0; i<_buttonArray.count; i++) {
         int column = i%5;
         int line = i/5;
@@ -87,6 +89,14 @@ static NSInteger const BUTTONHEIGTH = 40;
         //        AppDelegate *dele = [UIApplication sharedApplication].delegate;
         //        [self.navigationController pushViewController:dele.mConnBLE animated:YES];
         YGNewBluetoothPrintingVC *myVC = [YGNewBluetoothPrintingVC sharedInstance];
+        UINavigationController *naVC = [[UINavigationController alloc] initWithRootViewController:myVC];
+        [self presentViewController:naVC animated:YES completion:nil];
+    } else if (send.tag == 8) {
+        YGWifiPrinterVC *myVC = [[YGWifiPrinterVC alloc] init];
+        UINavigationController *naVC = [[UINavigationController alloc] initWithRootViewController:myVC];
+        [self presentViewController:naVC animated:YES completion:nil];
+    } else if (send.tag == 9) {
+        YGAppointmentVC *myVC = [[YGAppointmentVC alloc] init];
         UINavigationController *naVC = [[UINavigationController alloc] initWithRootViewController:myVC];
         [self presentViewController:naVC animated:YES completion:nil];
     }
