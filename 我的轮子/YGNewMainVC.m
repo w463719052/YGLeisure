@@ -7,12 +7,12 @@
 //
 
 #import "YGNewMainVC.h"
-#import "YGCommunityTopScrollerView.h"
+#import "YGRollingAdView.h"
 #import "YGHeader.h"
 
 @interface YGNewMainVC ()
 {
-    YGCommunityTopScrollerView *_topView;
+    YGRollingAdView *_topView;
     UICollectionView *collectionView;
 }
 @end
@@ -25,17 +25,11 @@
     self.view.backgroundColor = [UIColor whiteColor];
     NSArray *array = @[[UIImage imageNamed:@"image1"],[UIImage imageNamed:@"image2"],[UIImage imageNamed:@"image3"]];
     if (!_topView) {
-        _topView = [[YGCommunityTopScrollerView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, 120) rollPictureArray:array];
-        _topView.backgroundColor = [UIColor redColor];
+        _topView = [[YGRollingAdView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenWidth/3)];
+        _topView.rollPictureArray = array;
+        _topView.backgroundColor = [UIColor whiteColor];
         [self.view addSubview:_topView];
     }
-    
-    UILabel *lbl = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 20)];
-    lbl.text = @"ajdajslkdjalksdjlajslkdjaklsdjklajklsdjsakljdklasjdklsa";
-    lbl.lineBreakMode = NSLineBreakByClipping;
-    [self.view addSubview:lbl];
-    NSLog(@"%@",lbl.text);
-    
     // Do any additional setup after loading the view.
 }
 

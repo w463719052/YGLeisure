@@ -26,6 +26,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setNavigationBarWithBackButton:YES];
+    self.view.backgroundColor = [UIColor whiteColor];
     _logTextView = [[UITextView alloc] initWithFrame:CGRectMake(10, 50, 300, 150)];
     _logTextView.backgroundColor = [UIColor redColor];
     [self.view addSubview:_logTextView];
