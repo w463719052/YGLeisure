@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YGRollingAdInfo.h"
 
 @interface YGRollingAdView : UIView<UIScrollViewDelegate>
 

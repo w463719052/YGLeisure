@@ -11,7 +11,6 @@
 		152FA0E01EB8709C002AEF3B /* YGSilkTransformPcm.m in Sources */ = {isa = PBXBuildFile; fileRef = 152FA0DE1EB8709C002AEF3B /* YGSilkTransformPcm.m */; };
 		152FA0F01EB870BC002AEF3B /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 152FA0ED1EB870BC002AEF3B /* libmp3lame.a */; };
 		152FA0F11EB870BC002AEF3B /* YGPcmTransformMp3.m in Sources */ = {isa = PBXBuildFile; fileRef = 152FA0EF1EB870BC002AEF3B /* YGPcmTransformMp3.m */; };
-		152FA0F41EB87210002AEF3B /* YGRollingAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 152FA0F31EB87210002AEF3B /* YGRollingAdView.m */; };
 		158EFA121DAB857E007128FF /* YGSetPropertyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 158EFA111DAB857E007128FF /* YGSetPropertyView.m */; };
 		15A29FE01E5E774600F44817 /* logo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 15A29FDF1E5E774500F44817 /* logo2.png */; };
 		15A29FE31E5E8D0600F44817 /* YGPrintingSetingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15A29FE21E5E8D0600F44817 /* YGPrintingSetingView.m */; };
@@ -55,6 +54,8 @@
 		15B60E781DBD9951008B5A14 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B60E761DBD9951008B5A14 /* MBProgressHUD.m */; };
 		15B6984E1D7968F700883F3F /* YGDingDangVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B6984D1D7968F700883F3F /* YGDingDangVC.m */; };
 		15B698511D796A8C00883F3F /* YGDingDangCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B698501D796A8C00883F3F /* YGDingDangCell.m */; };
+		15B851971F025293005A853E /* YGRollingAdView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B851961F025293005A853E /* YGRollingAdView.m */; };
+		15B8519A1F0252B8005A853E /* YGRollingAdInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B851991F0252B8005A853E /* YGRollingAdInfo.m */; };
 		15B933A01D7D4B6A007C178D /* YGCustomerInformationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 15B9339F1D7D4B6A007C178D /* YGCustomerInformationCell.m */; };
 		15BADEAC1DF545AB00205CD5 /* YGNewMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BADEAB1DF545AB00205CD5 /* YGNewMainVC.m */; };
 		15BADED31DF566DC00205CD5 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BADEB31DF566DC00205CD5 /* MKAnnotationView+WebCache.m */; };
@@ -103,8 +104,6 @@
 		152FA0ED1EB870BC002AEF3B /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmp3lame.a; sourceTree = "<group>"; };
 		152FA0EE1EB870BC002AEF3B /* YGPcmTransformMp3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGPcmTransformMp3.h; sourceTree = "<group>"; };
 		152FA0EF1EB870BC002AEF3B /* YGPcmTransformMp3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGPcmTransformMp3.m; sourceTree = "<group>"; };
-		152FA0F21EB87210002AEF3B /* YGRollingAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGRollingAdView.h; sourceTree = "<group>"; };
-		152FA0F31EB87210002AEF3B /* YGRollingAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGRollingAdView.m; sourceTree = "<group>"; };
 		158EFA101DAB857E007128FF /* YGSetPropertyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGSetPropertyView.h; sourceTree = "<group>"; };
 		158EFA111DAB857E007128FF /* YGSetPropertyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGSetPropertyView.m; sourceTree = "<group>"; };
 		15A29FDF1E5E774500F44817 /* logo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo2.png; sourceTree = "<group>"; };
@@ -187,6 +186,10 @@
 		15B6984D1D7968F700883F3F /* YGDingDangVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGDingDangVC.m; sourceTree = "<group>"; };
 		15B6984F1D796A8C00883F3F /* YGDingDangCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGDingDangCell.h; sourceTree = "<group>"; };
 		15B698501D796A8C00883F3F /* YGDingDangCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGDingDangCell.m; sourceTree = "<group>"; };
+		15B851951F025293005A853E /* YGRollingAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGRollingAdView.h; sourceTree = "<group>"; };
+		15B851961F025293005A853E /* YGRollingAdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGRollingAdView.m; sourceTree = "<group>"; };
+		15B851981F0252B8005A853E /* YGRollingAdInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGRollingAdInfo.h; sourceTree = "<group>"; };
+		15B851991F0252B8005A853E /* YGRollingAdInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGRollingAdInfo.m; sourceTree = "<group>"; };
 		15B9339E1D7D4B6A007C178D /* YGCustomerInformationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGCustomerInformationCell.h; sourceTree = "<group>"; };
 		15B9339F1D7D4B6A007C178D /* YGCustomerInformationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGCustomerInformationCell.m; sourceTree = "<group>"; };
 		15BADEAA1DF545AB00205CD5 /* YGNewMainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YGNewMainVC.h; sourceTree = "<group>"; };
@@ -345,7 +348,7 @@
 			children = (
 				15A42CA21E7F70B50090437F /* silk转MP3 */,
 				15C1BA941E56A3DE00804A41 /* 条码打印 */,
-				15BADEA91DF5455A00205CD5 /* 新主页 */,
+				15BADEA91DF5455A00205CD5 /* 图片轮播 */,
 				15B4EF711DE7DF97009CC32C /* 卡牌翻页 */,
 				15BE48CC1D94C46F0081E051 /* 图片标注 */,
 				15D0C5CA1D82A93D000A9575 /* 图片拼接 */,
@@ -459,15 +462,17 @@
 			name = "订单详情页";
 			sourceTree = "<group>";
 		};
-		15BADEA91DF5455A00205CD5 /* 新主页 */ = {
+		15BADEA91DF5455A00205CD5 /* 图片轮播 */ = {
 			isa = PBXGroup;
 			children = (
-				152FA0F21EB87210002AEF3B /* YGRollingAdView.h */,
-				152FA0F31EB87210002AEF3B /* YGRollingAdView.m */,
 				15BADEAA1DF545AB00205CD5 /* YGNewMainVC.h */,
 				15BADEAB1DF545AB00205CD5 /* YGNewMainVC.m */,
+				15B851951F025293005A853E /* YGRollingAdView.h */,
+				15B851961F025293005A853E /* YGRollingAdView.m */,
+				15B851981F0252B8005A853E /* YGRollingAdInfo.h */,
+				15B851991F0252B8005A853E /* YGRollingAdInfo.m */,
 			);
-			name = "新主页";
+			name = "图片轮播";
 			sourceTree = "<group>";
 		};
 		15BADEB01DF5487E00205CD5 /* ThirdParty */ = {
@@ -804,6 +809,7 @@
 				15BADED61DF566DC00205CD5 /* SDWebImageCompat.m in Sources */,
 				15BADEDA1DF566DC00205CD5 /* SDWebImageManager.m in Sources */,
 				15FBDD641DACB6E600D978DF /* YGSetPropertyInfo.m in Sources */,
+				15B851971F025293005A853E /* YGRollingAdView.m in Sources */,
 				15BADED51DF566DC00205CD5 /* SDImageCache.m in Sources */,
 				15AA46F01D2F556C00E4AD97 /* YGLogisticsInformationInfo.m in Sources */,
 				15A29FE81E5EE0B600F44817 /* YGPrintingPerson.m in Sources */,
@@ -829,10 +835,10 @@
 				15ABC1FF1DB74DBD00D22351 /* YGSetPropertyTextOptionsView.m in Sources */,
 				15BADEE21DF566DC00205CD5 /* UIView+WebCacheOperation.m in Sources */,
 				15BADEDB1DF566DC00205CD5 /* SDWebImagePrefetcher.m in Sources */,
-				152FA0F41EB87210002AEF3B /* YGRollingAdView.m in Sources */,
 				15BE48CF1D94C4A20081E051 /* YGDrawingView.m in Sources */,
 				15A3E04B1DAA304000707203 /* YGTwoBarCodeView.m in Sources */,
 				15A6BF171E5D3FE20070678F /* YGPrintingInfo.m in Sources */,
+				15B8519A1F0252B8005A853E /* YGRollingAdInfo.m in Sources */,
 				15A42CA81E7F72B90090437F /* YGAppointmentVC.m in Sources */,
 				15CA57D01D87EAE500AFD555 /* YGMosaicImageView.m in Sources */,
 				15A29FE31E5E8D0600F44817 /* YGPrintingSetingView.m in Sources */,

@@ -8,11 +8,10 @@
 
 #import "YGRollingAdView.h"
 #import "UIImageView+WebCache.h"
-//#import "YGWebVC.h"
+#import "YGTool.h"
 
 @interface YGRollingAdView ()
 {
-//    YGWebVC *_webVC;
     UIImageView *_leftView;
     UIImageView *_centreView;
     UIImageView *_rightView;
@@ -33,11 +32,6 @@
 -(instancetype)initWithFrame:(CGRect)frame {
     if (self=[super initWithFrame:frame]) {
         _rollPictureArray = @[[UIImage new],[UIImage new],[UIImage new]];
-        self.timer=[NSTimer scheduledTimerWithTimeInterval:3
-                                                    target:self
-                                                  selector:@selector(runtimer)
-                                                  userInfo:nil
-                                                   repeats:YES];
         UIScrollView *mainPageTopScrollView=[[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
         mainPageTopScrollView.delegate=self;
         mainPageTopScrollView.pagingEnabled=YES;
@@ -54,6 +48,8 @@
             rollPictureImg.frame=CGRectMake(frame.size.width*i, 0, frame.size.width, frame.size.height);
             rollPictureImg.userInteractionEnabled = YES;
             [self.mainPageTopScrollView addSubview:rollPictureImg];
+            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
+            [rollPictureImg addGestureRecognizer:tap];
             if (i==0) {
                 _leftView = rollPictureImg;
             } else if (i==1) {
@@ -70,6 +66,17 @@
 #pragma mark 设置轮播图数组
 - (void)setRollPictureArray:(NSArray *)rollPictureArray {
     if (rollPictureArray.count>0) {
+        YGRollingAdInfo *info = rollPictureArray[0];
+        int time = 5;
+        if ([info.times intValue]>0) {
+            time = [info.times intValue];
+        }
+        [self.timer invalidate];
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:time
+                                                    target:self
+                                                  selector:@selector(runtimer)
+                                                  userInfo:nil
+                                                   repeats:YES];
         _rollPictureArray = rollPictureArray;
         _leftView.tag = rollPictureArray.count-1;
         _centreView.tag = 0;
@@ -112,9 +119,25 @@
 }
 #pragma mark 设置3个视图对应的图片
 - (void)setImage {
-    _leftView.image = _rollPictureArray[_leftView.tag];
-    _centreView.image = _rollPictureArray[_centreView.tag];
-    _rightView.image = _rollPictureArray[_rightView.tag];
+    YGRollingAdInfo *leftInfo = _rollPictureArray[_leftView.tag];
+    YGRollingAdInfo *centreInfo = _rollPictureArray[_centreView.tag];
+    YGRollingAdInfo *rightInfo = _rollPictureArray[_rightView.tag];
+    if ([leftInfo isKindOfClass:[YGRollingAdInfo class]]) {
+        [self setImageWithView:_leftView info:leftInfo];
+    }
+    if ([centreInfo isKindOfClass:[YGRollingAdInfo class]]) {
+        [self setImageWithView:_centreView info:centreInfo];
+    }
+    if ([rightInfo isKindOfClass:[YGRollingAdInfo class]]) {
+        [self setImageWithView:_rightView info:rightInfo];
+    }
+}
+- (void)setImageWithView:(UIImageView *)view info:(YGRollingAdInfo *)info {
+    if (info.image) {
+        view.image = info.image;
+    } else {
+        [view sd_setImageWithURL:[NSURL URLWithString:info.imageurl] placeholderImage:nil];
+    }
 }
 #pragma mark 结束滚动
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
@@ -128,36 +151,13 @@
 }
 
 
-//- (void)tapAction:(UITapGestureRecognizer *)tap
-//{
-//    CGPoint point = [tap locationInView:self.mainPageTopScrollView];
-//    NSInteger index = (point.x - ScreenWidth)/ScreenWidth;
-//    LImgInfoModel *model = self.rollPictureArray[index];
-//
-//    if (![YGToolKit isBlankString:model.linkurl]) {
-//        _webVC = [[YGWebVC alloc] init];
-//        _webVC.url = model.linkurl;
-//        _webVC.hidesBottomBarWhenPushed = YES;
-//
-//        UITabBarController *tabBar = (UITabBarController *)[YGToolKit getCurrentVC];
-//        [tabBar.selectedViewController pushViewController:_webVC animated:YES];
-//
-//        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-//        btn.frame = CGRectMake(ScreenWidth - 120, ScreenHeight - 64 -15, 80, 38);
-//        [btn setTitle:@"返回app" forState:UIControlStateNormal];
-//        btn.titleLabel.font = [UIFont boldSystemFontOfSize:13];
-//        btn.backgroundColor = [UIColor colorWithWhite:0.8 alpha:0.7];
-//        btn.layer.cornerRadius = 10;
-//        btn.layer.masksToBounds = YES;
-//        [btn addTarget:self action:@selector(webBackAction) forControlEvents:UIControlEventTouchUpInside];
-//        [_webVC.view addSubview:btn];
-//    }
-//}
-//
-//- (void)webBackAction
-//{
-//    [_webVC.navigationController popViewControllerAnimated:YES];
-//}
-
+- (void)tapAction:(UITapGestureRecognizer *)tap
+{
+    YGRollingAdInfo *info = _rollPictureArray[tap.view.tag];
+    if (![YGTool isBlankString:info.linkurl]) {
+        //跳转到对应网页
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:info.linkurl]];
+    }
+}
 
 @end

@@ -23,7 +23,14 @@
     [super viewDidLoad];
     [self setNavigationBarWithBackButton:YES];
     self.view.backgroundColor = [UIColor whiteColor];
-    NSArray *array = @[[UIImage imageNamed:@"image1"],[UIImage imageNamed:@"image2"],[UIImage imageNamed:@"image3"]];
+    YGRollingAdInfo *info1 = [YGRollingAdInfo new];
+    info1.image = [UIImage imageNamed:@"banner1"];
+    info1.linkurl = @"https://www.apple.com";
+    YGRollingAdInfo *info2 = [YGRollingAdInfo new];
+    info2.image = [UIImage imageNamed:@"banner2"];
+    YGRollingAdInfo *info3 = [YGRollingAdInfo new];
+    info3.image = [UIImage imageNamed:@"banner3"];
+    NSArray *array = @[info1,info2,info3];
     if (!_topView) {
         _topView = [[YGRollingAdView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenWidth/3)];
         _topView.rollPictureArray = array;
