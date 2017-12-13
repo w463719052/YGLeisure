@@ -28,6 +28,13 @@
 
 #define NAVBAR_BGCOLOR_2 RGBCOLOR(49,153, 215)
 
+#define StatusBarHeight [UIApplication sharedApplication].statusBarFrame.size.height
+#define TopBarHeight (StatusBarHeight+44.0f)
+
+#define DEVICE_IS_IPHONEX ([[UIScreen mainScreen] bounds].size.height == 812)
+#define BottomArcHeight ((DEVICE_IS_IPHONEX==1)?34.0f:0.0f)
+#define TabbarHeight ((DEVICE_IS_IPHONEX==1)?83.0f:49.0f)
+
 //数据中心
 //正式
 //#define TESTURL @"http://121.199.43.178:10003/appservice.asmx/Entrance"

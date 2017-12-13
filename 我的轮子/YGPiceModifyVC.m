@@ -28,7 +28,7 @@ static NSInteger const BackViewSpace = 30;
     [self setNavigationBarWithBackButton:YES];
     self.title = @"图片拼接";
     
-    self.view.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
+    self.view.backgroundColor = [UIColor blackColor];
     
     UIButton *rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     rightBtn.frame = CGRectMake(0, 0, 40, 40);

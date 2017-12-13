@@ -19,6 +19,7 @@
 #import "BLKWrite.h"
 #import "AppDelegate.h"
 #import "YGAppointmentVC.h"
+#import "YGSVGAnalysisVC.h"
 
 @interface ViewController ()
 {
@@ -35,13 +36,13 @@ static NSInteger const BUTTONHEIGTH = 40;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _buttonArray = @[@"物流详情",@"个人简介",@"订单详情页",@"图片拼接",@"图片标注",@"卡牌翻页",@"图片轮播",@"条码打印",@"silk转MP3"];
+    _buttonArray = @[@"物流详情",@"个人简介",@"订单详情页",@"图片拼接",@"图片标注",@"卡牌翻页",@"图片轮播",@"条码打印",@"silk转MP3",@"SVG解析显示"];
     for (int i = 0; i<_buttonArray.count; i++) {
         int column = i%5;
         int line = i/5;
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.tag = i;
-        button.frame  = CGRectMake(INTERVAL+(BUTTONWIDTH+INTERVAL)*column, 20+INTERVAL+(BUTTONHEIGTH+INTERVAL)*line, BUTTONWIDTH, BUTTONHEIGTH);
+        button.frame  = CGRectMake(INTERVAL+(BUTTONWIDTH+INTERVAL)*column, StatusBarHeight+INTERVAL+(BUTTONHEIGTH+INTERVAL)*line, BUTTONWIDTH, BUTTONHEIGTH);
         button.layer.cornerRadius = 5;
         button.backgroundColor = [UIColor blackColor];
         button.titleLabel.font = [UIFont systemFontOfSize:12];
@@ -92,6 +93,10 @@ static NSInteger const BUTTONHEIGTH = 40;
         [self presentViewController:naVC animated:YES completion:nil];
     } else if (send.tag == 8) {
         YGAppointmentVC *myVC = [[YGAppointmentVC alloc] init];
+        UINavigationController *naVC = [[UINavigationController alloc] initWithRootViewController:myVC];
+        [self presentViewController:naVC animated:YES completion:nil];
+    } else if (send.tag == 9) {
+        YGSVGAnalysisVC *myVC = [[YGSVGAnalysisVC alloc] init];
         UINavigationController *naVC = [[UINavigationController alloc] initWithRootViewController:myVC];
         [self presentViewController:naVC animated:YES completion:nil];
     }
