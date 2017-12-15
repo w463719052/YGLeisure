@@ -320,7 +320,7 @@
 	CAShapeLayer* _shapeLayer = [CAShapeLayerWithHitTest layer];
 	
 	[self configureCALayer:_shapeLayer usingElement:svgElement];
-	
+    
 	NSString* actualStroke = [svgElement cascadedValueForStylableProperty:@"stroke"];
 	if (!actualStroke)
 		actualStroke = @"none";
@@ -482,10 +482,17 @@
 			strokeLayer.lineWidth = 1.0f; // default value from SVG spec
 		}
 	}
-	
-	NSString* actualFill = [svgElement cascadedValueForStylableProperty:@"fill"];
-	NSString* actualFillOpacity = [svgElement cascadedValueForStylableProperty:@"fill-opacity"];
-	
+    
+    NSString* actualFill = [svgElement cascadedValueForStylableProperty:@"fill"];
+    NSString* actualFillOpacity = [svgElement cascadedValueForStylableProperty:@"fill-opacity"];
+    
+//    NSString* actualStyle = [svgElement cascadedValueForStylableProperty:@"style"];
+//    if (actualStyle ) {
+//        if ([actualStyle hasPrefix:@"&"]) {
+//            fill =
+//        }
+//    }
+    
 	if ( [actualFill hasPrefix:@"url"] )
 	{
 		NSRange idKeyRange = NSMakeRange(5, actualFill.length - 6);

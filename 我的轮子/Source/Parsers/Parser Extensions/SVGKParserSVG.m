@@ -21,6 +21,7 @@
 
 #import "SVGDocument_Mutable.h"
 
+
 @implementation SVGKParserSVG
 
 static NSDictionary *elementMap;
@@ -71,9 +72,6 @@ static NSDictionary *elementMap;
 {
 	if( [[self supportedNamespaces] containsObject:XMLNSURI] )
 	{
-        if ([name isEqualToString:@"text"]) {
-            NSLog(@"ssss");
-        }
 		Class elementClass = [elementMap objectForKey:name];
 		
 		if (!elementClass) {

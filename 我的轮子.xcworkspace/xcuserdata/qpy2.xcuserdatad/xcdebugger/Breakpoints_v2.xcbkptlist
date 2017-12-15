@@ -83,5 +83,117 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x6211;&#x7684;&#x8f6e;&#x5b50;/Source/Parsers/Parser Extensions/SVGKParserStyles.m"
+            timestampString = "534913140.519261"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "-handleStartElement:document:namePrefix:namespaceURI:attributes:parseResult:parentNode:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x6211;&#x7684;&#x8f6e;&#x5b50;/Source/DOM classes/Core DOM/AppleSucksDOMImplementation.m"
+            timestampString = "534930237.75022"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "-createDocument:qualifiedName:doctype:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[AppleSucksDOMImplementation createDocument:qualifiedName:doctype:]"
+                  moduleName = "&#x6211;&#x7684;&#x8f6e;&#x5b50;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/qpy2/Desktop/%E6%88%91%E7%9A%84%E8%BD%AE%E5%AD%90/%E6%88%91%E7%9A%84%E8%BD%AE%E5%AD%90/Source/DOM%20classes/Core%20DOM/AppleSucksDOMImplementation.m"
+                  timestampString = "535024126.817031"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "132">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[AppleSucksDOMImplementation createDocument:qualifiedName:doctype:]"
+                  moduleName = "&#x6211;&#x7684;&#x8f6e;&#x5b50;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/qpy2/Desktop/%E6%88%91%E7%9A%84%E8%BD%AE%E5%AD%90/%E6%88%91%E7%9A%84%E8%BD%AE%E5%AD%90/Source/DOM%20classes/Core%20DOM/AppleSucksDOMImplementation.m"
+                  timestampString = "535024126.819238"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "340">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x6211;&#x7684;&#x8f6e;&#x5b50;/Source/DOM classes/Core DOM/AppleSucksDOMImplementation.m"
+            timestampString = "534930237.750655"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "-createDocumentType:publicId:systemId:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[AppleSucksDOMImplementation createDocumentType:publicId:systemId:]"
+                  moduleName = "&#x6211;&#x7684;&#x8f6e;&#x5b50;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/qpy2/Desktop/%E6%88%91%E7%9A%84%E8%BD%AE%E5%AD%90/%E6%88%91%E7%9A%84%E8%BD%AE%E5%AD%90/Source/DOM%20classes/Core%20DOM/AppleSucksDOMImplementation.m"
+                  timestampString = "535024126.82474"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "132">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[AppleSucksDOMImplementation createDocumentType:publicId:systemId:]"
+                  moduleName = "&#x6211;&#x7684;&#x8f6e;&#x5b50;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/qpy2/Desktop/%E6%88%91%E7%9A%84%E8%BD%AE%E5%AD%90/%E6%88%91%E7%9A%84%E8%BD%AE%E5%AD%90/Source/DOM%20classes/Core%20DOM/AppleSucksDOMImplementation.m"
+                  timestampString = "535024126.82642"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "340">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

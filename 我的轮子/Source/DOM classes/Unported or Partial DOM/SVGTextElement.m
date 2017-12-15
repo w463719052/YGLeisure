@@ -91,7 +91,7 @@
 											  suggestedUntransformedSize.width,
 											  suggestedUntransformedSize.height); // everything's been pre-scaled by [self transformAbsolute]
 	
-    CATextLayer *label = [[CATextLayer alloc] init];
+    CATextLayer *label = [CATextLayer layer];
     [SVGHelperUtilities configureCALayer:label usingElement:self];
 	
     label.font = font; /** WARNING: Apple docs say you "CANNOT" assign a UIFont instance here, for some reason they didn't bridge it with CGFont */
@@ -142,15 +142,14 @@
         label.anchorPoint = CGPointMake(1.0, 0.0);
     else
         label.anchorPoint = CGPointZero; // WARNING: SVG applies transforms around the top-left as origin, whereas Apple defaults to center as origin, so we tell Apple to work "like SVG" here.
-    
 	label.affineTransform = textTransformAbsoluteWithLocalPositionOffset;
 	label.fontSize = effectiveFontSize;
     label.string = effectiveText;
-    label.alignmentMode = kCAAlignmentLeft;
+    label.alignmentMode = kCAAlignmentCenter;
     
     label.foregroundColor = [SVGHelperUtilities parseFillForElement:self];
 #if TARGET_OS_IPHONE
-    label.contentsScale = [[UIScreen mainScreen] scale];
+    label.contentsScale = 10;
 #endif
 
 	/** VERY USEFUL when trying to debug text issues:

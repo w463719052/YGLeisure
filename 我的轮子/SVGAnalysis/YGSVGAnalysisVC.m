@@ -12,15 +12,24 @@
 #import "SVGKit.h"
 #import "SVGParser.h"
 #import "UIScrollView+YGTouch.h"
+#import "YGSVGAnalysisCell.h"
+#import <CoreText/CoreText.h>
+#import "MBProgressHUD+NSString.h"
 
 @interface YGSVGAnalysisVC ()<QLPreviewControllerDataSource,QLPreviewControllerDelegate,UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 {
     UIScrollView *_scrollView;
+    SVGKImage *_svgImage;
     SVGKLayeredImageView *_svgView;
-    NSMutableArray *_textArray;
-    CAShapeLayer *_markCALayer;
+    NSMutableDictionary *_textPointDic;
+    NSMutableArray *_keyArray;
+    
+    NSMutableArray *_markCALayerArray;
     
     UITableView *_tableView;
+    YGSVGAnalysisInfo *_selectedInfo;
+    
+//    UILabel *_promptLbl;
 }
 
 @end
@@ -29,21 +38,39 @@ static const NSInteger MarkRadius = 20;
 
 @implementation YGSVGAnalysisVC
 
+#define YGWIDTH [UIScreen mainScreen].bounds.size.width
+#define YGHEIGHT [UIScreen mainScreen].bounds.size.height
+#define GRAY_BGCOLOR RGBCOLOR(243,243,243)
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setNavigationBarWithBackButton:YES];
-    [self setMagnifyImage];
-    
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(_scrollView.frame), ScreenWidth, CGRectGetHeight(self.view.frame)/2) style:UITableViewStyleGrouped];
+        UILabel *titleLbl = [[UILabel alloc] initWithFrame:CGRectMake(0, (ScreenHeight-TopBarHeight)/2, ScreenWidth, 40)];
+        titleLbl.backgroundColor = GRAY_BGCOLOR;
+        titleLbl.font = [UIFont boldSystemFontOfSize:15];
+        titleLbl.textColor =  [UIColor darkGrayColor];
+        titleLbl.text = @"  配件清单:";
+        [self.view addSubview:titleLbl];
+        
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(titleLbl.frame), ScreenWidth, (ScreenHeight-TopBarHeight)/2-40) style:UITableViewStyleGrouped];
         _tableView.backgroundColor = RGBCOLOR(243, 243, 243);
-        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
         _tableView.showsHorizontalScrollIndicator = NO;
         _tableView.showsVerticalScrollIndicator = NO;
         _tableView.delegate = self;
         _tableView.dataSource = self;
+        _tableView.bounces = NO;
         [self.view addSubview:_tableView];
     }
+    [self setMagnifyImage];
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(ScreenWidth-50, 10, 40, 40);
+    button.backgroundColor = [UIColor greenColor];
+    [self.view addSubview:button];
+    [button addTarget:self action:@selector(zoomScrollView) forControlEvents:UIControlEventTouchUpInside];
 //    YGSVGAnalysisView *SVGAnalysisView = [[YGSVGAnalysisView alloc] initWithFrame:self.view.bounds];
 //    SVGAnalysisView.backgroundColor = [UIColor redColor];
 //    [self.view addSubview:SVGAnalysisView];
@@ -56,44 +83,76 @@ static const NSInteger MarkRadius = 20;
 //    NSLog(@"%@",self.dataSource);
 //    [self presentModalViewController:previewController animated:YES];
 }
-
-#define YGWIDTH [UIScreen mainScreen].bounds.size.width
-#define YGHEIGHT [UIScreen mainScreen].bounds.size.height
+#pragma mark 增大缩小可视范围
+- (void)zoomScrollView {
+    if (_scrollView.frame.size.height>(ScreenHeight-TopBarHeight)/2) {
+        _scrollView.frame = CGRectMake(0, 0, ScreenWidth, (ScreenHeight-TopBarHeight)/2);
+    } else {
+        _scrollView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight-TopBarHeight);
+    }
+    [self setCenterWithScrollView:_scrollView];
+}
 
 
 - (void)setMagnifyImage {
-    _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, CGRectGetHeight(self.view.frame)/2)];
+    _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, (ScreenHeight-TopBarHeight)/2)];
     _scrollView.backgroundColor = [UIColor whiteColor];
     _scrollView.userInteractionEnabled = YES;
     _scrollView.showsHorizontalScrollIndicator = NO;
     _scrollView.showsVerticalScrollIndicator = NO;
     _scrollView.delegate = self;
-    _scrollView.maximumZoomScale = 1.5;
-    _scrollView.minimumZoomScale = 0.5;
+    _scrollView.maximumZoomScale = 10;
+    _scrollView.minimumZoomScale = 0.2;
     [self.view addSubview:_scrollView];
-    NSString *svgName = @"4G63-D-J2-04";
-    SVGKImage *svgImage = [SVGKImage imageNamed:svgName];
-    NodeList *textList = [svgImage.DOMTree getElementsByTagName:@"text"];
-    _textArray = [NSMutableArray arrayWithCapacity:10];
-    for (SVGTextElement *textElement in textList) {
-        float Offset = textElement.textContent.length*3;
-        CGPoint point = CGPointMake(textElement.transform.tx+Offset, textElement.transform.ty-2);
-        NSDictionary *dic = @{@"text":textElement.textContent,@"point":NSStringFromCGPoint(point)};
-        [_textArray addObject:dic];
-    }
-    
-    
-    _svgView = [[SVGKLayeredImageView alloc] initWithSVGKImage:svgImage];
-    _svgView.frame = CGRectMake(0, 0, svgImage.size.width, svgImage.size.height);
+//    NSString *svgName = @"4G63-D-J4-03";
+//    SVGKImage *svgImage = [SVGKImage imageNamed:svgName];
+    _svgImage = [SVGKImage imageWithContentsOfURL:[NSURL URLWithString:@"http://epc.svw.servision.com.cn/legend/svg/a4e8708ec1f39283b411f24daed92605.svg"]];
+    _svgView = [[SVGKLayeredImageView alloc] initWithSVGKImage:_svgImage];
+    _svgView.frame = CGRectMake(0, 0, _svgImage.size.width, _svgImage.size.height);
     _svgView.backgroundColor = [UIColor clearColor];
     _svgView.userInteractionEnabled = YES;
     [_scrollView addSubview:_svgView];
-    [_scrollView setContentSize:CGSizeMake(svgImage.size.width, svgImage.size.height)];
-    _scrollView.contentOffset = CGPointMake((svgImage.size.width-ScreenWidth)/2.0f, (svgImage.size.height-(ScreenHeight-TopBarHeight))/2.0f);
-    
+    [_scrollView setContentSize:CGSizeMake(_svgImage.size.width, _svgImage.size.height)];
+    _scrollView.contentOffset = CGPointMake((_svgImage.size.width-ScreenWidth)/2.0f, (_svgImage.size.height-(ScreenHeight-TopBarHeight))/2.0f);
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
     // 添加手势
     [_svgView addGestureRecognizer:tap];
+    
+    NodeList *textList = [_svgImage.DOMTree getElementsByTagName:@"text"];
+    _textPointDic = [NSMutableDictionary dictionaryWithCapacity:10];
+    for (SVGTextElement *textElement in textList) {
+        CGPoint point = CGPointMake(textElement.transform.tx, textElement.transform.ty);
+        NSString *key = textElement.textContent?:@"";
+        YGSVGAnalysisInfo *info = [[YGSVGAnalysisInfo alloc] init];
+        if (!_textPointDic[key]) {
+            info.number = textElement.textContent?:@"";
+        } else {
+            info = _textPointDic[key][0][@"info"];
+        }
+        NSMutableDictionary *dic = [@{@"text":textElement.textContent?:@"",@"point":NSStringFromCGPoint(point)?:@"",@"font":[textElement cascadedValueForStylableProperty:@"font-size"]?:@"",@"font-family":[textElement cascadedValueForStylableProperty:@"font-family"]?:@"",@"text-anchor":[textElement cascadedValueForStylableProperty:@"text-anchor"]?:@"",@"info":info} mutableCopy];
+        if (!_textPointDic[key]) {
+            NSMutableArray *arr = [NSMutableArray arrayWithCapacity:10];
+            [arr addObject:dic];
+            [_textPointDic setValue:arr forKey:key];
+            if (!_keyArray) {
+                _keyArray = [NSMutableArray arrayWithCapacity:10];
+            }
+            [_keyArray addObject:info];
+        } else {
+            NSMutableArray *arr = _textPointDic[key];
+            [arr addObject:dic];
+        }
+    }
+    //数组排序
+    _keyArray = [[_keyArray sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+        YGSVGAnalysisInfo *info1 = obj1;
+        YGSVGAnalysisInfo *info2 = obj2;
+        return [info1.number compare:info2.number options:NSNumericSearch];
+    }] mutableCopy];
+    [_keyArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        YGSVGAnalysisInfo *info = obj;
+        info.indexPath = [NSIndexPath indexPathForRow:idx inSection:0];
+    }];
 }
 
 -(UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
@@ -101,13 +160,10 @@ static const NSInteger MarkRadius = 20;
 }
 - (void)scrollViewDidZoom:(UIScrollView *)scrollView
 {
-//    CGFloat imageBiLi = _svgView.image.size.width/_svgView.image.size.height;
-//    CGFloat windowBiLi = ScreenWidth/ScreenHeight;
-//    if (imageBiLi>windowBiLi) {
-//        scrollView.contentSize = CGSizeMake(_svgView.frame.size.width, _svgView.frame.size.width/imageBiLi);
-//    } else {
-//        scrollView.contentSize = CGSizeMake(_svgView.frame.size.height*imageBiLi, _svgView.frame.size.height);
-//    }
+    [self setCenterWithScrollView:scrollView];
+}
+#pragma mark 设置中心
+- (void)setCenterWithScrollView:(UIScrollView *)scrollView {
     CGFloat offsetX = (scrollView.bounds.size.width > scrollView.contentSize.width)?(scrollView.bounds.size.width - scrollView.contentSize.width)/2.0f : 0.0;
     CGFloat offsetY = (scrollView.bounds.size.height > scrollView.contentSize.height)?(scrollView.bounds.size.height - scrollView.contentSize.height)/2.0f : 0.0;
     _svgView.center = CGPointMake(scrollView.contentSize.width/2.0f + offsetX,scrollView.contentSize.height/2.0f + offsetY);
@@ -115,34 +171,100 @@ static const NSInteger MarkRadius = 20;
 
 - (void)tap:(UITapGestureRecognizer *)send {
     CGPoint point = [send locationInView:_svgView];
-    if (!_markCALayer) {
-        _markCALayer = [[CAShapeLayer alloc]init];
-    }
-    [_markCALayer removeFromSuperlayer];
-    for (NSDictionary *pointDic in _textArray) {
-       CGPoint textPoint = CGPointFromString(pointDic[@"point"]);
-       CGRect textRect = CGRectMake(textPoint.x-MarkRadius, textPoint.y-MarkRadius, MarkRadius*2, MarkRadius*2);
-        if (CGRectContainsPoint(textRect,point)) {
-            UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:textPoint
-                                                                radius:MarkRadius
-                                                            startAngle:-M_PI
-                                                              endAngle:M_PI
-                                                             clockwise:YES];
-            _markCALayer.path = path.CGPath;
-            _markCALayer.fillColor = [UIColor clearColor].CGColor;
-            _markCALayer.strokeColor = [UIColor orangeColor].CGColor;
-            _markCALayer.lineWidth = 2;
-            //    _markCALayer.strokeStart = 0;
-            //    _markCALayer.strokeStart = 1;
-            //    _markCALayer.strokeEnd = 1;
-            [_svgView.layer addSublayer:_markCALayer];
+    for (NSString *key in _textPointDic) {
+        BOOL isReturn = NO;
+        for (NSDictionary *pointDic in _textPointDic[key]) {
+            CGPoint centPoint = [self getTextCentPointWithTextDic:pointDic];
+            CGRect textRect = CGRectMake(centPoint.x-MarkRadius, centPoint.y-MarkRadius, MarkRadius*2.0f, MarkRadius*2.0f);
+            if (CGRectContainsPoint(textRect,point)) {
+                [self removeLayer];
+                for (NSDictionary *pointDic in _textPointDic[key]) {
+                    CGPoint centPoint = [self getTextCentPointWithTextDic:pointDic];
+                    [self drawRoundWithCentPoint:centPoint];
+                }
+                YGSVGAnalysisInfo *info = pointDic[@"info"];
+                [self selectTextPointReloadWithInfo:info];
+                [_tableView scrollToRowAtIndexPath:info.indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
+                if (_scrollView.frame.size.height>(ScreenHeight-TopBarHeight)/2) {
+                    [MBProgressHUD myShowTextOnly:[NSString stringWithFormat:@"%@测试测试",info.number] toView:self.view];
+                }
+                isReturn = YES;
+            }
+        }
+        if (isReturn) {
             return;
         }
     }
-//    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(point.x, point.y, 26, 26) cornerRadius:13];
-    
 }
-
+#pragma mark 获取文字中心点
+- (CGPoint)getTextCentPointWithTextDic:(NSDictionary *)pointDic {
+    NSString *textAnchor = pointDic[@"text-anchor"];
+    CGFloat index = 2.0f;
+    if( [@"middle" isEqualToString:textAnchor] )
+        index = 0;
+    else if( [@"end" isEqualToString:textAnchor] )
+        index = -2.0f;
+    CGPoint textPoint = CGPointFromString(pointDic[@"point"]);
+    NSString *actualSize = pointDic[@"font"];
+    NSString *actualFamily = pointDic[@"font-family"];
+    NSString *text = pointDic[@"text"];
+    CGSize textSize = [self getTextSizeWithActualSize:actualSize actualFamily:actualFamily text:text];
+    CGPoint centPoint = CGPointMake(textPoint.x+textSize.width/index, textPoint.y-textSize.height/6.0f);
+    return centPoint;
+}
+#pragma mark 获取文字的大小
+- (CGSize)getTextSizeWithActualSize:(NSString *)actualSize actualFamily:(NSString *)actualFamily text:(NSString *)text{
+    CGFloat effectiveFontSize = (actualSize.length > 0) ? [actualSize floatValue] : 12;
+    CTFontRef font = NULL;
+    if( actualFamily != nil)
+        font = CTFontCreateWithName( (CFStringRef)actualFamily, effectiveFontSize, NULL);
+    if( font == NULL ) {
+        font = CTFontCreateWithName( (CFStringRef) @"HelveticaNeue", effectiveFontSize, NULL);
+    }
+    NSMutableAttributedString* tempString = [[NSMutableAttributedString alloc] initWithString:text];
+    [tempString addAttribute:(NSString *)kCTFontAttributeName
+                       value:(__bridge id)font
+                       range:NSMakeRange(0, tempString.string.length)];
+    CTFramesetterRef framesetter = CTFramesetterCreateWithAttributedString( (CFMutableAttributedStringRef) tempString );
+    CGSize suggestedUntransformedSize = CTFramesetterSuggestFrameSizeWithConstraints(framesetter, CFRangeMake(0, 0), NULL, CGSizeMake(CGFLOAT_MAX, CGFLOAT_MAX), NULL);
+    CFRelease(framesetter);
+    return suggestedUntransformedSize;
+}
+#pragma mark 清除上一次画的圆
+- (void)removeLayer {
+    for (CAShapeLayer *layer in _markCALayerArray) {
+        [layer removeFromSuperlayer];
+    }
+    [_markCALayerArray removeAllObjects];
+}
+#pragma mark 画圆
+- (void)drawRoundWithCentPoint:(CGPoint)centPoint {
+    CAShapeLayer *markCALayer = [[CAShapeLayer alloc]init];
+    UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:centPoint
+                                                        radius:MarkRadius
+                                                    startAngle:-M_PI
+                                                      endAngle:M_PI
+                                                     clockwise:YES];
+    markCALayer.path = path.CGPath;
+    markCALayer.fillColor = [UIColor colorWithRed:1 green:0 blue:0 alpha:0.2].CGColor;
+    markCALayer.strokeColor = [UIColor redColor].CGColor;
+    markCALayer.lineWidth = 2;
+    [_svgView.layer addSublayer:markCALayer];
+    
+    if (!_markCALayerArray) {
+        _markCALayerArray = [NSMutableArray arrayWithCapacity:10];
+    }
+    [_markCALayerArray addObject:markCALayer];
+    
+    CABasicAnimation *pathAnima = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+    pathAnima.duration = 1.0f;
+    pathAnima.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    pathAnima.fromValue = [NSNumber numberWithFloat:0.0f];
+    pathAnima.toValue = [NSNumber numberWithFloat:1.0f];
+    pathAnima.fillMode = kCAFillModeForwards;
+    pathAnima.removedOnCompletion = NO;
+    [markCALayer addAnimation:pathAnima forKey:@"strokeEndAnimation"];
+}
 //- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
 //    UITouch *touch = touches.anyObject;//获取触摸对象
 //    CGPoint point = [touch locationInView:_svgView];
@@ -222,7 +344,7 @@ static const NSInteger MarkRadius = 20;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _textArray.count;
+    return _keyArray.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -243,26 +365,51 @@ static const NSInteger MarkRadius = 20;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentifier = @"MyCell";
-    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    YGSVGAnalysisCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {
-        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        cell=[[YGSVGAnalysisCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
         cell.selectionStyle = UITableViewCellEditingStyleNone;
     }
-    NSDictionary *pointDic = _textArray[indexPath.row];
-    cell.textLabel.text = pointDic[@"text"];
+    YGSVGAnalysisInfo *info = _keyArray[indexPath.row];
+    info.indexPath = indexPath;
+    [cell setContentViewInfo:info];
     return cell;
 }
 
 
 #pragma mark UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 30;
+    return [YGSVGAnalysisCell cellHeigt];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    YGSVGAnalysisInfo *info = _keyArray[indexPath.row];
+    NSMutableArray *arr = _textPointDic[info.number];
+    [self removeLayer];
+    for (NSDictionary *pointDic in arr) {
+        CGPoint centPoint = [self getTextCentPointWithTextDic:pointDic];
+        [self drawRoundWithCentPoint:centPoint];
+    }
     
+    CGSize imageSize = _svgImage.size;
+    CGSize scrollViewSize = _scrollView.frame.size;
+    CGFloat scale = _scrollView.zoomScale;
+    if (imageSize.width/imageSize.height>scrollViewSize.width/scrollViewSize.height) {
+        scale = scrollViewSize.width/imageSize.width;
+    } else {
+        scale = scrollViewSize.height/imageSize.height;
+    }
+    [_scrollView setZoomScale:scale animated:YES];
+    
+    [self selectTextPointReloadWithInfo:info];
 }
-
+#pragma 设置info的选择状态
+- (void)selectTextPointReloadWithInfo:(YGSVGAnalysisInfo *)info {
+    _selectedInfo.isSelect = NO;
+    info.isSelect = YES;
+    _selectedInfo = info;
+    [_tableView reloadData];
+}
 
 
 - (NSInteger)numberOfPreviewItemsInPreviewController:(QLPreviewController *)controller

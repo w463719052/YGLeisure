@@ -951,7 +951,7 @@
 		</g>
 	</g>
 </pattern>
-<rect style="&st4;" width="400" height="600"/>
+<rect fill="none" width="400" height="600"/>
 <line style="&st2;" x1="51.953" y1="552.134" x2="71.953" y2="552.134"/>
 <text transform="matrix(1 0 0 1 73.314 556.6982)" style="&st5; &st7;">11</text>
 <line style="&st2;" x1="279.557" y1="68.66" x2="299.557" y2="68.66"/>

@@ -94,6 +94,9 @@
 		9F049D2E1FE1318D001DA8C3 /* 4G63-D-J4-03.svg in Resources */ = {isa = PBXBuildFile; fileRef = 9F049D291FE1318B001DA8C3 /* 4G63-D-J4-03.svg */; };
 		9F049D301FE1318D001DA8C3 /* 4G63-D-J2-04.svg in Resources */ = {isa = PBXBuildFile; fileRef = 9F049D2B1FE1318D001DA8C3 /* 4G63-D-J2-04.svg */; };
 		9F049D311FE1318D001DA8C3 /* 4G63-D-J2-06.svg in Resources */ = {isa = PBXBuildFile; fileRef = 9F049D2C1FE1318D001DA8C3 /* 4G63-D-J2-06.svg */; };
+		9F049D331FE1373D001DA8C3 /* T11-3711001FN.svg in Resources */ = {isa = PBXBuildFile; fileRef = 9F049D321FE1373D001DA8C3 /* T11-3711001FN.svg */; };
+		9F0DBA7D1FE279A1001230F6 /* YGSVGAnalysisCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0DBA7C1FE279A1001230F6 /* YGSVGAnalysisCell.m */; };
+		9F292ACD1FE3BB7C00897E3B /* YGSVGAnalysisInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F292ACC1FE3BB7C00897E3B /* YGSVGAnalysisInfo.m */; };
 		9FCFD4011FDFAE5900E621B1 /* AppleSucksDOMImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCFD3151FDFAE5800E621B1 /* AppleSucksDOMImplementation.m */; };
 		9FCFD4021FDFAE5900E621B1 /* Attr.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCFD3171FDFAE5800E621B1 /* Attr.m */; };
 		9FCFD4031FDFAE5900E621B1 /* CDATASection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCFD3191FDFAE5800E621B1 /* CDATASection.m */; };
@@ -391,6 +394,11 @@
 		9F049D291FE1318B001DA8C3 /* 4G63-D-J4-03.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "4G63-D-J4-03.svg"; sourceTree = "<group>"; };
 		9F049D2B1FE1318D001DA8C3 /* 4G63-D-J2-04.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "4G63-D-J2-04.svg"; sourceTree = "<group>"; };
 		9F049D2C1FE1318D001DA8C3 /* 4G63-D-J2-06.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "4G63-D-J2-06.svg"; sourceTree = "<group>"; };
+		9F049D321FE1373D001DA8C3 /* T11-3711001FN.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "T11-3711001FN.svg"; sourceTree = "<group>"; };
+		9F0DBA7B1FE279A1001230F6 /* YGSVGAnalysisCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGSVGAnalysisCell.h; sourceTree = "<group>"; };
+		9F0DBA7C1FE279A1001230F6 /* YGSVGAnalysisCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGSVGAnalysisCell.m; sourceTree = "<group>"; };
+		9F292ACB1FE3BB7C00897E3B /* YGSVGAnalysisInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGSVGAnalysisInfo.h; sourceTree = "<group>"; };
+		9F292ACC1FE3BB7C00897E3B /* YGSVGAnalysisInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGSVGAnalysisInfo.m; sourceTree = "<group>"; };
 		9FCFD30F1FDFA7E000E621B1 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		9FCFD3141FDFAE5800E621B1 /* AppleSucksDOMImplementation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppleSucksDOMImplementation.h; sourceTree = "<group>"; };
 		9FCFD3151FDFAE5800E621B1 /* AppleSucksDOMImplementation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppleSucksDOMImplementation.m; sourceTree = "<group>"; };
@@ -1367,6 +1375,7 @@
 		9FF75FD21FD8D55E008E8F49 /* SVGAnalysis */ = {
 			isa = PBXGroup;
 			children = (
+				9F049D321FE1373D001DA8C3 /* T11-3711001FN.svg */,
 				9F049D2B1FE1318D001DA8C3 /* 4G63-D-J2-04.svg */,
 				9F049D2C1FE1318D001DA8C3 /* 4G63-D-J2-06.svg */,
 				9F049D291FE1318B001DA8C3 /* 4G63-D-J4-03.svg */,
@@ -1381,6 +1390,10 @@
 				9FF75FD31FD8D598008E8F49 /* YGSVGAnalysisView.m */,
 				9FF75FD81FD8D5D9008E8F49 /* YGSVGAnalysisVC.h */,
 				9FF75FD91FD8D5D9008E8F49 /* YGSVGAnalysisVC.m */,
+				9F0DBA7B1FE279A1001230F6 /* YGSVGAnalysisCell.h */,
+				9F0DBA7C1FE279A1001230F6 /* YGSVGAnalysisCell.m */,
+				9F292ACB1FE3BB7C00897E3B /* YGSVGAnalysisInfo.h */,
+				9F292ACC1FE3BB7C00897E3B /* YGSVGAnalysisInfo.m */,
 				9F049D251FE0B6BF001DA8C3 /* UIScrollView+YGTouch.h */,
 				9F049D261FE0B6BF001DA8C3 /* UIScrollView+YGTouch.m */,
 			);
@@ -1479,6 +1492,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F049D331FE1373D001DA8C3 /* T11-3711001FN.svg in Resources */,
 				15CC94381E5C24B3004A4937 /* tscpic.rtf in Resources */,
 				15A6BF201E5D932E0070678F /* ico180.png in Resources */,
 				9FCFD4991FDFC91C00E621B1 /* 127.svg in Resources */,
@@ -1629,6 +1643,7 @@
 				9FCFD4401FDFAE5900E621B1 /* SVGTitleElement.m in Sources */,
 				15B60E771DBD9951008B5A14 /* MBProgressHUD+NSString.m in Sources */,
 				15B555781D38DD7300DD7233 /* YGBaseMapView.m in Sources */,
+				9F292ACD1FE3BB7C00897E3B /* YGSVGAnalysisInfo.m in Sources */,
 				9FCFD40D1FDFAE5900E621B1 /* CSSValueList.m in Sources */,
 				15BE48D21D94C5210081E051 /* YGDrawingVC.m in Sources */,
 				9FCFD4261FDFAE5900E621B1 /* SVGMatrix.m in Sources */,
@@ -1671,6 +1686,7 @@
 				9FCFD4211FDFAE5900E621B1 /* SVGElementInstance.m in Sources */,
 				9FCFD4381FDFAE5900E621B1 /* SVGPathElement.m in Sources */,
 				9FCFD4041FDFAE5900E621B1 /* CharacterData.m in Sources */,
+				9F0DBA7D1FE279A1001230F6 /* YGSVGAnalysisCell.m in Sources */,
 				9FCFD45C1FDFAE5900E621B1 /* SVGKit.m in Sources */,
 				9FCFD4111FDFAE5900E621B1 /* DOMHelperUtilities.m in Sources */,
 				15BADEE21DF566DC00205CD5 /* UIView+WebCacheOperation.m in Sources */,
