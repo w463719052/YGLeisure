@@ -7,14 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "YGSVGAnalysisInfo.h"
+#import "YGSVGAnalysisPromptAlertView.h"
 
 @interface YGSVGAnalysisCell : UITableViewCell
 
-@property (nonatomic,strong) UILabel *numberLbl;
-@property (nonatomic,strong) UIImageView *picView;
-@property (nonatomic,strong) UILabel *messageLbl;
-
+@property (nonatomic,strong) YGSVGAnalysisPromptAlertView *promptAlertView;
 
 - (void)setContentViewInfo:(YGSVGAnalysisInfo *)info;
 + (CGFloat)cellHeigt;

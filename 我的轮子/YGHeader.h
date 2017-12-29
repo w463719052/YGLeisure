@@ -27,6 +27,7 @@
 #define RGBACOLOR(r, g, b, a)   [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
 
 #define NAVBAR_BGCOLOR_2 RGBCOLOR(49,153, 215)
+#define GRAY_BGCOLOR RGBCOLOR(243,243,243)
 
 #define StatusBarHeight [UIApplication sharedApplication].statusBarFrame.size.height
 #define TopBarHeight (StatusBarHeight+44.0f)

@@ -14,7 +14,7 @@
 #import "UIScrollView+YGTouch.h"
 #import "YGSVGAnalysisCell.h"
 #import <CoreText/CoreText.h>
-#import "MBProgressHUD+NSString.h"
+#import "YGSVGAnalysisPromptAlertView.h"
 
 @interface YGSVGAnalysisVC ()<QLPreviewControllerDataSource,QLPreviewControllerDelegate,UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 {
@@ -29,7 +29,7 @@
     UITableView *_tableView;
     YGSVGAnalysisInfo *_selectedInfo;
     
-//    UILabel *_promptLbl;
+    YGSVGAnalysisPromptAlertView *_promptAlertView;
 }
 
 @end
@@ -46,34 +46,42 @@ static const NSInteger MarkRadius = 20;
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setNavigationBarWithBackButton:YES];
-    if (!_tableView) {
-        UILabel *titleLbl = [[UILabel alloc] initWithFrame:CGRectMake(0, (ScreenHeight-TopBarHeight)/2, ScreenWidth, 40)];
-        titleLbl.backgroundColor = GRAY_BGCOLOR;
-        titleLbl.font = [UIFont boldSystemFontOfSize:15];
-        titleLbl.textColor =  [UIColor darkGrayColor];
-        titleLbl.text = @"  配件清单:";
-        [self.view addSubview:titleLbl];
-        
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(titleLbl.frame), ScreenWidth, (ScreenHeight-TopBarHeight)/2-40) style:UITableViewStyleGrouped];
-        _tableView.backgroundColor = RGBCOLOR(243, 243, 243);
-        _tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-        _tableView.showsHorizontalScrollIndicator = NO;
-        _tableView.showsVerticalScrollIndicator = NO;
-        _tableView.delegate = self;
-        _tableView.dataSource = self;
-        _tableView.bounces = NO;
-        [self.view addSubview:_tableView];
-    }
-    [self setMagnifyImage];
-    
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = CGRectMake(ScreenWidth-50, 10, 40, 40);
-    button.backgroundColor = [UIColor greenColor];
-    [self.view addSubview:button];
-    [button addTarget:self action:@selector(zoomScrollView) forControlEvents:UIControlEventTouchUpInside];
-//    YGSVGAnalysisView *SVGAnalysisView = [[YGSVGAnalysisView alloc] initWithFrame:self.view.bounds];
-//    SVGAnalysisView.backgroundColor = [UIColor redColor];
-//    [self.view addSubview:SVGAnalysisView];
+//    if (!_tableView) {
+//        UILabel *titleLbl = [[UILabel alloc] initWithFrame:CGRectMake(0, (ScreenHeight-TopBarHeight)/2, ScreenWidth, 40)];
+//        titleLbl.backgroundColor = GRAY_BGCOLOR;
+//        titleLbl.font = [UIFont boldSystemFontOfSize:15];
+//        titleLbl.textColor =  [UIColor darkGrayColor];
+//        titleLbl.text = @"  配件清单:";
+//        [self.view addSubview:titleLbl];
+//
+//        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(titleLbl.frame), ScreenWidth, (ScreenHeight-TopBarHeight)/2-40) style:UITableViewStyleGrouped];
+//        _tableView.backgroundColor = RGBCOLOR(243, 243, 243);
+//        _tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+//        _tableView.showsHorizontalScrollIndicator = NO;
+//        _tableView.showsVerticalScrollIndicator = NO;
+//        _tableView.delegate = self;
+//        _tableView.dataSource = self;
+//        _tableView.bounces = NO;
+//        [self.view addSubview:_tableView];
+//    }
+//    [self setMagnifyImage];
+//
+//    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+//    button.frame = CGRectMake(ScreenWidth-50, 10, 40, 40);
+//    button.backgroundColor = [UIColor greenColor];
+//    [self.view addSubview:button];
+//    [button addTarget:self action:@selector(zoomScrollView) forControlEvents:UIControlEventTouchUpInside];
+//
+//    if (!_promptAlertView) {
+//        _promptAlertView = [[YGSVGAnalysisPromptAlertView alloc] initWithFrame:CGRectMake(0, ScreenHeight-TopBarHeight-20-[YGSVGAnalysisPromptAlertView viewHeigt], ScreenWidth, [YGSVGAnalysisPromptAlertView viewHeigt])];
+//        _promptAlertView.backgroundColor = [UIColor colorWithWhite:0.8 alpha:0.5];
+//        _promptAlertView.cancleButton.hidden = NO;
+//        [self.view addSubview:_promptAlertView];
+//        _promptAlertView.hidden = YES;
+//    }
+    YGSVGAnalysisView *SVGAnalysisView = [[YGSVGAnalysisView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
+    UIWindow * window = [[UIApplication sharedApplication] keyWindow];
+    [window addSubview:SVGAnalysisView];
     
 //    [self setImaa];
     
@@ -87,12 +95,28 @@ static const NSInteger MarkRadius = 20;
 - (void)zoomScrollView {
     if (_scrollView.frame.size.height>(ScreenHeight-TopBarHeight)/2) {
         _scrollView.frame = CGRectMake(0, 0, ScreenWidth, (ScreenHeight-TopBarHeight)/2);
+        _promptAlertView.hidden = YES;
     } else {
         _scrollView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight-TopBarHeight);
+        if (_selectedInfo) {
+            _promptAlertView.hidden = NO;
+            [_promptAlertView setContentViewInfo:_selectedInfo];
+        }
     }
+    [self zoomToAdaptSize];
     [self setCenterWithScrollView:_scrollView];
 }
-
+- (void)zoomToAdaptSize {
+    CGSize imageSize = _svgImage.size;
+    CGSize scrollViewSize = _scrollView.frame.size;
+    CGFloat scale = _scrollView.zoomScale;
+    if (imageSize.width/imageSize.height>scrollViewSize.width/scrollViewSize.height) {
+        scale = scrollViewSize.width/imageSize.width;
+    } else {
+        scale = scrollViewSize.height/imageSize.height;
+    }
+    [_scrollView setZoomScale:scale animated:YES];
+}
 
 - (void)setMagnifyImage {
     _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, (ScreenHeight-TopBarHeight)/2)];
@@ -186,7 +210,18 @@ static const NSInteger MarkRadius = 20;
                 [self selectTextPointReloadWithInfo:info];
                 [_tableView scrollToRowAtIndexPath:info.indexPath atScrollPosition:UITableViewScrollPositionMiddle animated:YES];
                 if (_scrollView.frame.size.height>(ScreenHeight-TopBarHeight)/2) {
-                    [MBProgressHUD myShowTextOnly:[NSString stringWithFormat:@"%@测试测试",info.number] toView:self.view];
+                    [_promptAlertView setContentViewInfo:info];
+//                    if ([info.number isEqualToString:@"15"]) {
+////                        [_promptAlertView setContentViewText:[NSString stringWithFormat:@"%@测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试",info.number]];
+//                    } else {
+//                        [_promptAlertView setContentViewText:[NSString stringWithFormat:@"%@测试测试",info.number]];
+//                    }
+                    _promptAlertView.alpha = 0;
+                    [UIView animateWithDuration:0.5 animations:^{
+                        _promptAlertView.alpha = 1;
+                        _promptAlertView.hidden = NO;
+                    }];
+                    
                 }
                 isReturn = YES;
             }
@@ -196,6 +231,7 @@ static const NSInteger MarkRadius = 20;
         }
     }
 }
+
 #pragma mark 获取文字中心点
 - (CGPoint)getTextCentPointWithTextDic:(NSDictionary *)pointDic {
     NSString *textAnchor = pointDic[@"text-anchor"];
@@ -391,16 +427,7 @@ static const NSInteger MarkRadius = 20;
         [self drawRoundWithCentPoint:centPoint];
     }
     
-    CGSize imageSize = _svgImage.size;
-    CGSize scrollViewSize = _scrollView.frame.size;
-    CGFloat scale = _scrollView.zoomScale;
-    if (imageSize.width/imageSize.height>scrollViewSize.width/scrollViewSize.height) {
-        scale = scrollViewSize.width/imageSize.width;
-    } else {
-        scale = scrollViewSize.height/imageSize.height;
-    }
-    [_scrollView setZoomScale:scale animated:YES];
-    
+    [self zoomToAdaptSize];
     [self selectTextPointReloadWithInfo:info];
 }
 #pragma 设置info的选择状态

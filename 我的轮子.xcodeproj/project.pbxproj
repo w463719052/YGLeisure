@@ -96,6 +96,7 @@
 		9F049D311FE1318D001DA8C3 /* 4G63-D-J2-06.svg in Resources */ = {isa = PBXBuildFile; fileRef = 9F049D2C1FE1318D001DA8C3 /* 4G63-D-J2-06.svg */; };
 		9F049D331FE1373D001DA8C3 /* T11-3711001FN.svg in Resources */ = {isa = PBXBuildFile; fileRef = 9F049D321FE1373D001DA8C3 /* T11-3711001FN.svg */; };
 		9F0DBA7D1FE279A1001230F6 /* YGSVGAnalysisCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F0DBA7C1FE279A1001230F6 /* YGSVGAnalysisCell.m */; };
+		9F235EBC1FE793DC006B79EC /* YGSVGAnalysisPromptAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F235EBB1FE793DC006B79EC /* YGSVGAnalysisPromptAlertView.m */; };
 		9F292ACD1FE3BB7C00897E3B /* YGSVGAnalysisInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F292ACC1FE3BB7C00897E3B /* YGSVGAnalysisInfo.m */; };
 		9FCFD4011FDFAE5900E621B1 /* AppleSucksDOMImplementation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCFD3151FDFAE5800E621B1 /* AppleSucksDOMImplementation.m */; };
 		9FCFD4021FDFAE5900E621B1 /* Attr.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FCFD3171FDFAE5800E621B1 /* Attr.m */; };
@@ -397,6 +398,8 @@
 		9F049D321FE1373D001DA8C3 /* T11-3711001FN.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "T11-3711001FN.svg"; sourceTree = "<group>"; };
 		9F0DBA7B1FE279A1001230F6 /* YGSVGAnalysisCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGSVGAnalysisCell.h; sourceTree = "<group>"; };
 		9F0DBA7C1FE279A1001230F6 /* YGSVGAnalysisCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGSVGAnalysisCell.m; sourceTree = "<group>"; };
+		9F235EBA1FE793DC006B79EC /* YGSVGAnalysisPromptAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGSVGAnalysisPromptAlertView.h; sourceTree = "<group>"; };
+		9F235EBB1FE793DC006B79EC /* YGSVGAnalysisPromptAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGSVGAnalysisPromptAlertView.m; sourceTree = "<group>"; };
 		9F292ACB1FE3BB7C00897E3B /* YGSVGAnalysisInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGSVGAnalysisInfo.h; sourceTree = "<group>"; };
 		9F292ACC1FE3BB7C00897E3B /* YGSVGAnalysisInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGSVGAnalysisInfo.m; sourceTree = "<group>"; };
 		9FCFD30F1FDFA7E000E621B1 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -1394,6 +1397,8 @@
 				9F0DBA7C1FE279A1001230F6 /* YGSVGAnalysisCell.m */,
 				9F292ACB1FE3BB7C00897E3B /* YGSVGAnalysisInfo.h */,
 				9F292ACC1FE3BB7C00897E3B /* YGSVGAnalysisInfo.m */,
+				9F235EBA1FE793DC006B79EC /* YGSVGAnalysisPromptAlertView.h */,
+				9F235EBB1FE793DC006B79EC /* YGSVGAnalysisPromptAlertView.m */,
 				9F049D251FE0B6BF001DA8C3 /* UIScrollView+YGTouch.h */,
 				9F049D261FE0B6BF001DA8C3 /* UIScrollView+YGTouch.m */,
 			);
@@ -1597,6 +1602,7 @@
 				9FCFD4061FDFAE5900E621B1 /* CSSPrimitiveValue.m in Sources */,
 				15B4EF771DE7E1FD009CC32C /* YGCardFlipVCViewController.m in Sources */,
 				9FCFD43B1FDFAE5900E621B1 /* SVGRectElement.m in Sources */,
+				9F235EBC1FE793DC006B79EC /* YGSVGAnalysisPromptAlertView.m in Sources */,
 				15B6984E1D7968F700883F3F /* YGDingDangVC.m in Sources */,
 				9FCFD41B1FDFAE5900E621B1 /* Text.m in Sources */,
 				9FCFD4291FDFAE5900E621B1 /* SVGRect.m in Sources */,
