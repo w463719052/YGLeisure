@@ -90,6 +90,8 @@
 		15F4A6831DB5F53400EAAF83 /* YGArrowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F4A6821DB5F53400EAAF83 /* YGArrowView.m */; };
 		15FBDD641DACB6E600D978DF /* YGSetPropertyInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 15FBDD631DACB6E600D978DF /* YGSetPropertyInfo.m */; };
 		3DC608705D4914B8E9216DE4 /* libPods-我的轮子.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A7F0BD8FE126C71965DC85C /* libPods-我的轮子.a */; };
+		9206082520A2E4E700BADA90 /* YGProportionRingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9206082420A2E4E700BADA90 /* YGProportionRingVC.m */; };
+		9206082820A2E52100BADA90 /* YGProportionRingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9206082720A2E52100BADA90 /* YGProportionRingView.m */; };
 		9F049D271FE0B6BF001DA8C3 /* UIScrollView+YGTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F049D261FE0B6BF001DA8C3 /* UIScrollView+YGTouch.m */; };
 		9F049D2E1FE1318D001DA8C3 /* 4G63-D-J4-03.svg in Resources */ = {isa = PBXBuildFile; fileRef = 9F049D291FE1318B001DA8C3 /* 4G63-D-J4-03.svg */; };
 		9F049D301FE1318D001DA8C3 /* 4G63-D-J2-04.svg in Resources */ = {isa = PBXBuildFile; fileRef = 9F049D2B1FE1318D001DA8C3 /* 4G63-D-J2-04.svg */; };
@@ -390,6 +392,10 @@
 		15FBDD631DACB6E600D978DF /* YGSetPropertyInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YGSetPropertyInfo.m; sourceTree = "<group>"; };
 		6DA277EA08321F343746FC26 /* Pods-我的轮子.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-我的轮子.debug.xcconfig"; path = "Pods/Target Support Files/Pods-我的轮子/Pods-我的轮子.debug.xcconfig"; sourceTree = "<group>"; };
 		7A7F0BD8FE126C71965DC85C /* libPods-我的轮子.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-我的轮子.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9206082320A2E4E700BADA90 /* YGProportionRingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGProportionRingVC.h; sourceTree = "<group>"; };
+		9206082420A2E4E700BADA90 /* YGProportionRingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGProportionRingVC.m; sourceTree = "<group>"; };
+		9206082620A2E52100BADA90 /* YGProportionRingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YGProportionRingView.h; sourceTree = "<group>"; };
+		9206082720A2E52100BADA90 /* YGProportionRingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YGProportionRingView.m; sourceTree = "<group>"; };
 		9F049D251FE0B6BF001DA8C3 /* UIScrollView+YGTouch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+YGTouch.h"; sourceTree = "<group>"; };
 		9F049D261FE0B6BF001DA8C3 /* UIScrollView+YGTouch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+YGTouch.m"; sourceTree = "<group>"; };
 		9F049D291FE1318B001DA8C3 /* 4G63-D-J4-03.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "4G63-D-J4-03.svg"; sourceTree = "<group>"; };
@@ -744,6 +750,7 @@
 		15AA46CD1D2F515100E4AD97 /* 我的轮子 */ = {
 			isa = PBXGroup;
 			children = (
+				9206082220A2E48900BADA90 /* 比例圆环 */,
 				9FF75FD21FD8D55E008E8F49 /* SVGAnalysis */,
 				15A42CA21E7F70B50090437F /* silk转MP3 */,
 				15C1BA941E56A3DE00804A41 /* 条码打印 */,
@@ -1015,6 +1022,17 @@
 				15B33F731D88FF0300247239 /* YGMosaicImageInfo.m */,
 			);
 			name = "图片拼接";
+			sourceTree = "<group>";
+		};
+		9206082220A2E48900BADA90 /* 比例圆环 */ = {
+			isa = PBXGroup;
+			children = (
+				9206082320A2E4E700BADA90 /* YGProportionRingVC.h */,
+				9206082420A2E4E700BADA90 /* YGProportionRingVC.m */,
+				9206082620A2E52100BADA90 /* YGProportionRingView.h */,
+				9206082720A2E52100BADA90 /* YGProportionRingView.m */,
+			);
+			name = "比例圆环";
 			sourceTree = "<group>";
 		};
 		933704E2122C91B578B87F56 /* Frameworks */ = {
@@ -1466,7 +1484,7 @@
 				TargetAttributes = {
 					15AA46CA1D2F515100E4AD97 = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = 2Z8P7VRQP9;
+						DevelopmentTeam = A7Q5WY9T7J;
 					};
 					15AA46F71D2F5C0100E4AD97 = {
 						CreatedOnToolsVersion = 7.1;
@@ -1634,6 +1652,7 @@
 				15B851971F025293005A853E /* YGRollingAdView.m in Sources */,
 				9FCFD4361FDFAE5900E621B1 /* SVGImageElement.m in Sources */,
 				9FCFD4631FDFAE5900E621B1 /* SVGKPattern.m in Sources */,
+				9206082520A2E4E700BADA90 /* YGProportionRingVC.m in Sources */,
 				15BADED51DF566DC00205CD5 /* SDImageCache.m in Sources */,
 				9FCFD4271FDFAE5900E621B1 /* SVGPoint.m in Sources */,
 				15AA46F01D2F556C00E4AD97 /* YGLogisticsInformationInfo.m in Sources */,
@@ -1665,6 +1684,7 @@
 				9FCFD4201FDFAE5900E621B1 /* SVGDocument.m in Sources */,
 				9FCFD4511FDFAE5900E621B1 /* CALayerWithClipRender.m in Sources */,
 				9FF75FD61FD8D598008E8F49 /* YGSVGAnalysisView.m in Sources */,
+				9206082820A2E52100BADA90 /* YGProportionRingView.m in Sources */,
 				15C4C1721DB4CB24000DAE28 /* YGInputTextField.m in Sources */,
 				152FA0F11EB870BC002AEF3B /* YGPcmTransformMp3.m in Sources */,
 				15A6BF1E1E5D929B0070678F /* UIImage+Bitmap.m in Sources */,
@@ -1882,7 +1902,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 2Z8P7VRQP9;
+				DEVELOPMENT_TEAM = A7Q5WY9T7J;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1921,7 +1941,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 2Z8P7VRQP9;
+				DEVELOPMENT_TEAM = A7Q5WY9T7J;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
